@@ -1,0 +1,14 @@
+{
+  "name": "arhit",
+  "sourcePaths": [
+    "src"
+  ],
+  "ignore": [
+    "node_modules",
+    "dist",
+    ".arhit",
+    ".git",
+    ".omc"
+  ],
+  "language": "typescript"
+}

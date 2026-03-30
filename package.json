@@ -1,0 +1,26 @@
+{
+  "name": "arhit",
+  "version": "1.0.0",
+  "description": "CLI for code architecture and documentation — for AI agents and humans",
+  "type": "module",
+  "bin": {
+    "arhit": "./bin/arhit"
+  },
+  "scripts": {
+    "build": "tsc",
+    "bundle": "node esbuild.config.js",
+    "dev": "tsx src/cli.ts",
+    "start": "node dist/cli.js",
+    "prepare-release": "npm run build && npm run bundle"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "ts-morph": "^24.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "tsx": "^4.19.0",
+    "@types/node": "^22.0.0",
+    "esbuild": "^0.24.0"
+  }
+}

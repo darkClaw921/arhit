@@ -1,0 +1,802 @@
+{
+  "root": "/Users/igorgerasimov/claudeWorkspace/arhit",
+  "generatedAt": "2026-03-30T17:52:01.127Z",
+  "nodes": [
+    {
+      "id": "src/cli.ts",
+      "name": "cli.ts",
+      "type": "file",
+      "path": "src/cli.ts",
+      "exports": [],
+      "children": [
+        {
+          "id": "src/cli.ts:program",
+          "name": "program",
+          "type": "variable",
+          "path": "src/cli.ts",
+          "line": 9,
+          "exports": []
+        },
+        {
+          "id": "src/cli.ts:arch",
+          "name": "arch",
+          "type": "variable",
+          "path": "src/cli.ts",
+          "line": 34,
+          "exports": []
+        },
+        {
+          "id": "src/cli.ts:doc",
+          "name": "doc",
+          "type": "variable",
+          "path": "src/cli.ts",
+          "line": 87,
+          "exports": []
+        }
+      ]
+    },
+    {
+      "id": "src/storage.ts",
+      "name": "storage.ts",
+      "type": "file",
+      "path": "src/storage.ts",
+      "exports": [
+        "getArhitDir",
+        "ensureArhitDir",
+        "isInitialized",
+        "readJson",
+        "requireConfig",
+        "writeJson",
+        "readMarkdown",
+        "writeMarkdown",
+        "configPath",
+        "architecturePath",
+        "dependenciesPath",
+        "docsDir"
+      ],
+      "children": [
+        {
+          "id": "src/storage.ts:getArhitDir",
+          "name": "getArhitDir",
+          "type": "function",
+          "path": "src/storage.ts",
+          "line": 7,
+          "exports": [
+            "getArhitDir"
+          ]
+        },
+        {
+          "id": "src/storage.ts:ensureArhitDir",
+          "name": "ensureArhitDir",
+          "type": "function",
+          "path": "src/storage.ts",
+          "line": 11,
+          "exports": [
+            "ensureArhitDir"
+          ]
+        },
+        {
+          "id": "src/storage.ts:isInitialized",
+          "name": "isInitialized",
+          "type": "function",
+          "path": "src/storage.ts",
+          "line": 18,
+          "exports": [
+            "isInitialized"
+          ]
+        },
+        {
+          "id": "src/storage.ts:readJson",
+          "name": "readJson",
+          "type": "function",
+          "path": "src/storage.ts",
+          "line": 22,
+          "exports": [
+            "readJson"
+          ]
+        },
+        {
+          "id": "src/storage.ts:requireConfig",
+          "name": "requireConfig",
+          "type": "function",
+          "path": "src/storage.ts",
+          "line": 33,
+          "exports": [
+            "requireConfig"
+          ]
+        },
+        {
+          "id": "src/storage.ts:writeJson",
+          "name": "writeJson",
+          "type": "function",
+          "path": "src/storage.ts",
+          "line": 42,
+          "exports": [
+            "writeJson"
+          ]
+        },
+        {
+          "id": "src/storage.ts:readMarkdown",
+          "name": "readMarkdown",
+          "type": "function",
+          "path": "src/storage.ts",
+          "line": 47,
+          "exports": [
+            "readMarkdown"
+          ]
+        },
+        {
+          "id": "src/storage.ts:writeMarkdown",
+          "name": "writeMarkdown",
+          "type": "function",
+          "path": "src/storage.ts",
+          "line": 55,
+          "exports": [
+            "writeMarkdown"
+          ]
+        },
+        {
+          "id": "src/storage.ts:configPath",
+          "name": "configPath",
+          "type": "function",
+          "path": "src/storage.ts",
+          "line": 60,
+          "exports": [
+            "configPath"
+          ]
+        },
+        {
+          "id": "src/storage.ts:architecturePath",
+          "name": "architecturePath",
+          "type": "function",
+          "path": "src/storage.ts",
+          "line": 64,
+          "exports": [
+            "architecturePath"
+          ]
+        },
+        {
+          "id": "src/storage.ts:dependenciesPath",
+          "name": "dependenciesPath",
+          "type": "function",
+          "path": "src/storage.ts",
+          "line": 68,
+          "exports": [
+            "dependenciesPath"
+          ]
+        },
+        {
+          "id": "src/storage.ts:docsDir",
+          "name": "docsDir",
+          "type": "function",
+          "path": "src/storage.ts",
+          "line": 72,
+          "exports": [
+            "docsDir"
+          ]
+        },
+        {
+          "id": "src/storage.ts:ARHIT_DIR",
+          "name": "ARHIT_DIR",
+          "type": "variable",
+          "path": "src/storage.ts",
+          "line": 5,
+          "exports": []
+        }
+      ]
+    },
+    {
+      "id": "src/types.ts",
+      "name": "types.ts",
+      "type": "file",
+      "path": "src/types.ts",
+      "exports": [
+        "ArhitConfig",
+        "ArchNode",
+        "Architecture",
+        "Dependency",
+        "DependencyMap",
+        "DocEntry",
+        "OutputOptions"
+      ],
+      "children": [
+        {
+          "id": "src/types.ts:ArhitConfig",
+          "name": "ArhitConfig",
+          "type": "interface",
+          "path": "src/types.ts",
+          "line": 1,
+          "exports": [
+            "ArhitConfig"
+          ]
+        },
+        {
+          "id": "src/types.ts:ArchNode",
+          "name": "ArchNode",
+          "type": "interface",
+          "path": "src/types.ts",
+          "line": 9,
+          "exports": [
+            "ArchNode"
+          ]
+        },
+        {
+          "id": "src/types.ts:Architecture",
+          "name": "Architecture",
+          "type": "interface",
+          "path": "src/types.ts",
+          "line": 19,
+          "exports": [
+            "Architecture"
+          ]
+        },
+        {
+          "id": "src/types.ts:Dependency",
+          "name": "Dependency",
+          "type": "interface",
+          "path": "src/types.ts",
+          "line": 25,
+          "exports": [
+            "Dependency"
+          ]
+        },
+        {
+          "id": "src/types.ts:DependencyMap",
+          "name": "DependencyMap",
+          "type": "interface",
+          "path": "src/types.ts",
+          "line": 33,
+          "exports": [
+            "DependencyMap"
+          ]
+        },
+        {
+          "id": "src/types.ts:DocEntry",
+          "name": "DocEntry",
+          "type": "interface",
+          "path": "src/types.ts",
+          "line": 38,
+          "exports": [
+            "DocEntry"
+          ]
+        },
+        {
+          "id": "src/types.ts:OutputOptions",
+          "name": "OutputOptions",
+          "type": "interface",
+          "path": "src/types.ts",
+          "line": 47,
+          "exports": [
+            "OutputOptions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "src/analyzer/python-scanner.ts",
+      "name": "python-scanner.ts",
+      "type": "file",
+      "path": "src/analyzer/python-scanner.ts",
+      "exports": [
+        "findPythonFiles",
+        "buildPythonArchNodes",
+        "buildPythonDependencies"
+      ],
+      "children": [
+        {
+          "id": "src/analyzer/python-scanner.ts:parsePythonFile",
+          "name": "parsePythonFile",
+          "type": "function",
+          "path": "src/analyzer/python-scanner.ts",
+          "line": 12,
+          "exports": []
+        },
+        {
+          "id": "src/analyzer/python-scanner.ts:parsePythonImports",
+          "name": "parsePythonImports",
+          "type": "function",
+          "path": "src/analyzer/python-scanner.ts",
+          "line": 69,
+          "exports": []
+        },
+        {
+          "id": "src/analyzer/python-scanner.ts:parsePythonCalls",
+          "name": "parsePythonCalls",
+          "type": "function",
+          "path": "src/analyzer/python-scanner.ts",
+          "line": 99,
+          "exports": []
+        },
+        {
+          "id": "src/analyzer/python-scanner.ts:parsePythonInheritance",
+          "name": "parsePythonInheritance",
+          "type": "function",
+          "path": "src/analyzer/python-scanner.ts",
+          "line": 140,
+          "exports": []
+        },
+        {
+          "id": "src/analyzer/python-scanner.ts:findPythonFiles",
+          "name": "findPythonFiles",
+          "type": "function",
+          "path": "src/analyzer/python-scanner.ts",
+          "line": 158,
+          "exports": [
+            "findPythonFiles"
+          ]
+        },
+        {
+          "id": "src/analyzer/python-scanner.ts:buildPythonArchNodes",
+          "name": "buildPythonArchNodes",
+          "type": "function",
+          "path": "src/analyzer/python-scanner.ts",
+          "line": 189,
+          "exports": [
+            "buildPythonArchNodes"
+          ]
+        },
+        {
+          "id": "src/analyzer/python-scanner.ts:buildPythonDependencies",
+          "name": "buildPythonDependencies",
+          "type": "function",
+          "path": "src/analyzer/python-scanner.ts",
+          "line": 221,
+          "exports": [
+            "buildPythonDependencies"
+          ]
+        },
+        {
+          "id": "src/analyzer/python-scanner.ts:PythonElement",
+          "name": "PythonElement",
+          "type": "interface",
+          "path": "src/analyzer/python-scanner.ts",
+          "line": 5,
+          "exports": []
+        },
+        {
+          "id": "src/analyzer/python-scanner.ts:PythonImport",
+          "name": "PythonImport",
+          "type": "interface",
+          "path": "src/analyzer/python-scanner.ts",
+          "line": 63,
+          "exports": []
+        }
+      ]
+    },
+    {
+      "id": "src/analyzer/scanner.ts",
+      "name": "scanner.ts",
+      "type": "file",
+      "path": "src/analyzer/scanner.ts",
+      "exports": [
+        "createProject",
+        "buildArchNodes",
+        "buildDependencies"
+      ],
+      "children": [
+        {
+          "id": "src/analyzer/scanner.ts:createProject",
+          "name": "createProject",
+          "type": "function",
+          "path": "src/analyzer/scanner.ts",
+          "line": 5,
+          "exports": [
+            "createProject"
+          ]
+        },
+        {
+          "id": "src/analyzer/scanner.ts:buildArchNodes",
+          "name": "buildArchNodes",
+          "type": "function",
+          "path": "src/analyzer/scanner.ts",
+          "line": 25,
+          "exports": [
+            "buildArchNodes"
+          ]
+        },
+        {
+          "id": "src/analyzer/scanner.ts:buildDependencies",
+          "name": "buildDependencies",
+          "type": "function",
+          "path": "src/analyzer/scanner.ts",
+          "line": 118,
+          "exports": [
+            "buildDependencies"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "src/commands/analyze.ts",
+      "name": "analyze.ts",
+      "type": "file",
+      "path": "src/commands/analyze.ts",
+      "exports": [
+        "analyzeCommand",
+        "depsCommand",
+        "callsCommand",
+        "mapCommand"
+      ],
+      "children": [
+        {
+          "id": "src/commands/analyze.ts:loadDeps",
+          "name": "loadDeps",
+          "type": "function",
+          "path": "src/commands/analyze.ts",
+          "line": 7,
+          "exports": []
+        },
+        {
+          "id": "src/commands/analyze.ts:analyzeCommand",
+          "name": "analyzeCommand",
+          "type": "function",
+          "path": "src/commands/analyze.ts",
+          "line": 16,
+          "exports": [
+            "analyzeCommand"
+          ]
+        },
+        {
+          "id": "src/commands/analyze.ts:depsCommand",
+          "name": "depsCommand",
+          "type": "function",
+          "path": "src/commands/analyze.ts",
+          "line": 46,
+          "exports": [
+            "depsCommand"
+          ]
+        },
+        {
+          "id": "src/commands/analyze.ts:callsCommand",
+          "name": "callsCommand",
+          "type": "function",
+          "path": "src/commands/analyze.ts",
+          "line": 64,
+          "exports": [
+            "callsCommand"
+          ]
+        },
+        {
+          "id": "src/commands/analyze.ts:mapCommand",
+          "name": "mapCommand",
+          "type": "function",
+          "path": "src/commands/analyze.ts",
+          "line": 82,
+          "exports": [
+            "mapCommand"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "src/commands/arch.ts",
+      "name": "arch.ts",
+      "type": "file",
+      "path": "src/commands/arch.ts",
+      "exports": [
+        "archBuildCommand",
+        "archShowCommand"
+      ],
+      "children": [
+        {
+          "id": "src/commands/arch.ts:archBuildCommand",
+          "name": "archBuildCommand",
+          "type": "function",
+          "path": "src/commands/arch.ts",
+          "line": 7,
+          "exports": [
+            "archBuildCommand"
+          ]
+        },
+        {
+          "id": "src/commands/arch.ts:archShowCommand",
+          "name": "archShowCommand",
+          "type": "function",
+          "path": "src/commands/arch.ts",
+          "line": 36,
+          "exports": [
+            "archShowCommand"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "src/commands/doc.ts",
+      "name": "doc.ts",
+      "type": "file",
+      "path": "src/commands/doc.ts",
+      "exports": [
+        "docAddCommand",
+        "docShowCommand",
+        "docListCommand",
+        "docCreateCommand",
+        "docSearchCommand"
+      ],
+      "children": [
+        {
+          "id": "src/commands/doc.ts:docFilePath",
+          "name": "docFilePath",
+          "type": "function",
+          "path": "src/commands/doc.ts",
+          "line": 7,
+          "exports": []
+        },
+        {
+          "id": "src/commands/doc.ts:indexPath",
+          "name": "indexPath",
+          "type": "function",
+          "path": "src/commands/doc.ts",
+          "line": 12,
+          "exports": []
+        },
+        {
+          "id": "src/commands/doc.ts:loadIndex",
+          "name": "loadIndex",
+          "type": "function",
+          "path": "src/commands/doc.ts",
+          "line": 16,
+          "exports": []
+        },
+        {
+          "id": "src/commands/doc.ts:saveIndex",
+          "name": "saveIndex",
+          "type": "function",
+          "path": "src/commands/doc.ts",
+          "line": 20,
+          "exports": []
+        },
+        {
+          "id": "src/commands/doc.ts:docAddCommand",
+          "name": "docAddCommand",
+          "type": "function",
+          "path": "src/commands/doc.ts",
+          "line": 25,
+          "exports": [
+            "docAddCommand"
+          ]
+        },
+        {
+          "id": "src/commands/doc.ts:docShowCommand",
+          "name": "docShowCommand",
+          "type": "function",
+          "path": "src/commands/doc.ts",
+          "line": 88,
+          "exports": [
+            "docShowCommand"
+          ]
+        },
+        {
+          "id": "src/commands/doc.ts:docListCommand",
+          "name": "docListCommand",
+          "type": "function",
+          "path": "src/commands/doc.ts",
+          "line": 106,
+          "exports": [
+            "docListCommand"
+          ]
+        },
+        {
+          "id": "src/commands/doc.ts:docCreateCommand",
+          "name": "docCreateCommand",
+          "type": "function",
+          "path": "src/commands/doc.ts",
+          "line": 123,
+          "exports": [
+            "docCreateCommand"
+          ]
+        },
+        {
+          "id": "src/commands/doc.ts:docSearchCommand",
+          "name": "docSearchCommand",
+          "type": "function",
+          "path": "src/commands/doc.ts",
+          "line": 143,
+          "exports": [
+            "docSearchCommand"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "src/commands/onboarding.ts",
+      "name": "onboarding.ts",
+      "type": "file",
+      "path": "src/commands/onboarding.ts",
+      "exports": [
+        "onboardingCommand"
+      ],
+      "children": [
+        {
+          "id": "src/commands/onboarding.ts:ask",
+          "name": "ask",
+          "type": "function",
+          "path": "src/commands/onboarding.ts",
+          "line": 5,
+          "exports": []
+        },
+        {
+          "id": "src/commands/onboarding.ts:onboardingCommand",
+          "name": "onboardingCommand",
+          "type": "function",
+          "path": "src/commands/onboarding.ts",
+          "line": 14,
+          "exports": [
+            "onboardingCommand"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "src/commands/start.ts",
+      "name": "start.ts",
+      "type": "file",
+      "path": "src/commands/start.ts",
+      "exports": [
+        "startCommand"
+      ],
+      "children": [
+        {
+          "id": "src/commands/start.ts:findClaudeMd",
+          "name": "findClaudeMd",
+          "type": "function",
+          "path": "src/commands/start.ts",
+          "line": 49,
+          "exports": []
+        },
+        {
+          "id": "src/commands/start.ts:generateClaudeAgent",
+          "name": "generateClaudeAgent",
+          "type": "function",
+          "path": "src/commands/start.ts",
+          "line": 61,
+          "exports": []
+        },
+        {
+          "id": "src/commands/start.ts:startCommand",
+          "name": "startCommand",
+          "type": "function",
+          "path": "src/commands/start.ts",
+          "line": 81,
+          "exports": [
+            "startCommand"
+          ]
+        },
+        {
+          "id": "src/commands/start.ts:ARHIT_CLAUDE_SECTION",
+          "name": "ARHIT_CLAUDE_SECTION",
+          "type": "variable",
+          "path": "src/commands/start.ts",
+          "line": 6,
+          "exports": []
+        },
+        {
+          "id": "src/commands/start.ts:ARHIT_MARKER_START",
+          "name": "ARHIT_MARKER_START",
+          "type": "variable",
+          "path": "src/commands/start.ts",
+          "line": 46,
+          "exports": []
+        },
+        {
+          "id": "src/commands/start.ts:ARHIT_MARKER_END",
+          "name": "ARHIT_MARKER_END",
+          "type": "variable",
+          "path": "src/commands/start.ts",
+          "line": 47,
+          "exports": []
+        }
+      ]
+    },
+    {
+      "id": "src/formatters/dot.ts",
+      "name": "dot.ts",
+      "type": "file",
+      "path": "src/formatters/dot.ts",
+      "exports": [
+        "formatDepsDot"
+      ],
+      "children": [
+        {
+          "id": "src/formatters/dot.ts:formatDepsDot",
+          "name": "formatDepsDot",
+          "type": "function",
+          "path": "src/formatters/dot.ts",
+          "line": 3,
+          "exports": [
+            "formatDepsDot"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "src/formatters/index.ts",
+      "name": "index.ts",
+      "type": "file",
+      "path": "src/formatters/index.ts",
+      "exports": [],
+      "children": []
+    },
+    {
+      "id": "src/formatters/json.ts",
+      "name": "json.ts",
+      "type": "file",
+      "path": "src/formatters/json.ts",
+      "exports": [
+        "formatJson"
+      ],
+      "children": [
+        {
+          "id": "src/formatters/json.ts:formatJson",
+          "name": "formatJson",
+          "type": "function",
+          "path": "src/formatters/json.ts",
+          "line": 1,
+          "exports": [
+            "formatJson"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "src/formatters/mermaid.ts",
+      "name": "mermaid.ts",
+      "type": "file",
+      "path": "src/formatters/mermaid.ts",
+      "exports": [
+        "formatArchMermaid",
+        "formatDepsMermaid"
+      ],
+      "children": [
+        {
+          "id": "src/formatters/mermaid.ts:sanitizeId",
+          "name": "sanitizeId",
+          "type": "function",
+          "path": "src/formatters/mermaid.ts",
+          "line": 3,
+          "exports": []
+        },
+        {
+          "id": "src/formatters/mermaid.ts:formatArchMermaid",
+          "name": "formatArchMermaid",
+          "type": "function",
+          "path": "src/formatters/mermaid.ts",
+          "line": 7,
+          "exports": [
+            "formatArchMermaid"
+          ]
+        },
+        {
+          "id": "src/formatters/mermaid.ts:formatDepsMermaid",
+          "name": "formatDepsMermaid",
+          "type": "function",
+          "path": "src/formatters/mermaid.ts",
+          "line": 23,
+          "exports": [
+            "formatDepsMermaid"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "src/formatters/tree.ts",
+      "name": "tree.ts",
+      "type": "file",
+      "path": "src/formatters/tree.ts",
+      "exports": [
+        "formatTree"
+      ],
+      "children": [
+        {
+          "id": "src/formatters/tree.ts:formatTree",
+          "name": "formatTree",
+          "type": "function",
+          "path": "src/formatters/tree.ts",
+          "line": 3,
+          "exports": [
+            "formatTree"
+          ]
+        }
+      ]
+    }
+  ]
+}
