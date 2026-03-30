@@ -1,8 +1,51 @@
 import http from 'node:http';
-import { readJson, architecturePath, dependenciesPath, configPath, docsDir } from '../storage.js';
+import { readJson, architecturePath, dependenciesPath, configPath, docsDir, writeMarkdown } from '../storage.js';
 import type { Architecture, DependencyMap, ArhitConfig, DocEntry } from '../types.js';
 import fs from 'node:fs';
 import path from 'node:path';
+
+const TYPE_DIRS: Record<string, string> = {
+  file: 'files', function: 'functions', class: 'classes',
+  interface: 'types', type: 'types', enum: 'types',
+  variable: 'variables', module: 'modules', page: 'pages', unknown: 'other',
+};
+
+function saveDocContent(element: string, content: string): { status: string } {
+  const index = getDocsIndex();
+  const entry = index.find(e => e.element === element);
+  const type = entry?.type || 'unknown';
+  const now = new Date().toISOString();
+
+  // Update or create index entry
+  if (entry) {
+    entry.content = content;
+    entry.updatedAt = now;
+  } else {
+    index.push({ element, path: '', type: 'page', content, createdAt: now, updatedAt: now });
+  }
+  const indexFilePath = path.join(docsDir(), '_index.json');
+  fs.mkdirSync(docsDir(), { recursive: true });
+  fs.writeFileSync(indexFilePath, JSON.stringify(index, null, 2) + '\n');
+
+  // Write markdown file
+  const safe = element.replace(/[^\p{L}\p{N}._-]/gu, '_');
+  const dir = TYPE_DIRS[type] || 'other';
+  const filePath = path.join(docsDir(), dir, `${safe}.md`);
+  const elementPath = entry?.path || '';
+  const md = `# ${element}\n\n**Тип:** ${type}  \n**Путь:** ${elementPath || 'N/A'}  \n**Обновлено:** ${now}\n\n${content}\n`;
+  writeMarkdown(filePath, md);
+
+  return { status: 'updated' };
+}
+
+function readBody(req: http.IncomingMessage): Promise<string> {
+  return new Promise((resolve, reject) => {
+    let body = '';
+    req.on('data', (chunk: Buffer) => { body += chunk.toString(); });
+    req.on('end', () => resolve(body));
+    req.on('error', reject);
+  });
+}
 
 function jsonResponse(res: http.ServerResponse, data: unknown, status = 200) {
   res.writeHead(status, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
@@ -104,6 +147,17 @@ const PAGE_HTML = `<!DOCTYPE html>
 
   .doc-content { white-space: pre-wrap; font-size: 14px; line-height: 1.6; color: var(--text2); }
   .doc-content h1, .doc-content h2, .doc-content h3 { color: var(--text); margin: 12px 0 8px; }
+
+  .btn { padding: 6px 14px; border-radius: 6px; border: 1px solid var(--border); background: var(--bg3); color: var(--text); cursor: pointer; font-size: 13px; }
+  .btn:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-primary { background: #1f6feb; border-color: #1f6feb; color: #fff; }
+  .btn-primary:hover { background: #388bfd; border-color: #388bfd; color: #fff; }
+  .btn-danger { color: var(--red); }
+  .btn-danger:hover { border-color: var(--red); }
+  .doc-editor { width: 100%; min-height: 300px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); color: var(--text); font-family: 'SF Mono', Monaco, monospace; font-size: 13px; line-height: 1.6; padding: 12px; resize: vertical; outline: none; }
+  .doc-editor:focus { border-color: var(--accent); }
+  .doc-actions { display: flex; gap: 8px; margin-top: 12px; }
+  .save-status { font-size: 12px; color: var(--green); margin-left: 8px; line-height: 30px; }
 
   .mermaid-box { background: #fff; border-radius: var(--radius); padding: 20px; overflow: auto; }
 
@@ -302,11 +356,12 @@ async function renderMermaid(type, el) {
 }
 
 async function renderDocs(c) {
-  let html = '<input class="search" placeholder="Поиск по документации..." oninput="filterDocs(this.value)">';
+  let html = '<div style="display:flex;gap:12px;margin-bottom:16px;align-items:center"><input class="search" placeholder="Поиск по документации..." oninput="filterDocs(this.value)" style="margin-bottom:0;flex:1">';
+  html += '<button class="btn btn-primary" onclick="createNewDoc()">+ Создать</button></div>';
   html += '<div id="docs-list">';
 
   if (!docsData?.length) {
-    html += '<div class="empty">Нет документации. Используйте arhit doc add</div>';
+    html += '<div class="empty">Нет документации. Нажмите «+ Создать» или используйте arhit doc add</div>';
   } else {
     for (const doc of docsData) {
       html += '<div class="card" style="cursor:pointer" onclick="showDoc(\\''+doc.element.replace(/'/g, "\\\\'")+'\\')">';
@@ -328,14 +383,94 @@ function filterDocs(val) {
   });
 }
 
+let editingDoc = null;
+
 async function showDoc(element) {
   const resp = await fetch('/api/docs/' + encodeURIComponent(element));
   const data = await resp.json();
+  editingDoc = data;
   const c = document.getElementById('content');
+  const content = data.content || data.markdown || '';
   c.innerHTML = '<a style="color:var(--accent);cursor:pointer;font-size:13px" onclick="showPage(\\'docs\\')">&larr; Назад к документации</a>' +
-    '<div class="card" style="margin-top:12px"><h2>' + tagHTML(data.type || 'page') + ' ' + data.element + '</h2>' +
+    '<div class="card" style="margin-top:12px"><h2>' + tagHTML(data.type || 'page') + ' ' + data.element +
+    ' <button class="btn" style="margin-left:auto;font-size:12px" onclick="toggleEdit(\\''+data.element.replace(/'/g, "\\\\'")+'\\')" id="edit-btn">Редактировать</button></h2>' +
     '<div style="color:var(--text2);font-size:12px;margin-bottom:12px">' + (data.path || '') + '</div>' +
-    '<div class="doc-content">' + (data.markdown || data.content || 'Нет содержимого').replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</div></div>';
+    '<div id="doc-view" class="doc-content">' + (data.markdown || content || 'Нет содержимого').replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</div>' +
+    '<div id="doc-edit" style="display:none">' +
+    '<textarea class="doc-editor" id="doc-editor">' + escapeHtml(content) + '</textarea>' +
+    '<div class="doc-actions"><button class="btn btn-primary" onclick="saveDoc(\\''+data.element.replace(/'/g, "\\\\'")+'\\')" id="save-btn">Сохранить</button>' +
+    '<button class="btn btn-danger" onclick="cancelEdit(\\''+data.element.replace(/'/g, "\\\\'")+'\\')" >Отмена</button>' +
+    '<span class="save-status" id="save-status"></span></div></div></div>';
+}
+
+function escapeHtml(s) {
+  return (s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function toggleEdit(element) {
+  const view = document.getElementById('doc-view');
+  const edit = document.getElementById('doc-edit');
+  const btn = document.getElementById('edit-btn');
+  if (edit.style.display === 'none') {
+    edit.style.display = 'block';
+    view.style.display = 'none';
+    btn.textContent = 'Просмотр';
+  } else {
+    edit.style.display = 'none';
+    view.style.display = 'block';
+    btn.textContent = 'Редактировать';
+  }
+}
+
+function cancelEdit(element) {
+  document.getElementById('doc-edit').style.display = 'none';
+  document.getElementById('doc-view').style.display = 'block';
+  document.getElementById('edit-btn').textContent = 'Редактировать';
+}
+
+async function saveDoc(element) {
+  const btn = document.getElementById('save-btn');
+  const status = document.getElementById('save-status');
+  const content = document.getElementById('doc-editor').value;
+  btn.disabled = true;
+  btn.textContent = 'Сохраняю...';
+  status.textContent = '';
+  try {
+    const resp = await fetch('/api/docs/' + encodeURIComponent(element), {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ content }),
+    });
+    const data = await resp.json();
+    if (data.error) throw new Error(data.error);
+    status.textContent = 'Сохранено!';
+    status.style.color = 'var(--green)';
+    // Update view
+    document.getElementById('doc-view').innerHTML = escapeHtml(content);
+    // Refresh docs data
+    docsData = await fetchJSON('/api/docs');
+    document.getElementById('stat-docs').textContent = docsData?.length || 0;
+  } catch(e) {
+    status.textContent = 'Ошибка: ' + e.message;
+    status.style.color = 'var(--red)';
+  }
+  btn.disabled = false;
+  btn.textContent = 'Сохранить';
+}
+
+async function createNewDoc() {
+  const name = prompt('Название документа:');
+  if (!name) return;
+  try {
+    await fetch('/api/docs/' + encodeURIComponent(name), {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ content: 'Добавьте документацию здесь.' }),
+    });
+    docsData = await fetchJSON('/api/docs');
+    document.getElementById('stat-docs').textContent = docsData?.length || 0;
+    showDoc(name);
+  } catch(e) { alert('Ошибка: ' + e.message); }
 }
 
 function showFile(node) {
@@ -428,9 +563,27 @@ function getRunningPid(): number | null {
 }
 
 function createServer(port: number): http.Server {
-  return http.createServer((req, res) => {
+  return http.createServer(async (req, res) => {
     const url = new URL(req.url || '/', `http://localhost:${port}`);
     const pathname = url.pathname;
+
+    // CORS preflight
+    if (req.method === 'OPTIONS') {
+      res.writeHead(204, { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET,PUT,OPTIONS', 'Access-Control-Allow-Headers': 'Content-Type' });
+      return res.end();
+    }
+
+    // PUT /api/docs/:element — save doc content
+    if (req.method === 'PUT' && pathname.startsWith('/api/docs/')) {
+      const element = decodeURIComponent(pathname.slice('/api/docs/'.length));
+      try {
+        const body = JSON.parse(await readBody(req));
+        const result = saveDocContent(element, body.content || '');
+        return jsonResponse(res, result);
+      } catch (e: any) {
+        return jsonResponse(res, { error: e.message }, 400);
+      }
+    }
 
     if (pathname === '/api/architecture') {
       const arch = readJson<Architecture>(architecturePath());
