@@ -1,6 +1,6 @@
 {
   "root": "/Users/igorgerasimov/claudeWorkspace/arhit",
-  "generatedAt": "2026-03-30T17:52:01.127Z",
+  "generatedAt": "2026-03-30T18:20:38.205Z",
   "nodes": [
     {
       "id": "src/cli.ts",
@@ -14,7 +14,7 @@
           "name": "program",
           "type": "variable",
           "path": "src/cli.ts",
-          "line": 9,
+          "line": 10,
           "exports": []
         },
         {
@@ -22,7 +22,7 @@
           "name": "arch",
           "type": "variable",
           "path": "src/cli.ts",
-          "line": 34,
+          "line": 35,
           "exports": []
         },
         {
@@ -30,7 +30,15 @@
           "name": "doc",
           "type": "variable",
           "path": "src/cli.ts",
-          "line": 87,
+          "line": 88,
+          "exports": []
+        },
+        {
+          "id": "src/cli.ts:ui",
+          "name": "ui",
+          "type": "variable",
+          "path": "src/cli.ts",
+          "line": 130,
           "exports": []
         }
       ]
@@ -683,6 +691,121 @@
           "type": "variable",
           "path": "src/commands/start.ts",
           "line": 47,
+          "exports": []
+        }
+      ]
+    },
+    {
+      "id": "src/commands/ui.ts",
+      "name": "ui.ts",
+      "type": "file",
+      "path": "src/commands/ui.ts",
+      "exports": [
+        "uiStartCommand",
+        "uiStopCommand",
+        "uiStatusCommand"
+      ],
+      "children": [
+        {
+          "id": "src/commands/ui.ts:jsonResponse",
+          "name": "jsonResponse",
+          "type": "function",
+          "path": "src/commands/ui.ts",
+          "line": 7,
+          "exports": []
+        },
+        {
+          "id": "src/commands/ui.ts:htmlResponse",
+          "name": "htmlResponse",
+          "type": "function",
+          "path": "src/commands/ui.ts",
+          "line": 12,
+          "exports": []
+        },
+        {
+          "id": "src/commands/ui.ts:getDocsIndex",
+          "name": "getDocsIndex",
+          "type": "function",
+          "path": "src/commands/ui.ts",
+          "line": 17,
+          "exports": []
+        },
+        {
+          "id": "src/commands/ui.ts:getDocContent",
+          "name": "getDocContent",
+          "type": "function",
+          "path": "src/commands/ui.ts",
+          "line": 26,
+          "exports": []
+        },
+        {
+          "id": "src/commands/ui.ts:pidFilePath",
+          "name": "pidFilePath",
+          "type": "function",
+          "path": "src/commands/ui.ts",
+          "line": 402,
+          "exports": []
+        },
+        {
+          "id": "src/commands/ui.ts:getRunningPid",
+          "name": "getRunningPid",
+          "type": "function",
+          "path": "src/commands/ui.ts",
+          "line": 406,
+          "exports": []
+        },
+        {
+          "id": "src/commands/ui.ts:createServer",
+          "name": "createServer",
+          "type": "function",
+          "path": "src/commands/ui.ts",
+          "line": 419,
+          "exports": []
+        },
+        {
+          "id": "src/commands/ui.ts:runDaemon",
+          "name": "runDaemon",
+          "type": "function",
+          "path": "src/commands/ui.ts",
+          "line": 489,
+          "exports": []
+        },
+        {
+          "id": "src/commands/ui.ts:uiStartCommand",
+          "name": "uiStartCommand",
+          "type": "function",
+          "path": "src/commands/ui.ts",
+          "line": 512,
+          "exports": [
+            "uiStartCommand"
+          ]
+        },
+        {
+          "id": "src/commands/ui.ts:uiStopCommand",
+          "name": "uiStopCommand",
+          "type": "function",
+          "path": "src/commands/ui.ts",
+          "line": 564,
+          "exports": [
+            "uiStopCommand"
+          ]
+        },
+        {
+          "id": "src/commands/ui.ts:uiStatusCommand",
+          "name": "uiStatusCommand",
+          "type": "function",
+          "path": "src/commands/ui.ts",
+          "line": 593,
+          "exports": [
+            "uiStatusCommand"
+          ]
+        },
+        {
+          "id": "src/commands/ui.ts:PAGE_HTML",
+          "name": "PAGE_HTML",
+          "type": "variable",
+          "path": "src/commands/ui.ts",
+          "line": 36,
           "exports": []
         }
       ]

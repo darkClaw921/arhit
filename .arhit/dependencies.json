@@ -1,0 +1,4460 @@
+{
+  "generatedAt": "2026-03-30T18:20:38.878Z",
+  "dependencies": [
+    {
+      "from": "src/cli.ts",
+      "to": "node_modules/commander/typings/index.d.ts",
+      "type": "import",
+      "toElement": "Command"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/commands/start.ts",
+      "type": "import",
+      "toElement": "startCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "import",
+      "toElement": "onboardingCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/commands/arch.ts",
+      "type": "import",
+      "toElement": "archBuildCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/commands/arch.ts",
+      "type": "import",
+      "toElement": "archShowCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "import",
+      "toElement": "analyzeCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "import",
+      "toElement": "depsCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "import",
+      "toElement": "callsCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "import",
+      "toElement": "mapCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/commands/doc.ts",
+      "type": "import",
+      "toElement": "docAddCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/commands/doc.ts",
+      "type": "import",
+      "toElement": "docShowCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/commands/doc.ts",
+      "type": "import",
+      "toElement": "docListCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/commands/doc.ts",
+      "type": "import",
+      "toElement": "docCreateCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/commands/doc.ts",
+      "type": "import",
+      "toElement": "docSearchCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/commands/ui.ts",
+      "type": "import",
+      "toElement": "uiStartCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/commands/ui.ts",
+      "type": "import",
+      "toElement": "uiStopCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/commands/ui.ts",
+      "type": "import",
+      "toElement": "uiStatusCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "startCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "onboardingCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "archBuildCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "archShowCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "analyzeCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "depsCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "callsCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "mapCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "docAddCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "docShowCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "docListCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "docCreateCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "docSearchCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "uiStartCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "uiStopCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "uiStatusCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.parse"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "node:fs",
+      "type": "import",
+      "toElement": "default"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "node:path",
+      "type": "import",
+      "toElement": "default"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "ArhitConfig"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "getArhitDir",
+      "toElement": "process.cwd"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "getArhitDir",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "ensureArhitDir",
+      "toElement": "getArhitDir"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "ensureArhitDir",
+      "toElement": "fs.mkdirSync"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "ensureArhitDir",
+      "toElement": "fs.mkdirSync"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "ensureArhitDir",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "isInitialized",
+      "toElement": "fs.existsSync"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "isInitialized",
+      "toElement": "getArhitDir"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "readJson",
+      "toElement": "JSON.parse"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "readJson",
+      "toElement": "fs.readFileSync"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "requireConfig",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "requireConfig",
+      "toElement": "configPath"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "requireConfig",
+      "toElement": "console.error"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "requireConfig",
+      "toElement": "process.exit"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "writeJson",
+      "toElement": "fs.mkdirSync"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "writeJson",
+      "toElement": "path.dirname"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "writeJson",
+      "toElement": "fs.writeFileSync"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "writeJson",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "readMarkdown",
+      "toElement": "fs.readFileSync"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "writeMarkdown",
+      "toElement": "fs.mkdirSync"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "writeMarkdown",
+      "toElement": "path.dirname"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "writeMarkdown",
+      "toElement": "fs.writeFileSync"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "configPath",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "configPath",
+      "toElement": "getArhitDir"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "architecturePath",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "architecturePath",
+      "toElement": "getArhitDir"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "dependenciesPath",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "dependenciesPath",
+      "toElement": "getArhitDir"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "docsDir",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "docsDir",
+      "toElement": "getArhitDir"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "node:fs",
+      "type": "import",
+      "toElement": "default"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "node:path",
+      "type": "import",
+      "toElement": "default"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "ArchNode"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "Dependency"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonFile",
+      "toElement": "content.split"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonFile",
+      "toElement": "line.match"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonFile",
+      "toElement": "elements.push"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonFile",
+      "toElement": "name.startsWith"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonFile",
+      "toElement": "line.match"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonFile",
+      "toElement": "elements.push"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonFile",
+      "toElement": "name.startsWith"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonFile",
+      "toElement": "line.match"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonFile",
+      "toElement": "line.startsWith"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonFile",
+      "toElement": "line.startsWith"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonFile",
+      "toElement": "line.startsWith"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonFile",
+      "toElement": "line.startsWith"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonFile",
+      "toElement": "line.startsWith"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonFile",
+      "toElement": "elements.push"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonFile",
+      "toElement": "name.startsWith"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonImports",
+      "toElement": "content.split"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonImports",
+      "toElement": "line.match"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonImports",
+      "toElement": "n.trim"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonImports",
+      "toElement": "imports.push"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonImports",
+      "toElement": "line.match"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonImports",
+      "toElement": "m.trim"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonImports",
+      "toElement": "imports.push"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonCalls",
+      "toElement": "content.split"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonCalls",
+      "toElement": "line.match"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonCalls",
+      "toElement": "line.startsWith"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonCalls",
+      "toElement": "line.startsWith"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonCalls",
+      "toElement": "line.match"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonCalls",
+      "toElement": "callRegex.exec"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonCalls",
+      "toElement": "calls.push"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonInheritance",
+      "toElement": "content.split"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonInheritance",
+      "toElement": "b.trim"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonInheritance",
+      "toElement": "result.push"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "walk",
+      "toElement": "fs.readdirSync"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "walk",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "walk",
+      "toElement": "path.relative"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "walk",
+      "toElement": "process.cwd"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "walk",
+      "toElement": "ignore.some"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "walk",
+      "toElement": "rel.includes"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "walk",
+      "toElement": "entry.isDirectory"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "walk",
+      "toElement": "walk"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "walk",
+      "toElement": "entry.name.endsWith"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "walk",
+      "toElement": "files.push"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "findPythonFiles",
+      "toElement": "path.isAbsolute"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "findPythonFiles",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "findPythonFiles",
+      "toElement": "process.cwd"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "findPythonFiles",
+      "toElement": "walk"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "buildPythonArchNodes",
+      "toElement": "findPythonFiles"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "buildPythonArchNodes",
+      "toElement": "path.relative"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "buildPythonArchNodes",
+      "toElement": "process.cwd"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "buildPythonArchNodes",
+      "toElement": "fs.readFileSync"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "buildPythonArchNodes",
+      "toElement": "parsePythonFile"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "buildPythonArchNodes",
+      "toElement": "elements.map"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "buildPythonArchNodes",
+      "toElement": "children.filter"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "buildPythonArchNodes",
+      "toElement": "nodes.push"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "buildPythonArchNodes",
+      "toElement": "path.basename"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "buildPythonDependencies",
+      "toElement": "findPythonFiles"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "buildPythonDependencies",
+      "toElement": "path.relative"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "buildPythonDependencies",
+      "toElement": "process.cwd"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "buildPythonDependencies",
+      "toElement": "fs.readFileSync"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "buildPythonDependencies",
+      "toElement": "parsePythonImports"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "buildPythonDependencies",
+      "toElement": "imp.module.replace"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "buildPythonDependencies",
+      "toElement": "deps.push"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "buildPythonDependencies",
+      "toElement": "deps.push"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "buildPythonDependencies",
+      "toElement": "parsePythonInheritance"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "buildPythonDependencies",
+      "toElement": "deps.push"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "buildPythonDependencies",
+      "toElement": "parsePythonCalls"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "buildPythonDependencies",
+      "toElement": "deps.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "node_modules/ts-morph/lib/ts-morph.d.ts",
+      "type": "import",
+      "toElement": "Project"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "node_modules/ts-morph/lib/ts-morph.d.ts",
+      "type": "import",
+      "toElement": "SourceFile"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "node_modules/ts-morph/lib/ts-morph.d.ts",
+      "type": "import",
+      "toElement": "SyntaxKind"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "node_modules/ts-morph/lib/ts-morph.d.ts",
+      "type": "import",
+      "toElement": "Node"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "node:path",
+      "type": "import",
+      "toElement": "default"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "ArchNode"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "Dependency"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "createProject",
+      "toElement": "project.addSourceFilesAtPaths"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "createProject",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "createProject",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "createProject",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "createProject",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "createProject",
+      "toElement": "project.getSourceFiles"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "createProject",
+      "toElement": "path.relative"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "createProject",
+      "toElement": "process.cwd"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "createProject",
+      "toElement": "sf.getFilePath"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "createProject",
+      "toElement": "ignore.some"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "createProject",
+      "toElement": "rel.includes"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "createProject",
+      "toElement": "project.removeSourceFile"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "project.getSourceFiles"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "path.relative"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "process.cwd"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "sf.getFilePath"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "sf.getFunctions"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "fn.getName"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "children.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "fn.getStartLineNumber"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "fn.isExported"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "sf.getClasses"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "cls.getName"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "children.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "cls.getStartLineNumber"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "cls.isExported"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "sf.getInterfaces"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "iface.getName"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "children.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "iface.getStartLineNumber"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "iface.isExported"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "sf.getTypeAliases"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "typeAlias.getName"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "children.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "typeAlias.getStartLineNumber"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "typeAlias.isExported"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "sf.getEnums"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "en.getName"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "children.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "en.getStartLineNumber"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "en.isExported"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "sf.getVariableStatements"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "varStmt.getDeclarations"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "decl.getName"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "children.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "decl.getStartLineNumber"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "varStmt.isExported"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "children.filter"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "nodes.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "path.basename"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "project.getSourceFiles"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "path.relative"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "process.cwd"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "sf.getFilePath"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "sf.getImportDeclarations"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "imp.getModuleSpecifierValue"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "imp.getModuleSpecifierSourceFile"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "path.relative"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "process.cwd"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "resolved.getFilePath"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "imp.getNamedImports"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "deps.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "named.getName"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "imp.getDefaultImport"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "deps.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "sf.getClasses"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "cls.getExtends"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "deps.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "cls.getName"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "ext.getText"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "cls.getImplements"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "deps.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "cls.getName"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "impl.getText"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "sf.forEachDescendant"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "Node.isCallExpression"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "node.getExpression"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "expr.getText"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "text.match"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "node.getFirstAncestorByKind"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "node.getFirstAncestorByKind"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "node.getFirstAncestorByKind"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "Node.isFunctionDeclaration"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "containingFn.getName"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "deps.push"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "requireConfig"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "dependenciesPath"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "writeJson"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "import",
+      "toElement": "createProject"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "import",
+      "toElement": "buildDependencies"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "import",
+      "toElement": "buildPythonDependencies"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/formatters/index.ts",
+      "type": "import",
+      "toElement": "formatJson"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/formatters/index.ts",
+      "type": "import",
+      "toElement": "formatDepsMermaid"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/formatters/index.ts",
+      "type": "import",
+      "toElement": "formatDepsDot"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "DependencyMap"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "Dependency"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "loadDeps",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "loadDeps",
+      "toElement": "dependenciesPath"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "loadDeps",
+      "toElement": "console.error"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "loadDeps",
+      "toElement": "process.exit"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "analyzeCommand",
+      "toElement": "requireConfig"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "analyzeCommand",
+      "toElement": "buildPythonDependencies"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "analyzeCommand",
+      "toElement": "createProject"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "analyzeCommand",
+      "toElement": "buildDependencies"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "analyzeCommand",
+      "toElement": "writeJson"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "analyzeCommand",
+      "toElement": "dependenciesPath"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "analyzeCommand",
+      "toElement": "dependencies.filter"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "analyzeCommand",
+      "toElement": "dependencies.filter"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "analyzeCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "analyzeCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "analyzeCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "analyzeCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "analyzeCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "analyzeCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "depsCommand",
+      "toElement": "loadDeps"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "depsCommand",
+      "toElement": "deps.filter"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "depsCommand",
+      "toElement": "d.to.includes"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "depsCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "depsCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "depsCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "depsCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "depsCommand",
+      "toElement": "formatJson"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "callsCommand",
+      "toElement": "loadDeps"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "callsCommand",
+      "toElement": "deps.filter"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "callsCommand",
+      "toElement": "d.from.includes"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "callsCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "callsCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "callsCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "callsCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "callsCommand",
+      "toElement": "formatJson"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "mapCommand",
+      "toElement": "loadDeps"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "mapCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "mapCommand",
+      "toElement": "formatDepsMermaid"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "mapCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "mapCommand",
+      "toElement": "formatDepsDot"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "mapCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/analyze.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "call",
+      "fromElement": "mapCommand",
+      "toElement": "formatJson"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "requireConfig"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "architecturePath"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "writeJson"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "import",
+      "toElement": "createProject"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "import",
+      "toElement": "buildArchNodes"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "import",
+      "toElement": "buildPythonArchNodes"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/formatters/index.ts",
+      "type": "import",
+      "toElement": "formatJson"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/formatters/index.ts",
+      "type": "import",
+      "toElement": "formatTree"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/formatters/index.ts",
+      "type": "import",
+      "toElement": "formatArchMermaid"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "Architecture"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "ArchNode"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archBuildCommand",
+      "toElement": "requireConfig"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archBuildCommand",
+      "toElement": "buildPythonArchNodes"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archBuildCommand",
+      "toElement": "createProject"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archBuildCommand",
+      "toElement": "buildArchNodes"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archBuildCommand",
+      "toElement": "process.cwd"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archBuildCommand",
+      "toElement": "writeJson"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archBuildCommand",
+      "toElement": "architecturePath"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archBuildCommand",
+      "toElement": "nodes.reduce"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archBuildCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archBuildCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archBuildCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archBuildCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archShowCommand",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archShowCommand",
+      "toElement": "architecturePath"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archShowCommand",
+      "toElement": "console.error"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archShowCommand",
+      "toElement": "process.exit"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archShowCommand",
+      "toElement": "nodes.filter"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archShowCommand",
+      "toElement": "n.path.includes"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archShowCommand",
+      "toElement": "n.name.includes"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archShowCommand",
+      "toElement": "c.name.includes"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archShowCommand",
+      "toElement": "c.id.includes"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archShowCommand",
+      "toElement": "matched.push"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archShowCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archShowCommand",
+      "toElement": "formatTree"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archShowCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archShowCommand",
+      "toElement": "formatArchMermaid"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archShowCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archShowCommand",
+      "toElement": "formatJson"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "node:fs",
+      "type": "import",
+      "toElement": "default"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "node:path",
+      "type": "import",
+      "toElement": "default"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "docsDir"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "architecturePath"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "readMarkdown"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "writeMarkdown"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/formatters/index.ts",
+      "type": "import",
+      "toElement": "formatJson"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "Architecture"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "DocEntry"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docFilePath",
+      "toElement": "element.replace"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docFilePath",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docFilePath",
+      "toElement": "docsDir"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "indexPath",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "indexPath",
+      "toElement": "docsDir"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "loadIndex",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "loadIndex",
+      "toElement": "indexPath"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "saveIndex",
+      "toElement": "fs.mkdirSync"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "saveIndex",
+      "toElement": "docsDir"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "saveIndex",
+      "toElement": "fs.writeFileSync"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "saveIndex",
+      "toElement": "indexPath"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "saveIndex",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAddCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAddCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAddCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAddCommand",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAddCommand",
+      "toElement": "architecturePath"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAddCommand",
+      "toElement": "loadIndex"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAddCommand",
+      "toElement": "index.findIndex"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAddCommand",
+      "toElement": "index.push"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAddCommand",
+      "toElement": "saveIndex"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAddCommand",
+      "toElement": "writeMarkdown"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAddCommand",
+      "toElement": "docFilePath"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAddCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAddCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAddCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docShowCommand",
+      "toElement": "readMarkdown"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docShowCommand",
+      "toElement": "docFilePath"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docShowCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docShowCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docShowCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docShowCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docShowCommand",
+      "toElement": "loadIndex"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docShowCommand",
+      "toElement": "index.find"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docShowCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docShowCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docListCommand",
+      "toElement": "loadIndex"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docListCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docListCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docListCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docListCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docListCommand",
+      "toElement": "formatJson"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCreateCommand",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCreateCommand",
+      "toElement": "docsDir"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCreateCommand",
+      "toElement": "name.replace"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCreateCommand",
+      "toElement": "writeMarkdown"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCreateCommand",
+      "toElement": "loadIndex"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCreateCommand",
+      "toElement": "index.findIndex"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCreateCommand",
+      "toElement": "index.push"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCreateCommand",
+      "toElement": "saveIndex"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCreateCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCreateCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCreateCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docSearchCommand",
+      "toElement": "loadIndex"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docSearchCommand",
+      "toElement": "query.toLowerCase"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docSearchCommand",
+      "toElement": "index.filter"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docSearchCommand",
+      "toElement": "e.element.toLowerCase"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docSearchCommand",
+      "toElement": "e.content.toLowerCase"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docSearchCommand",
+      "toElement": "e.path.toLowerCase"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docSearchCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docSearchCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docSearchCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docSearchCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docSearchCommand",
+      "toElement": "formatJson"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "node:readline",
+      "type": "import",
+      "toElement": "default"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "configPath"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "writeJson"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "ensureArhitDir"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "isInitialized"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "ArhitConfig"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "ask",
+      "toElement": "rl.question"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "ask",
+      "toElement": "resolve"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "ask",
+      "toElement": "answer.trim"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "isInitialized"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "ensureArhitDir"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "configPath"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "readline.createInterface"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "ask"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "ask"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "existing.sourcePaths.join"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "srcInput.split"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "s.trim"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "ask"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "existing.ignore.join"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "ignoreInput.split"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "s.trim"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "ask"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "ask"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "rl.close"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "writeJson"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "configPath"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/onboarding.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "call",
+      "fromElement": "onboardingCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "node:fs",
+      "type": "import",
+      "toElement": "default"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "node:path",
+      "type": "import",
+      "toElement": "default"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "ensureArhitDir"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "configPath"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "writeJson"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "isInitialized"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "ArhitConfig"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "findClaudeMd",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "findClaudeMd",
+      "toElement": "process.cwd"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "findClaudeMd",
+      "toElement": "fs.existsSync"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "findClaudeMd",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "findClaudeMd",
+      "toElement": "process.cwd"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "findClaudeMd",
+      "toElement": "fs.existsSync"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "generateClaudeAgent",
+      "toElement": "findClaudeMd"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "generateClaudeAgent",
+      "toElement": "fs.existsSync"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "generateClaudeAgent",
+      "toElement": "fs.readFileSync"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "generateClaudeAgent",
+      "toElement": "existing.includes"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "generateClaudeAgent",
+      "toElement": "existing.replace"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "generateClaudeAgent",
+      "toElement": "fs.writeFileSync"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "generateClaudeAgent",
+      "toElement": "fs.writeFileSync"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "generateClaudeAgent",
+      "toElement": "existing.trimEnd"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "generateClaudeAgent",
+      "toElement": "fs.writeFileSync"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "isInitialized"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "ensureArhitDir"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "fs.existsSync"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "fs.existsSync"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "fs.existsSync"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "fs.existsSync"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "fs.existsSync"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "fs.existsSync"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "fs.existsSync"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "JSON.parse"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "fs.readFileSync"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "fs.existsSync"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "path.basename"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "process.cwd"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "writeJson"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "configPath"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "generateClaudeAgent"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "process.cwd"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "sourcePaths.join"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "node:http",
+      "type": "import",
+      "toElement": "default"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "architecturePath"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "dependenciesPath"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "configPath"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "docsDir"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "Architecture"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "DependencyMap"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "ArhitConfig"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "DocEntry"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "node:fs",
+      "type": "import",
+      "toElement": "default"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "node:path",
+      "type": "import",
+      "toElement": "default"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "getArhitDir"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "node:child_process",
+      "type": "import",
+      "toElement": "spawn"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "jsonResponse",
+      "toElement": "res.writeHead"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "jsonResponse",
+      "toElement": "res.end"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "jsonResponse",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "htmlResponse",
+      "toElement": "res.writeHead"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "htmlResponse",
+      "toElement": "res.end"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "getDocsIndex",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "getDocsIndex",
+      "toElement": "docsDir"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "getDocsIndex",
+      "toElement": "JSON.parse"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "getDocsIndex",
+      "toElement": "fs.readFileSync"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "getDocContent",
+      "toElement": "element.replace"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "getDocContent",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "getDocContent",
+      "toElement": "docsDir"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "getDocContent",
+      "toElement": "fs.readFileSync"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "pidFilePath",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "pidFilePath",
+      "toElement": "getArhitDir"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "getRunningPid",
+      "toElement": "parseInt"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "getRunningPid",
+      "toElement": "fs.readFileSync"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "getRunningPid",
+      "toElement": "pidFilePath"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "getRunningPid",
+      "toElement": "process.kill"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "getRunningPid",
+      "toElement": "fs.unlinkSync"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "getRunningPid",
+      "toElement": "pidFilePath"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "http.createServer"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "architecturePath"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "jsonResponse"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "dependenciesPath"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "jsonResponse"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "configPath"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "jsonResponse"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "jsonResponse"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "getDocsIndex"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "pathname.startsWith"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "decodeURIComponent"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "pathname.slice"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "getDocsIndex"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "index.find"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "getDocContent"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "jsonResponse"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "url.searchParams.get"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "architecturePath"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "jsonResponse"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "node.id.replace"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "child.id.replace"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "jsonResponse"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "dependenciesPath"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "jsonResponse"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "seen.has"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "seen.add"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "jsonResponse"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "htmlResponse"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "runDaemon",
+      "toElement": "createServer"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "runDaemon",
+      "toElement": "server.listen"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "runDaemon",
+      "toElement": "fs.writeFileSync"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "runDaemon",
+      "toElement": "pidFilePath"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "runDaemon",
+      "toElement": "String"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "runDaemon",
+      "toElement": "process.send"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "runDaemon",
+      "toElement": "process.on"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "runDaemon",
+      "toElement": "server.close"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "runDaemon",
+      "toElement": "fs.unlinkSync"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "runDaemon",
+      "toElement": "pidFilePath"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "runDaemon",
+      "toElement": "process.exit"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "runDaemon",
+      "toElement": "process.on"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "runDaemon",
+      "toElement": "server.close"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "runDaemon",
+      "toElement": "fs.unlinkSync"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "runDaemon",
+      "toElement": "pidFilePath"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "runDaemon",
+      "toElement": "process.exit"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStartCommand",
+      "toElement": "parseInt"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStartCommand",
+      "toElement": "getRunningPid"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStartCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStartCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStartCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStartCommand",
+      "toElement": "runDaemon"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStartCommand",
+      "toElement": "spawn"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStartCommand",
+      "toElement": "String"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStartCommand",
+      "toElement": "process.cwd"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStartCommand",
+      "toElement": "child.unref"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStartCommand",
+      "toElement": "setTimeout"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStartCommand",
+      "toElement": "getRunningPid"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStartCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStartCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStartCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStartCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStartCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStartCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStartCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStartCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStartCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStopCommand",
+      "toElement": "getRunningPid"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStopCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStopCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStopCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStopCommand",
+      "toElement": "process.kill"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStopCommand",
+      "toElement": "fs.unlinkSync"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStopCommand",
+      "toElement": "pidFilePath"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStopCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStopCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStopCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStopCommand",
+      "toElement": "fs.unlinkSync"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStopCommand",
+      "toElement": "pidFilePath"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStopCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStopCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStopCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStatusCommand",
+      "toElement": "getRunningPid"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStatusCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStatusCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStatusCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStatusCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStatusCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "uiStatusCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/formatters/dot.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "Dependency"
+    },
+    {
+      "from": "src/formatters/dot.ts",
+      "to": "src/formatters/dot.ts",
+      "type": "call",
+      "fromElement": "formatDepsDot",
+      "toElement": "s.replace"
+    },
+    {
+      "from": "src/formatters/dot.ts",
+      "to": "src/formatters/dot.ts",
+      "type": "call",
+      "fromElement": "formatDepsDot",
+      "toElement": "lines.push"
+    },
+    {
+      "from": "src/formatters/dot.ts",
+      "to": "src/formatters/dot.ts",
+      "type": "call",
+      "fromElement": "formatDepsDot",
+      "toElement": "id"
+    },
+    {
+      "from": "src/formatters/dot.ts",
+      "to": "src/formatters/dot.ts",
+      "type": "call",
+      "fromElement": "formatDepsDot",
+      "toElement": "id"
+    },
+    {
+      "from": "src/formatters/dot.ts",
+      "to": "src/formatters/dot.ts",
+      "type": "call",
+      "fromElement": "formatDepsDot",
+      "toElement": "lines.push"
+    },
+    {
+      "from": "src/formatters/dot.ts",
+      "to": "src/formatters/dot.ts",
+      "type": "call",
+      "fromElement": "formatDepsDot",
+      "toElement": "lines.join"
+    },
+    {
+      "from": "src/formatters/json.ts",
+      "to": "src/formatters/json.ts",
+      "type": "call",
+      "fromElement": "formatJson",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/formatters/mermaid.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "ArchNode"
+    },
+    {
+      "from": "src/formatters/mermaid.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "Dependency"
+    },
+    {
+      "from": "src/formatters/mermaid.ts",
+      "to": "src/formatters/mermaid.ts",
+      "type": "call",
+      "fromElement": "sanitizeId",
+      "toElement": "id.replace"
+    },
+    {
+      "from": "src/formatters/mermaid.ts",
+      "to": "src/formatters/mermaid.ts",
+      "type": "call",
+      "fromElement": "addNode",
+      "toElement": "sanitizeId"
+    },
+    {
+      "from": "src/formatters/mermaid.ts",
+      "to": "src/formatters/mermaid.ts",
+      "type": "call",
+      "fromElement": "addNode",
+      "toElement": "lines.push"
+    },
+    {
+      "from": "src/formatters/mermaid.ts",
+      "to": "src/formatters/mermaid.ts",
+      "type": "call",
+      "fromElement": "addNode",
+      "toElement": "lines.push"
+    },
+    {
+      "from": "src/formatters/mermaid.ts",
+      "to": "src/formatters/mermaid.ts",
+      "type": "call",
+      "fromElement": "addNode",
+      "toElement": "sanitizeId"
+    },
+    {
+      "from": "src/formatters/mermaid.ts",
+      "to": "src/formatters/mermaid.ts",
+      "type": "call",
+      "fromElement": "addNode",
+      "toElement": "addNode"
+    },
+    {
+      "from": "src/formatters/mermaid.ts",
+      "to": "src/formatters/mermaid.ts",
+      "type": "call",
+      "fromElement": "formatArchMermaid",
+      "toElement": "addNode"
+    },
+    {
+      "from": "src/formatters/mermaid.ts",
+      "to": "src/formatters/mermaid.ts",
+      "type": "call",
+      "fromElement": "formatArchMermaid",
+      "toElement": "lines.join"
+    },
+    {
+      "from": "src/formatters/mermaid.ts",
+      "to": "src/formatters/mermaid.ts",
+      "type": "call",
+      "fromElement": "formatDepsMermaid",
+      "toElement": "sanitizeId"
+    },
+    {
+      "from": "src/formatters/mermaid.ts",
+      "to": "src/formatters/mermaid.ts",
+      "type": "call",
+      "fromElement": "formatDepsMermaid",
+      "toElement": "sanitizeId"
+    },
+    {
+      "from": "src/formatters/mermaid.ts",
+      "to": "src/formatters/mermaid.ts",
+      "type": "call",
+      "fromElement": "formatDepsMermaid",
+      "toElement": "lines.push"
+    },
+    {
+      "from": "src/formatters/mermaid.ts",
+      "to": "src/formatters/mermaid.ts",
+      "type": "call",
+      "fromElement": "formatDepsMermaid",
+      "toElement": "lines.join"
+    },
+    {
+      "from": "src/formatters/tree.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "ArchNode"
+    },
+    {
+      "from": "src/formatters/tree.ts",
+      "to": "src/formatters/tree.ts",
+      "type": "call",
+      "fromElement": "formatTree",
+      "toElement": "nodes.forEach"
+    },
+    {
+      "from": "src/formatters/tree.ts",
+      "to": "src/formatters/tree.ts",
+      "type": "call",
+      "fromElement": "formatTree",
+      "toElement": "node.exports.join"
+    },
+    {
+      "from": "src/formatters/tree.ts",
+      "to": "src/formatters/tree.ts",
+      "type": "call",
+      "fromElement": "formatTree",
+      "toElement": "lines.push"
+    },
+    {
+      "from": "src/formatters/tree.ts",
+      "to": "src/formatters/tree.ts",
+      "type": "call",
+      "fromElement": "formatTree",
+      "toElement": "lines.push"
+    },
+    {
+      "from": "src/formatters/tree.ts",
+      "to": "src/formatters/tree.ts",
+      "type": "call",
+      "fromElement": "formatTree",
+      "toElement": "formatTree"
+    },
+    {
+      "from": "src/formatters/tree.ts",
+      "to": "src/formatters/tree.ts",
+      "type": "call",
+      "fromElement": "formatTree",
+      "toElement": "lines.join"
+    }
+  ]
+}

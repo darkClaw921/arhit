@@ -3,3 +3,4 @@ dist/
 bin/
 .omc/
 .claude
+*.pid

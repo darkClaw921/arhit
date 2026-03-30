@@ -1,0 +1,178 @@
+[
+  {
+    "element": "cli.ts",
+    "path": "src/cli.ts",
+    "type": "file",
+    "content": "Точка входа CLI-приложения. Регистрирует все команды через Commander.js: start, onboarding, arch (build/show), analyze, deps, calls, map, doc (add/show/list/create/search), ui (start/stop/status). Поддерживает глобальный флаг -H для человеко-читаемого вывода.",
+    "createdAt": "2026-03-30T18:21:14.034Z",
+    "updatedAt": "2026-03-30T18:21:14.034Z"
+  },
+  {
+    "element": "storage.ts",
+    "path": "src/storage.ts",
+    "type": "file",
+    "content": "Слой хранения данных. Работает с директорией .arhit/: чтение/запись JSON и Markdown файлов, автосоздание директорий. readJson ловит только ENOENT и возвращает null, другие ошибки пробрасываются. Содержит общую функцию requireConfig для проверки инициализации.",
+    "createdAt": "2026-03-30T18:21:14.235Z",
+    "updatedAt": "2026-03-30T18:21:14.235Z"
+  },
+  {
+    "element": "types.ts",
+    "path": "src/types.ts",
+    "type": "file",
+    "content": "Все типы данных проекта: ArhitConfig (настройки проекта), ArchNode (узел архитектуры — файл/функция/класс и т.д.), Architecture (полный граф), Dependency (связь между элементами), DependencyMap (карта зависимостей), DocEntry (запись документации), OutputOptions (параметры вывода).",
+    "createdAt": "2026-03-30T18:21:14.438Z",
+    "updatedAt": "2026-03-30T18:21:14.438Z"
+  },
+  {
+    "element": "scanner.ts",
+    "path": "src/analyzer/scanner.ts",
+    "type": "file",
+    "content": "Движок AST-анализа для TypeScript/JavaScript. Использует ts-morph для парсинга. createProject — создаёт проект из исходных путей. buildArchNodes — извлекает функции, классы, интерфейсы, типы, перечисления, переменные. buildDependencies — строит граф зависимостей (импорты, вызовы, наследование).",
+    "createdAt": "2026-03-30T18:21:14.640Z",
+    "updatedAt": "2026-03-30T18:21:14.640Z"
+  },
+  {
+    "element": "python-scanner.ts",
+    "path": "src/analyzer/python-scanner.ts",
+    "type": "file",
+    "content": "Анализатор Python-кода на основе регулярных выражений (без внешних зависимостей). Извлекает: функции (def), классы (class), переменные верхнего уровня, импорты (from/import), вызовы функций, наследование классов. Приватные элементы (_prefix) помечаются как неэкспортируемые.",
+    "createdAt": "2026-03-30T18:21:14.846Z",
+    "updatedAt": "2026-03-30T18:21:14.846Z"
+  },
+  {
+    "element": "start.ts",
+    "path": "src/commands/start.ts",
+    "type": "file",
+    "content": "Команда инициализации (arhit start). Создаёт директорию .arhit/, автоопределяет язык (TS/JS/Python/Rust/Go) и фреймворк (Next.js/React/Vue/Express/Fastify). Генерирует секцию в CLAUDE.md с инструкциями для ИИ-агента. Ищет CLAUDE.md сначала в .claude/, затем в корне.",
+    "createdAt": "2026-03-30T18:21:15.050Z",
+    "updatedAt": "2026-03-30T18:21:15.050Z"
+  },
+  {
+    "element": "onboarding.ts",
+    "path": "src/commands/onboarding.ts",
+    "type": "file",
+    "content": "Мастер настройки (arhit onboarding). В режиме человека — интерактивные вопросы: имя проекта, пути к исходникам, паттерны игнорирования, язык, фреймворк. В режиме агента — выводит текущий конфиг как JSON для программной модификации.",
+    "createdAt": "2026-03-30T18:21:15.258Z",
+    "updatedAt": "2026-03-30T18:21:15.258Z"
+  },
+  {
+    "element": "arch.ts",
+    "path": "src/commands/arch.ts",
+    "type": "file",
+    "content": "Команды архитектуры. archBuildCommand — сканирует код (через ts-morph или python-scanner в зависимости от языка), строит граф, сохраняет в .arhit/architecture.json. archShowCommand — отображает архитектуру в формате tree/json/mermaid с возможностью фильтрации по имени файла или элемента.",
+    "createdAt": "2026-03-30T18:21:15.458Z",
+    "updatedAt": "2026-03-30T18:21:15.458Z"
+  },
+  {
+    "element": "analyze.ts",
+    "path": "src/commands/analyze.ts",
+    "type": "file",
+    "content": "Команды анализа зависимостей. analyzeCommand — полный анализ (импорты, вызовы, наследование), сохраняет в .arhit/dependencies.json. depsCommand — обратные зависимости (кто зависит от элемента). callsCommand — прямые зависимости (что элемент вызывает). mapCommand — полная карта в json/mermaid/dot.",
+    "createdAt": "2026-03-30T18:21:15.663Z",
+    "updatedAt": "2026-03-30T18:21:15.663Z"
+  },
+  {
+    "element": "doc.ts",
+    "path": "src/commands/doc.ts",
+    "type": "file",
+    "content": "Система документации. docAddCommand — привязывает документацию к элементу кода (автопоиск в архитектуре). docShowCommand — отображает документацию. docListCommand — список всех задокументированных элементов. docCreateCommand — свободная страница. docSearchCommand — полнотекстовый поиск. Хранение: Markdown + JSON-индекс в .arhit/docs/.",
+    "createdAt": "2026-03-30T18:21:15.863Z",
+    "updatedAt": "2026-03-30T18:21:15.863Z"
+  },
+  {
+    "element": "ui.ts",
+    "path": "src/commands/ui.ts",
+    "type": "file",
+    "content": "Веб-интерфейс для просмотра архитектуры и документации. uiStartCommand — запускает HTTP-сервер в фоновом процессе (daemon), сохраняет PID в .arhit/ui.pid. uiStopCommand — останавливает сервер по PID. uiStatusCommand — проверяет статус. Встроенный SPA с тёмной темой: навигация по архитектуре, зависимости с фильтрами, Mermaid-диаграммы, поиск по документации.",
+    "createdAt": "2026-03-30T18:21:16.063Z",
+    "updatedAt": "2026-03-30T18:21:32.771Z"
+  },
+  {
+    "element": "ArhitConfig",
+    "path": "src/types.ts",
+    "type": "interface",
+    "content": "Интерфейс настроек проекта. Поля: name (имя проекта), sourcePaths (пути к исходникам), ignore (паттерны игнорирования), language (язык: typescript/javascript/python/rust/go), framework (опционально: next.js/react/vue/express/fastify).",
+    "createdAt": "2026-03-30T18:21:32.981Z",
+    "updatedAt": "2026-03-30T18:21:32.981Z"
+  },
+  {
+    "element": "ArchNode",
+    "path": "src/types.ts",
+    "type": "interface",
+    "content": "Узел графа архитектуры. Представляет файл или элемент кода. Поля: id (уникальный идентификатор), name (имя), type (file/module/class/function/variable/interface/type/enum), path (путь к файлу), line (номер строки), exports (экспортируемые имена), children (дочерние элементы).",
+    "createdAt": "2026-03-30T18:21:33.192Z",
+    "updatedAt": "2026-03-30T18:21:33.192Z"
+  },
+  {
+    "element": "Dependency",
+    "path": "src/types.ts",
+    "type": "interface",
+    "content": "Связь между элементами кода. Поля: from (откуда), to (куда), type (import/call/extends/implements/uses), fromElement (элемент-источник), toElement (элемент-цель). Формирует направленный граф зависимостей проекта.",
+    "createdAt": "2026-03-30T18:21:33.402Z",
+    "updatedAt": "2026-03-30T18:21:33.402Z"
+  },
+  {
+    "element": "DocEntry",
+    "path": "src/types.ts",
+    "type": "interface",
+    "content": "Запись документации. Поля: element (имя элемента), path (путь к файлу), type (тип элемента), content (текст документации), createdAt/updatedAt (временные метки). Хранится в JSON-индексе .arhit/docs/_index.json и в отдельном Markdown-файле.",
+    "createdAt": "2026-03-30T18:21:33.614Z",
+    "updatedAt": "2026-03-30T18:21:33.614Z"
+  },
+  {
+    "element": "formatTree",
+    "path": "src/formatters/tree.ts",
+    "type": "function",
+    "content": "Форматирует массив ArchNode в ASCII-дерево с коннекторами (├── └──). Показывает тип элемента, экспорты. Рекурсивно обходит дочерние узлы с отступами.",
+    "createdAt": "2026-03-30T18:21:33.819Z",
+    "updatedAt": "2026-03-30T18:21:33.819Z"
+  },
+  {
+    "element": "formatArchMermaid",
+    "path": "src/formatters/mermaid.ts",
+    "type": "function",
+    "content": "Конвертирует узлы архитектуры в Mermaid graph TD. Каждый файл — нода, дочерние элементы связаны стрелками. Имена санитизируются для совместимости с Mermaid.",
+    "createdAt": "2026-03-30T18:21:34.028Z",
+    "updatedAt": "2026-03-30T18:21:34.028Z"
+  },
+  {
+    "element": "formatDepsMermaid",
+    "path": "src/formatters/mermaid.ts",
+    "type": "function",
+    "content": "Конвертирует массив зависимостей в Mermaid graph LR с подписанными рёбрами (import/call/extends). Для визуализации карты взаимодействий.",
+    "createdAt": "2026-03-30T18:21:34.237Z",
+    "updatedAt": "2026-03-30T18:21:34.237Z"
+  },
+  {
+    "element": "formatDepsDot",
+    "path": "src/formatters/dot.ts",
+    "type": "function",
+    "content": "Конвертирует зависимости в формат Graphviz DOT для рендеринга через утилиты dot/neato/fdp. Направленный граф с подписями типов связей.",
+    "createdAt": "2026-03-30T18:21:34.443Z",
+    "updatedAt": "2026-03-30T18:22:56.851Z"
+  },
+  {
+    "element": "architecture-overview",
+    "path": "",
+    "type": "page",
+    "content": "# Обзор архитектуры arhit\n\n## Слои системы\n\n### 1. CLI-слой (cli.ts)\nТочка входа. Commander.js регистрирует все команды и обрабатывает аргументы.\nГлобальный флаг `-H` переключает режим вывода (JSON для агентов / текст для людей).\n\n### 2. Слой команд (commands/)\nКаждая команда — отдельный файл:\n- **start.ts** — инициализация проекта, автоопределение стека\n- **onboarding.ts** — интерактивная настройка\n- **arch.ts** — построение и отображение архитектуры\n- **analyze.ts** — анализ зависимостей\n- **doc.ts** — система документации\n- **ui.ts** — веб-интерфейс\n\n### 3. Слой анализа (analyzer/)\nДва движка:\n- **scanner.ts** — AST-анализ TypeScript/JavaScript через ts-morph\n- **python-scanner.ts** — regex-анализ Python (без зависимостей)\n\nВыбор движка автоматический по полю `language` в конфиге.\n\n### 4. Слой форматирования (formatters/)\nЧетыре формата вывода: JSON, ASCII-дерево, Mermaid, Graphviz DOT.\n\n### 5. Слой хранения (storage.ts)\nВсе данные в `.arhit/` — JSON и Markdown, git-friendly.\n\n### 6. Веб-интерфейс (ui.ts)\nВстроенный HTTP-сервер с SPA. Запускается в фоне через daemon-процесс.\nAPI: /api/architecture, /api/dependencies, /api/docs, /api/mermaid.\n\n## Типы данных\nОпределены в types.ts: ArhitConfig, ArchNode, Architecture, Dependency, DependencyMap, DocEntry.\n",
+    "createdAt": "2026-03-30T18:22:57.060Z",
+    "updatedAt": "2026-03-30T18:22:57.060Z"
+  },
+  {
+    "element": "getting-started",
+    "path": "",
+    "type": "page",
+    "content": "# Начало работы с arhit\n\n## Шаг 1. Установка\n```bash\nnpm install -g arhit\n```\n\n## Шаг 2. Инициализация\n```bash\ncd /path/to/your/project\narhit start\n```\nArhit автоматически определит язык и фреймворк, создаст `.arhit/` и добавит инструкции в CLAUDE.md.\n\n## Шаг 3. Построение архитектуры\n```bash\narhit arch build\narhit -H arch show\n```\n\n## Шаг 4. Анализ зависимостей\n```bash\narhit analyze\narhit -H deps МояФункция\narhit -H calls МояФункция\narhit -H map --format mermaid\n```\n\n## Шаг 5. Документирование\n```bash\narhit doc add МояФункция --content \"Обрабатывает запросы пользователей\"\narhit -H doc list\n```\n\n## Шаг 6. Веб-интерфейс\n```bash\narhit ui start --port 3000\n# Откройте http://localhost:3000\narhit ui stop\n```\n\n## Шаг 7. Настройка\n```bash\narhit -H onboarding\n```\nПозволяет изменить пути к исходникам, паттерны игнорирования и другие параметры.\n",
+    "createdAt": "2026-03-30T18:22:57.260Z",
+    "updatedAt": "2026-03-30T18:22:57.260Z"
+  },
+  {
+    "element": "agent-guide",
+    "path": "",
+    "type": "page",
+    "content": "# Руководство для ИИ-агентов\n\n## Обзор\narhit предоставляет машинно-читаемый API для исследования кодовой базы.\nПо умолчанию все команды выводят JSON.\n\n## Рабочий процесс агента\n\n### 1. Инициализация (однократно)\n```bash\narhit start\n```\n\n### 2. Перед изменением кода\n```bash\narhit arch build && arhit analyze\narhit deps <элемент>    # Проверить, кто зависит от элемента\narhit calls <элемент>   # Проверить, что элемент вызывает\n```\n\n### 3. После изменения кода\n```bash\narhit arch build && arhit analyze    # Обновить данные\narhit doc add <элемент> --content \"Описание изменений\"\n```\n\n### 4. Исследование архитектуры\n```bash\narhit arch show                      # Полный граф (JSON)\narhit arch show src/commands         # Фильтр по пути\narhit map --format json              # Карта зависимостей\n```\n\n### 5. Поиск документации\n```bash\narhit doc list                       # Все документы\narhit doc search запрос              # Поиск\narhit doc show элемент               # Конкретный документ\n```\n\n## Форматы ответов\nВсе команды возвращают JSON с полем `status` для отслеживания результата:\n- `{\"status\": \"built\", \"files\": 14, \"elements\": 51}`\n- `{\"status\": \"analyzed\", \"total\": 428}`\n- `{\"status\": \"added\", \"element\": \"myFunc\"}`\n",
+    "createdAt": "2026-03-30T18:22:57.465Z",
+    "updatedAt": "2026-03-30T18:22:57.465Z"
+  }
+]

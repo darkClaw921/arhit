@@ -5,6 +5,7 @@ import { onboardingCommand } from './commands/onboarding.js';
 import { archBuildCommand, archShowCommand } from './commands/arch.js';
 import { analyzeCommand, depsCommand, callsCommand, mapCommand } from './commands/analyze.js';
 import { docAddCommand, docShowCommand, docListCommand, docCreateCommand, docSearchCommand } from './commands/doc.js';
+import { uiStartCommand, uiStopCommand, uiStatusCommand } from './commands/ui.js';
 
 const program = new Command();
 
@@ -123,6 +124,34 @@ doc
   .description('Search documentation')
   .action((query: string) => {
     docSearchCommand(query, { human: program.opts().human });
+  });
+
+// UI
+const ui = program
+  .command('ui')
+  .description('Web UI server commands');
+
+ui
+  .command('start')
+  .description('Start web UI server in background')
+  .option('-p, --port <port>', 'Port number', '3000')
+  .option('--daemon', 'Run as daemon (internal)')
+  .action((opts: { port?: string; daemon?: boolean }) => {
+    uiStartCommand({ port: opts.port, human: program.opts().human, daemon: opts.daemon });
+  });
+
+ui
+  .command('stop')
+  .description('Stop web UI server')
+  .action(() => {
+    uiStopCommand({ human: program.opts().human });
+  });
+
+ui
+  .command('status')
+  .description('Check if web UI server is running')
+  .action(() => {
+    uiStatusCommand({ human: program.opts().human });
   });
 
 program.parse();
