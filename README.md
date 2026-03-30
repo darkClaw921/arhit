@@ -252,18 +252,18 @@ graph TD
     CLI --> Analyze[analyze.ts]
     CLI --> Doc[doc.ts]
 
-    Arch --> TSScanner[scanner.ts<br>TypeScript/JS]
-    Arch --> PyScanner[python-scanner.ts<br>Python]
+    Arch --> TSScanner[scanner.ts - TS/JS]
+    Arch --> PyScanner[python-scanner.ts - Python]
     Analyze --> TSScanner
     Analyze --> PyScanner
 
     TSScanner --> Storage[storage.ts]
     PyScanner --> Storage
-    Arch --> Formatters[formatters/]
+    Arch --> Formatters[formatters]
     Analyze --> Formatters
     Doc --> Storage
 
-    Storage --> Arhit[.arhit/]
+    Storage --> Arhit[.arhit]
     Start --> Claude[CLAUDE.md]
 ```
 
