@@ -33,7 +33,7 @@ export function readJson<T>(filePath: string): T | null {
 export function requireConfig(): ArhitConfig {
   const config = readJson<ArhitConfig>(configPath());
   if (!config) {
-    console.error('Not initialized. Run `arhit start` first.');
+    console.error('Not initialized. Run `arhit init` first.');
     process.exit(1);
   }
   return config;

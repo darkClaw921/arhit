@@ -4,9 +4,54 @@ import { docsDir, readJson, architecturePath, readMarkdown, writeMarkdown } from
 import { formatJson } from '../formatters/index.js';
 import type { Architecture, DocEntry } from '../types.js';
 
-function docFilePath(element: string): string {
-  const safe = element.replace(/[^a-zA-Z0-9._-]/g, '_');
-  return path.join(docsDir(), `${safe}.md`);
+const TYPE_DIRS: Record<string, string> = {
+  file: 'files',
+  function: 'functions',
+  class: 'classes',
+  interface: 'types',
+  type: 'types',
+  enum: 'types',
+  variable: 'variables',
+  module: 'modules',
+  page: 'pages',
+  unknown: 'other',
+};
+
+function typeDir(type: string): string {
+  return TYPE_DIRS[type] || 'other';
+}
+
+function docFilePath(element: string, type: string): string {
+  const safe = element.replace(/[^\p{L}\p{N}._-]/gu, '_');
+  const dir = path.join(docsDir(), typeDir(type));
+  return path.join(dir, `${safe}.md`);
+}
+
+// Search for doc file in categorized dirs, then fallback to flat (legacy)
+function findDocFile(element: string, type?: string): string | null {
+  const safe = element.replace(/[^\p{L}\p{N}._-]/gu, '_');
+
+  // If type known, check categorized path first
+  if (type) {
+    const categorized = path.join(docsDir(), typeDir(type), `${safe}.md`);
+    if (fs.existsSync(categorized)) return categorized;
+  }
+
+  // Search all subdirs
+  const base = docsDir();
+  try {
+    for (const dir of fs.readdirSync(base, { withFileTypes: true })) {
+      if (!dir.isDirectory() || dir.name.startsWith('_')) continue;
+      const candidate = path.join(base, dir.name, `${safe}.md`);
+      if (fs.existsSync(candidate)) return candidate;
+    }
+  } catch {}
+
+  // Legacy flat path
+  const flat = path.join(base, `${safe}.md`);
+  if (fs.existsSync(flat)) return flat;
+
+  return null;
 }
 
 function indexPath(): string {
@@ -68,15 +113,22 @@ export function docAddCommand(element: string, options: { content?: string; huma
   const existing = index.findIndex(e => e.element === element);
   if (existing >= 0) {
     entry.createdAt = index[existing].createdAt;
+    // Remove old file if type changed
+    const oldType = index[existing].type;
+    if (oldType !== elementType) {
+      const oldFile = findDocFile(element, oldType);
+      if (oldFile) try { fs.unlinkSync(oldFile); } catch {}
+    }
     index[existing] = entry;
   } else {
     index.push(entry);
   }
   saveIndex(index);
 
-  // Write markdown file
-  const md = `# ${element}\n\n**Type:** ${elementType}  \n**Path:** ${elementPath || 'N/A'}  \n**Updated:** ${now}\n\n${content}\n`;
-  writeMarkdown(docFilePath(element), md);
+  // Write markdown file in categorized dir
+  const filePath = docFilePath(element, elementType);
+  const md = `# ${element}\n\n**Тип:** ${elementType}  \n**Путь:** ${elementPath || 'N/A'}  \n**Обновлено:** ${now}\n\n${content}\n`;
+  writeMarkdown(filePath, md);
 
   if (options.human) {
     console.log(`Documentation ${existing >= 0 ? 'updated' : 'added'} for "${element}"`);
@@ -86,19 +138,22 @@ export function docAddCommand(element: string, options: { content?: string; huma
 }
 
 export function docShowCommand(element: string, options: { human?: boolean }) {
-  const md = readMarkdown(docFilePath(element));
-  if (!md) {
+  // Look up type from index for better search
+  const index = loadIndex();
+  const entry = index.find(e => e.element === element);
+  const file = findDocFile(element, entry?.type);
+
+  if (!file) {
     const msg = `No documentation found for "${element}"`;
     if (options.human) console.log(msg);
     else console.log(JSON.stringify({ error: 'not_found', element }));
     return;
   }
 
+  const md = readMarkdown(file);
   if (options.human) {
     console.log(md);
   } else {
-    const index = loadIndex();
-    const entry = index.find(e => e.element === element);
     console.log(JSON.stringify(entry || { element, content: md }));
   }
 }
@@ -111,9 +166,21 @@ export function docListCommand(options: { human?: boolean }) {
       console.log('No documentation yet. Use `arhit doc add <element> --content "..."`');
       return;
     }
-    console.log(`Documented elements (${index.length}):\n`);
+
+    // Group by type
+    const groups: Record<string, DocEntry[]> = {};
     for (const entry of index) {
-      console.log(`  ${entry.element} [${entry.type}] — ${entry.path || 'N/A'}`);
+      const dir = typeDir(entry.type);
+      if (!groups[dir]) groups[dir] = [];
+      groups[dir].push(entry);
+    }
+
+    console.log(`Задокументировано элементов: ${index.length}\n`);
+    for (const [group, entries] of Object.entries(groups).sort()) {
+      console.log(`  ${group}/`);
+      for (const entry of entries) {
+        console.log(`    ${entry.element} [${entry.type}] — ${entry.path || 'свободная страница'}`);
+      }
     }
   } else {
     console.log(formatJson(index));
@@ -121,8 +188,8 @@ export function docListCommand(options: { human?: boolean }) {
 }
 
 export function docCreateCommand(name: string, options: { content?: string; human?: boolean }) {
-  const content = options.content || `# ${name}\n\nAdd your documentation here.\n`;
-  const filePath = path.join(docsDir(), `${name.replace(/[^a-zA-Z0-9._-]/g, '_')}.md`);
+  const content = options.content || `# ${name}\n\nДобавьте документацию здесь.\n`;
+  const filePath = docFilePath(name, 'page');
   writeMarkdown(filePath, content);
 
   // Add to index

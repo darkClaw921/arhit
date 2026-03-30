@@ -2,7 +2,7 @@ class Arhit < Formula
   desc "CLI for code architecture and documentation — for AI agents and humans"
   homepage "https://github.com/igorgerasimov/arhit"
   # Update URL and sha256 when publishing a release
-  url "https://github.com/igorgerasimov/arhit/archive/refs/tags/v1.0.0.tar.gz"
+  url "https://github.com/igorgerasimov/arhit/archive/refs/tags/v0.1.0.tar.gz"
   sha256 ""
   license "MIT"
 

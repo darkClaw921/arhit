@@ -24,10 +24,21 @@ function getDocsIndex(): DocEntry[] {
 }
 
 function getDocContent(element: string): string | null {
-  const safe = element.replace(/[^a-zA-Z0-9._-]/g, '_');
-  const filePath = path.join(docsDir(), `${safe}.md`);
+  const safe = element.replace(/[^\p{L}\p{N}._-]/gu, '_');
+  const base = docsDir();
+
+  // Search in subdirectories first
   try {
-    return fs.readFileSync(filePath, 'utf-8');
+    for (const dir of fs.readdirSync(base, { withFileTypes: true })) {
+      if (!dir.isDirectory() || dir.name.startsWith('_')) continue;
+      const candidate = path.join(base, dir.name, `${safe}.md`);
+      if (fs.existsSync(candidate)) return fs.readFileSync(candidate, 'utf-8');
+    }
+  } catch {}
+
+  // Fallback to flat (legacy)
+  try {
+    return fs.readFileSync(path.join(base, `${safe}.md`), 'utf-8');
   } catch {
     return null;
   }

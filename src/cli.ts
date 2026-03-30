@@ -15,9 +15,9 @@ program
   .version('1.0.0')
   .option('-H, --human', 'Human-readable output mode');
 
-// Start
+// Init
 program
-  .command('start')
+  .command('init')
   .description('Initialize .arhit/ in the current project')
   .action(() => {
     startCommand({ human: program.opts().human });
