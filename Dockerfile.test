@@ -1,0 +1,19 @@
+FROM node:20-slim
+
+WORKDIR /app
+
+# Copy source
+COPY package.json package-lock.json* tsconfig.json esbuild.config.js ./
+COPY src/ src/
+COPY bin/ bin/
+
+# Install and build
+RUN npm install --production=false && npm run bundle
+
+# Copy test fixtures and test script
+COPY test/ test/
+
+# Make CLI available globally
+RUN chmod +x bin/arhit && ln -s /app/bin/arhit /usr/local/bin/arhit
+
+ENTRYPOINT ["bash", "test/e2e.sh"]

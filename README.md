@@ -33,15 +33,15 @@
 ## Установка
 
 ```bash
+# Homebrew (рекомендуется)
+brew tap darkClaw921/tap
+brew install arhit
+
 # npm (глобально)
 npm install -g arhit
 
-# Homebrew
-brew tap igorgerasimov/arhit
-brew install arhit
-
 # Из исходников
-git clone https://github.com/igorgerasimov/arhit.git
+git clone https://github.com/darkClaw921/arhit.git
 cd arhit && npm install && npm run bundle && npm link
 ```
 

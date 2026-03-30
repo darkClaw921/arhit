@@ -4,3 +4,5 @@ bin/
 .omc/
 .claude
 *.pid
+release.sh
+TODO.md

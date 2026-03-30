@@ -6,6 +6,7 @@ import { archBuildCommand, archShowCommand } from './commands/arch.js';
 import { analyzeCommand, depsCommand, callsCommand, mapCommand } from './commands/analyze.js';
 import { docAddCommand, docShowCommand, docListCommand, docCreateCommand, docSearchCommand } from './commands/doc.js';
 import { uiStartCommand, uiStopCommand, uiStatusCommand } from './commands/ui.js';
+import { contextCommand } from './commands/context.js';
 
 const program = new Command();
 
@@ -82,6 +83,14 @@ program
   .option('-f, --format <format>', 'Output format: json, mermaid, dot')
   .action((opts: { format?: string }) => {
     mapCommand({ format: opts.format, human: program.opts().human });
+  });
+
+// Context (LLM session briefing)
+program
+  .command('context')
+  .description('Generate project context briefing for LLM session start')
+  .action(() => {
+    contextCommand({ human: program.opts().human });
   });
 
 // Documentation
