@@ -1,6 +1,6 @@
 {
   "name": "arhit",
-  "version": "1.0.0",
+  "version": "0.2.1",
   "description": "CLI for code architecture and documentation — for AI agents and humans",
   "type": "module",
   "bin": {
