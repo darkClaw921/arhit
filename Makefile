@@ -11,9 +11,9 @@ install-local: bundle
 	chmod +x bin/arhit.mjs
 	ln -sf $(PWD)/bin/arhit.mjs /usr/local/bin/arhit
 
-release: bundle
-	@echo "To create a release:"
-	@echo "  1. git tag v$(shell node -p 'require(\"./package.json\").version')"
-	@echo "  2. git push origin --tags"
-	@echo "  3. Create GitHub release from the tag"
-	@echo "  4. Update Formula/arhit.rb with the release URL and sha256"
+# Usage: make release VERSION=0.2.0
+release:
+ifndef VERSION
+	$(error VERSION is required. Usage: make release VERSION=0.2.0)
+endif
+	./release.sh $(VERSION)

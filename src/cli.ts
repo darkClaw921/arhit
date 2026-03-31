@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+declare const PKG_VERSION: string;
 import { Command } from 'commander';
 import { startCommand } from './commands/start.js';
 import { onboardingCommand } from './commands/onboarding.js';
@@ -13,7 +14,7 @@ const program = new Command();
 program
   .name('arhit')
   .description('CLI for code architecture and documentation — for AI agents and humans')
-  .version('1.0.0')
+  .version(PKG_VERSION)
   .option('-H, --human', 'Human-readable output mode');
 
 // Init

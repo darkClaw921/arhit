@@ -1,6 +1,8 @@
 import * as esbuild from 'esbuild';
-import { writeFileSync, chmodSync } from 'node:fs';
+import { writeFileSync, chmodSync, readFileSync } from 'node:fs';
 import { mkdirSync } from 'node:fs';
+
+const pkg = JSON.parse(readFileSync('package.json', 'utf-8'));
 
 mkdirSync('bin', { recursive: true });
 
@@ -14,6 +16,9 @@ await esbuild.build({
   external: [],
   minify: false,
   sourcemap: false,
+  define: {
+    'PKG_VERSION': JSON.stringify(pkg.version),
+  },
 });
 
 // Create wrapper script with shebang
