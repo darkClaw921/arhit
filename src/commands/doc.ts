@@ -21,20 +21,40 @@ function typeDir(type: string): string {
   return TYPE_DIRS[type] || 'other';
 }
 
+const FILE_EXTENSIONS = ['.ts', '.tsx', '.js', '.jsx', '.py', '.rs', '.go', '.java', '.rb', '.php', '.vue', '.svelte', '.html', '.css', '.scss'];
+
+function detectTypeFromElement(element: string): { type: string; path: string } {
+  // Check if element looks like a file path (has a known extension)
+  for (const ext of FILE_EXTENSIONS) {
+    if (element.endsWith(ext)) {
+      return { type: 'file', path: element };
+    }
+  }
+  return { type: 'unknown', path: '' };
+}
+
 function docFilePath(element: string, type: string): string {
-  const safe = element.replace(/[^\p{L}\p{N}._-]/gu, '_');
+  const parts = element.split('/');
+  const safeParts = parts.map(p => p.replace(/[^\p{L}\p{N}._-]/gu, '_'));
   const dir = path.join(docsDir(), typeDir(type));
-  return path.join(dir, `${safe}.md`);
+  const filePath = path.join(dir, ...safeParts.slice(0, -1), `${safeParts[safeParts.length - 1]}.md`);
+  fs.mkdirSync(path.dirname(filePath), { recursive: true });
+  return filePath;
 }
 
 // Search for doc file in categorized dirs, then fallback to flat (legacy)
 function findDocFile(element: string, type?: string): string | null {
-  const safe = element.replace(/[^\p{L}\p{N}._-]/gu, '_');
+  const parts = element.split('/');
+  const safeParts = parts.map(p => p.replace(/[^\p{L}\p{N}._-]/gu, '_'));
+  const nestedPath = path.join(...safeParts.slice(0, -1), `${safeParts[safeParts.length - 1]}.md`);
+  const flatName = `${safeParts.join('_')}.md`;
 
-  // If type known, check categorized path first
+  // If type known, check categorized path first (nested, then legacy flat)
   if (type) {
-    const categorized = path.join(docsDir(), typeDir(type), `${safe}.md`);
-    if (fs.existsSync(categorized)) return categorized;
+    const nested = path.join(docsDir(), typeDir(type), nestedPath);
+    if (fs.existsSync(nested)) return nested;
+    const flat = path.join(docsDir(), typeDir(type), flatName);
+    if (fs.existsSync(flat)) return flat;
   }
 
   // Search all subdirs
@@ -42,13 +62,15 @@ function findDocFile(element: string, type?: string): string | null {
   try {
     for (const dir of fs.readdirSync(base, { withFileTypes: true })) {
       if (!dir.isDirectory() || dir.name.startsWith('_')) continue;
-      const candidate = path.join(base, dir.name, `${safe}.md`);
-      if (fs.existsSync(candidate)) return candidate;
+      const nested = path.join(base, dir.name, nestedPath);
+      if (fs.existsSync(nested)) return nested;
+      const flat = path.join(base, dir.name, flatName);
+      if (fs.existsSync(flat)) return flat;
     }
   } catch {}
 
-  // Legacy flat path
-  const flat = path.join(base, `${safe}.md`);
+  // Legacy flat path in root docs dir
+  const flat = path.join(base, flatName);
   if (fs.existsSync(flat)) return flat;
 
   return null;
@@ -98,6 +120,13 @@ export function docAddCommand(element: string, options: { content?: string; huma
     }
   }
 
+  // Auto-detect type from file extension if not found in architecture
+  if (elementType === 'unknown') {
+    const detected = detectTypeFromElement(element);
+    elementType = detected.type;
+    if (!elementPath) elementPath = detected.path;
+  }
+
   const now = new Date().toISOString();
   const entry: DocEntry = {
     element,
@@ -127,7 +156,7 @@ export function docAddCommand(element: string, options: { content?: string; huma
 
   // Write markdown file in categorized dir
   const filePath = docFilePath(element, elementType);
-  const md = `# ${element}\n\n**Тип:** ${elementType}  \n**Путь:** ${elementPath || 'N/A'}  \n**Обновлено:** ${now}\n\n${content}\n`;
+  const md = `# ${element}\n\n${content}\n`;
   writeMarkdown(filePath, md);
 
   if (options.human) {
