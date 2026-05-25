@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-25T06:19:20.654Z",
+  "generatedAt": "2026-05-25T08:06:59.703Z",
   "dependencies": [
     {
       "from": "src/analyzer/python-scanner.ts",
@@ -24,6 +24,62 @@
       "to": "src/types.ts",
       "type": "import",
       "toElement": "Dependency"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "extractDocstring",
+      "toElement": "trimmed.match"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "extractDocstring",
+      "toElement": "trimmed.slice"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "extractDocstring",
+      "toElement": "rest.indexOf"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "extractDocstring",
+      "toElement": "rest.slice"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "extractDocstring",
+      "toElement": "buf.push"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "extractDocstring",
+      "toElement": "buf.join"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "extractDocstring",
+      "toElement": "buf.push"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "extractDocstring",
+      "toElement": "buf.join"
     },
     {
       "from": "src/analyzer/python-scanner.ts",
@@ -58,6 +114,20 @@
       "to": "src/analyzer/python-scanner.ts",
       "type": "call",
       "fromElement": "parsePythonFile",
+      "toElement": "line.trim"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonFile",
+      "toElement": "extractDocstring"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonFile",
       "toElement": "line.match"
     },
     {
@@ -73,6 +143,20 @@
       "type": "call",
       "fromElement": "parsePythonFile",
       "toElement": "name.startsWith"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonFile",
+      "toElement": "line.trim"
+    },
+    {
+      "from": "src/analyzer/python-scanner.ts",
+      "to": "src/analyzer/python-scanner.ts",
+      "type": "call",
+      "fromElement": "parsePythonFile",
+      "toElement": "extractDocstring"
     },
     {
       "from": "src/analyzer/python-scanner.ts",
@@ -659,6 +743,34 @@
       "from": "src/analyzer/scanner.ts",
       "to": "src/analyzer/scanner.ts",
       "type": "call",
+      "fromElement": "extractJsDoc",
+      "toElement": "node.getJsDocs"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "functionSignature",
+      "toElement": "fn.getParameters"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "functionSignature",
+      "toElement": "p.getText"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "functionSignature",
+      "toElement": "fn.getReturnTypeNode"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
       "fromElement": "collectFileChildren",
       "toElement": "sf.getFunctions"
     },
@@ -688,6 +800,20 @@
       "to": "src/analyzer/scanner.ts",
       "type": "call",
       "fromElement": "collectFileChildren",
+      "toElement": "functionSignature"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "extractJsDoc"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
       "toElement": "fn.isExported"
     },
     {
@@ -709,6 +835,13 @@
       "to": "src/analyzer/scanner.ts",
       "type": "call",
       "fromElement": "collectFileChildren",
+      "toElement": "cls.getExtends"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
       "toElement": "children.push"
     },
     {
@@ -717,6 +850,13 @@
       "type": "call",
       "fromElement": "collectFileChildren",
       "toElement": "cls.getStartLineNumber"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "extractJsDoc"
     },
     {
       "from": "src/analyzer/scanner.ts",
@@ -758,6 +898,13 @@
       "to": "src/analyzer/scanner.ts",
       "type": "call",
       "fromElement": "collectFileChildren",
+      "toElement": "extractJsDoc"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
       "toElement": "iface.isExported"
     },
     {
@@ -787,6 +934,13 @@
       "type": "call",
       "fromElement": "collectFileChildren",
       "toElement": "typeAlias.getStartLineNumber"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "extractJsDoc"
     },
     {
       "from": "src/analyzer/scanner.ts",
@@ -828,6 +982,13 @@
       "to": "src/analyzer/scanner.ts",
       "type": "call",
       "fromElement": "collectFileChildren",
+      "toElement": "extractJsDoc"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
       "toElement": "en.isExported"
     },
     {
@@ -836,6 +997,13 @@
       "type": "call",
       "fromElement": "collectFileChildren",
       "toElement": "sf.getVariableStatements"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "extractJsDoc"
     },
     {
       "from": "src/analyzer/scanner.ts",
@@ -1370,6 +1538,18 @@
     },
     {
       "from": "src/cli.ts",
+      "to": "src/commands/doc.ts",
+      "type": "import",
+      "toElement": "docCoverageCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/commands/doc.ts",
+      "type": "import",
+      "toElement": "docStaleCommand"
+    },
+    {
+      "from": "src/cli.ts",
       "to": "src/commands/ui.ts",
       "type": "import",
       "toElement": "uiStartCommand"
@@ -1391,6 +1571,18 @@
       "to": "src/commands/context.ts",
       "type": "import",
       "toElement": "contextCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/commands/explain.ts",
+      "type": "import",
+      "toElement": "explainCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/commands/search.ts",
+      "type": "import",
+      "toElement": "searchCommand"
     },
     {
       "from": "src/cli.ts",
@@ -1504,6 +1696,30 @@
       "from": "src/cli.ts",
       "to": "src/cli.ts",
       "type": "call",
+      "toElement": "explainCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "searchCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
       "toElement": "docAddCommand"
     },
     {
@@ -1565,6 +1781,30 @@
       "to": "src/cli.ts",
       "type": "call",
       "toElement": "docAliasCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "docCoverageCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "docStaleCommand"
     },
     {
       "from": "src/cli.ts",
@@ -2016,6 +2256,18 @@
     },
     {
       "from": "src/commands/arch.ts",
+      "to": "src/commands/doc.ts",
+      "type": "import",
+      "toElement": "seedDocsFromArchitecture"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/start.ts",
+      "type": "import",
+      "toElement": "syncClaudeSection"
+    },
+    {
+      "from": "src/commands/arch.ts",
       "to": "src/types.ts",
       "type": "import",
       "toElement": "Architecture"
@@ -2080,6 +2332,20 @@
       "to": "src/commands/arch.ts",
       "type": "call",
       "fromElement": "archBuildCommand",
+      "toElement": "seedDocsFromArchitecture"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archBuildCommand",
+      "toElement": "syncClaudeSection"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archBuildCommand",
       "toElement": "console.log"
     },
     {
@@ -2088,6 +2354,27 @@
       "type": "call",
       "fromElement": "archBuildCommand",
       "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archBuildCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archBuildCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/arch.ts",
+      "to": "src/commands/arch.ts",
+      "type": "call",
+      "fromElement": "archBuildCommand",
+      "toElement": "claudeSync.paths.join"
     },
     {
       "from": "src/commands/arch.ts",
@@ -2875,6 +3162,18 @@
     },
     {
       "from": "src/commands/doc.ts",
+      "to": "src/search/score.ts",
+      "type": "import",
+      "toElement": "scoreMatch"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/context.ts",
+      "type": "import",
+      "toElement": "getPublicApi"
+    },
+    {
+      "from": "src/commands/doc.ts",
       "to": "src/types.ts",
       "type": "import",
       "toElement": "Architecture"
@@ -3520,42 +3819,42 @@
       "to": "src/commands/doc.ts",
       "type": "call",
       "fromElement": "docSearchCommand",
-      "toElement": "query.toLowerCase"
+      "toElement": "scoreMatch"
     },
     {
       "from": "src/commands/doc.ts",
       "to": "src/commands/doc.ts",
       "type": "call",
       "fromElement": "docSearchCommand",
-      "toElement": "index.filter"
+      "toElement": "Math.max"
     },
     {
       "from": "src/commands/doc.ts",
       "to": "src/commands/doc.ts",
       "type": "call",
       "fromElement": "docSearchCommand",
-      "toElement": "e.element.toLowerCase"
+      "toElement": "scoreMatch"
     },
     {
       "from": "src/commands/doc.ts",
       "to": "src/commands/doc.ts",
       "type": "call",
       "fromElement": "docSearchCommand",
-      "toElement": "e.content.toLowerCase"
+      "toElement": "scoreMatch"
     },
     {
       "from": "src/commands/doc.ts",
       "to": "src/commands/doc.ts",
       "type": "call",
       "fromElement": "docSearchCommand",
-      "toElement": "e.path.toLowerCase"
+      "toElement": "scoreMatch"
     },
     {
       "from": "src/commands/doc.ts",
       "to": "src/commands/doc.ts",
       "type": "call",
       "fromElement": "docSearchCommand",
-      "toElement": "a.toLowerCase"
+      "toElement": "Math.max"
     },
     {
       "from": "src/commands/doc.ts",
@@ -3590,6 +3889,13 @@
       "to": "src/commands/doc.ts",
       "type": "call",
       "fromElement": "docSearchCommand",
+      "toElement": "score.toFixed"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docSearchCommand",
       "toElement": "console.log"
     },
     {
@@ -3598,6 +3904,27 @@
       "type": "call",
       "fromElement": "docSearchCommand",
       "toElement": "formatJson"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docSearchCommand",
+      "toElement": "scored.map"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docSearchCommand",
+      "toElement": "Number"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docSearchCommand",
+      "toElement": "x.score.toFixed"
     },
     {
       "from": "src/commands/doc.ts",
@@ -3696,6 +4023,619 @@
       "type": "call",
       "fromElement": "docAliasCommand",
       "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "seedDocsFromArchitecture",
+      "toElement": "loadIndex"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "seedDocsFromArchitecture",
+      "toElement": "index.map"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "seedDocsFromArchitecture",
+      "toElement": "byElement.get"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "seedDocsFromArchitecture",
+      "toElement": "byElement.set"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "seedDocsFromArchitecture",
+      "toElement": "docFilePath"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "seedDocsFromArchitecture",
+      "toElement": "writeMarkdown"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "seedDocsFromArchitecture",
+      "toElement": "saveIndex"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "seedDocsFromArchitecture",
+      "toElement": "byElement.values"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCoverageCommand",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCoverageCommand",
+      "toElement": "architecturePath"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCoverageCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCoverageCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCoverageCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCoverageCommand",
+      "toElement": "getPublicApi"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCoverageCommand",
+      "toElement": "loadIndex"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCoverageCommand",
+      "toElement": "index.map"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCoverageCommand",
+      "toElement": "api.filter"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCoverageCommand",
+      "toElement": "documented.has"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCoverageCommand",
+      "toElement": "Math.round"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCoverageCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCoverageCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCoverageCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCoverageCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docCoverageCommand",
+      "toElement": "formatJson"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docStaleCommand",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docStaleCommand",
+      "toElement": "architecturePath"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docStaleCommand",
+      "toElement": "loadIndex"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docStaleCommand",
+      "toElement": "known.add"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docStaleCommand",
+      "toElement": "known.add"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docStaleCommand",
+      "toElement": "known.add"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docStaleCommand",
+      "toElement": "known.add"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docStaleCommand",
+      "toElement": "known.has"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docStaleCommand",
+      "toElement": "orphaned.push"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docStaleCommand",
+      "toElement": "fs.statSync"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docStaleCommand",
+      "toElement": "outdated.push"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docStaleCommand",
+      "toElement": "mtime.split"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docStaleCommand",
+      "toElement": "e.updatedAt.split"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docStaleCommand",
+      "toElement": "orphaned.push"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docStaleCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docStaleCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docStaleCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docStaleCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docStaleCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docStaleCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docStaleCommand",
+      "toElement": "formatJson"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "architecturePath"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "readMarkdown"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "import",
+      "toElement": "loadDeps"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/doc.ts",
+      "type": "import",
+      "toElement": "loadIndex"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/doc.ts",
+      "type": "import",
+      "toElement": "findDocFile"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/formatters/index.ts",
+      "type": "import",
+      "toElement": "formatJson"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "Architecture"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "ArchNode"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "Dependency"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "explainCommand",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "explainCommand",
+      "toElement": "architecturePath"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "explainCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "explainCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "explainCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "explainCommand",
+      "toElement": "findNode"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "explainCommand",
+      "toElement": "loadDeps"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "explainCommand",
+      "toElement": "loadIndex"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "explainCommand",
+      "toElement": "index.find"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "explainCommand",
+      "toElement": "findDocFile"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "explainCommand",
+      "toElement": "readMarkdown"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "explainCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "explainCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "explainCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "explainCommand",
+      "toElement": "printHuman"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "explainCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "explainCommand",
+      "toElement": "formatJson"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "r.exports.join"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "r.calls.slice"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "r.dependents.slice"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "r.documentation.split"
+    },
+    {
+      "from": "src/commands/explain.ts",
+      "to": "src/commands/explain.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
     },
     {
       "from": "src/commands/onboarding.ts",
@@ -3943,6 +4883,231 @@
       "toElement": "console.log"
     },
     {
+      "from": "src/commands/search.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "architecturePath"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/doc.ts",
+      "type": "import",
+      "toElement": "loadIndex"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/formatters/index.ts",
+      "type": "import",
+      "toElement": "formatJson"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/search/score.ts",
+      "type": "import",
+      "toElement": "scoreMatch"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "Architecture"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "architecturePath"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "scoreMatch"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "hits.push"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "Math.max"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "scoreMatch"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "scoreMatch"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "hits.push"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "loadIndex"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "scoreMatch"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "Math.max"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "scoreMatch"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "scoreMatch"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "Math.max"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "hits.push"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "byKey.get"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "byKey.set"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "byKey.values"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "h.score.toFixed"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "formatJson"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "ranked.map"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "Number"
+    },
+    {
+      "from": "src/commands/search.ts",
+      "to": "src/commands/search.ts",
+      "type": "call",
+      "fromElement": "searchCommand",
+      "toElement": "h.score.toFixed"
+    },
+    {
       "from": "src/commands/start.ts",
       "to": "node:fs",
       "type": "import",
@@ -4038,6 +5203,13 @@
       "to": "src/commands/start.ts",
       "type": "call",
       "fromElement": "generateClaudeAgent",
+      "toElement": "buildClaudeSection"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "generateClaudeAgent",
       "toElement": "fs.existsSync"
     },
     {
@@ -4093,8 +5265,106 @@
       "from": "src/commands/start.ts",
       "to": "src/commands/start.ts",
       "type": "call",
+      "fromElement": "syncClaudeSection",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "syncClaudeSection",
+      "toElement": "process.cwd"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "syncClaudeSection",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "syncClaudeSection",
+      "toElement": "process.cwd"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "syncClaudeSection",
+      "toElement": "buildClaudeSection"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "syncClaudeSection",
+      "toElement": "fs.existsSync"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "syncClaudeSection",
+      "toElement": "fs.readFileSync"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "syncClaudeSection",
+      "toElement": "existing.includes"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "syncClaudeSection",
+      "toElement": "existing.replace"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "syncClaudeSection",
+      "toElement": "fs.writeFileSync"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "syncClaudeSection",
+      "toElement": "updatedPaths.push"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
       "fromElement": "startCommand",
       "toElement": "isInitialized"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "syncClaudeSection"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/start.ts",
+      "to": "src/commands/start.ts",
+      "type": "call",
+      "fromElement": "startCommand",
+      "toElement": "sync.paths.join"
     },
     {
       "from": "src/commands/start.ts",
@@ -5602,6 +6872,69 @@
       "type": "call",
       "fromElement": "formatTree",
       "toElement": "lines.join"
+    },
+    {
+      "from": "src/search/score.ts",
+      "to": "src/search/score.ts",
+      "type": "call",
+      "fromElement": "levenshtein",
+      "toElement": "Math.min"
+    },
+    {
+      "from": "src/search/score.ts",
+      "to": "src/search/score.ts",
+      "type": "call",
+      "fromElement": "scoreMatch",
+      "toElement": "query.toLowerCase"
+    },
+    {
+      "from": "src/search/score.ts",
+      "to": "src/search/score.ts",
+      "type": "call",
+      "fromElement": "scoreMatch",
+      "toElement": "target.toLowerCase"
+    },
+    {
+      "from": "src/search/score.ts",
+      "to": "src/search/score.ts",
+      "type": "call",
+      "fromElement": "scoreMatch",
+      "toElement": "t.includes"
+    },
+    {
+      "from": "src/search/score.ts",
+      "to": "src/search/score.ts",
+      "type": "call",
+      "fromElement": "scoreMatch",
+      "toElement": "tokenize"
+    },
+    {
+      "from": "src/search/score.ts",
+      "to": "src/search/score.ts",
+      "type": "call",
+      "fromElement": "scoreMatch",
+      "toElement": "tokenize"
+    },
+    {
+      "from": "src/search/score.ts",
+      "to": "src/search/score.ts",
+      "type": "call",
+      "fromElement": "scoreMatch",
+      "toElement": "tSet.has"
+    },
+    {
+      "from": "src/search/score.ts",
+      "to": "src/search/score.ts",
+      "type": "call",
+      "fromElement": "scoreMatch",
+      "toElement": "levenshtein"
+    },
+    {
+      "from": "src/search/score.ts",
+      "to": "src/search/score.ts",
+      "type": "call",
+      "fromElement": "scoreMatch",
+      "toElement": "Math.max"
     },
     {
       "from": "src/storage.ts",

@@ -1,6 +1,6 @@
 {
   "root": "/Users/igorgerasimov/claudeWorkspace/arhit",
-  "generatedAt": "2026-05-25T06:19:20.289Z",
+  "generatedAt": "2026-05-25T08:06:59.330Z",
   "nodes": [
     {
       "id": "src/analyzer/python-scanner.ts",
@@ -14,11 +14,22 @@
       ],
       "children": [
         {
+          "id": "src/analyzer/python-scanner.ts:extractDocstring",
+          "name": "extractDocstring",
+          "type": "function",
+          "path": "src/analyzer/python-scanner.ts",
+          "line": 18,
+          "signature": "extractDocstring(lines: string[], declIndex: number): string | undefined",
+          "docComment": "Извлекает docstring элемента: первый строковый литерал тела сразу после\nстроки объявления (def/class). Возвращает undefined, если его нет.",
+          "exports": []
+        },
+        {
           "id": "src/analyzer/python-scanner.ts:parsePythonFile",
           "name": "parsePythonFile",
           "type": "function",
           "path": "src/analyzer/python-scanner.ts",
-          "line": 12,
+          "line": 47,
+          "signature": "parsePythonFile(content: string): PythonElement[]",
           "exports": []
         },
         {
@@ -26,7 +37,8 @@
           "name": "parsePythonImports",
           "type": "function",
           "path": "src/analyzer/python-scanner.ts",
-          "line": 69,
+          "line": 108,
+          "signature": "parsePythonImports(content: string): PythonImport[]",
           "exports": []
         },
         {
@@ -34,7 +46,8 @@
           "name": "parsePythonCalls",
           "type": "function",
           "path": "src/analyzer/python-scanner.ts",
-          "line": 99,
+          "line": 138,
+          "signature": "parsePythonCalls(content: string): Array<{ caller: string | undefined; callee: string; line: number }>",
           "exports": []
         },
         {
@@ -42,7 +55,8 @@
           "name": "parsePythonInheritance",
           "type": "function",
           "path": "src/analyzer/python-scanner.ts",
-          "line": 140,
+          "line": 177,
+          "signature": "parsePythonInheritance(content: string): Array<{ className: string; bases: string[]; line: number }>",
           "exports": []
         },
         {
@@ -50,7 +64,8 @@
           "name": "findPythonFiles",
           "type": "function",
           "path": "src/analyzer/python-scanner.ts",
-          "line": 158,
+          "line": 195,
+          "signature": "findPythonFiles(sourcePaths: string[], ignore: string[]): string[]",
           "exports": [
             "findPythonFiles"
           ]
@@ -60,7 +75,8 @@
           "name": "buildPythonArchNodes",
           "type": "function",
           "path": "src/analyzer/python-scanner.ts",
-          "line": 189,
+          "line": 226,
+          "signature": "buildPythonArchNodes(sourcePaths: string[], ignore: string[]): ArchNode[]",
           "exports": [
             "buildPythonArchNodes"
           ]
@@ -70,7 +86,8 @@
           "name": "buildPythonDependencies",
           "type": "function",
           "path": "src/analyzer/python-scanner.ts",
-          "line": 221,
+          "line": 260,
+          "signature": "buildPythonDependencies(sourcePaths: string[], ignore: string[]): Dependency[]",
           "exports": [
             "buildPythonDependencies"
           ]
@@ -81,6 +98,7 @@
           "type": "interface",
           "path": "src/analyzer/python-scanner.ts",
           "line": 5,
+          "signature": "interface PythonElement",
           "exports": []
         },
         {
@@ -88,7 +106,8 @@
           "name": "PythonImport",
           "type": "interface",
           "path": "src/analyzer/python-scanner.ts",
-          "line": 63,
+          "line": 102,
+          "signature": "interface PythonImport",
           "exports": []
         }
       ]
@@ -110,6 +129,8 @@
           "type": "function",
           "path": "src/analyzer/scanner.ts",
           "line": 16,
+          "signature": "findSourceFiles(sourcePaths: string[], ignore: string[]): string[]",
+          "docComment": "Обходит файловую систему и собирает пути к исходникам TS/JS.\n\nИгнорируемые каталоги (node_modules, dist, …) отсекаются ПРЯМО при обходе —\nих содержимое никогда не читается и не парсится. Это критично для памяти:\nраньше ts-morph загружал в AST весь node_modules и удалял его только после,\nчто приводило к OOM в V8 на больших проектах.",
           "exports": [
             "findSourceFiles"
           ]
@@ -120,6 +141,28 @@
           "type": "function",
           "path": "src/analyzer/scanner.ts",
           "line": 58,
+          "signature": "createScratchProject(): Project",
+          "docComment": "Создаёт «лёгкий» проект ts-morph для пофайлового разбора.\n\nskipFileDependencyResolution не даёт ts-morph автоматически подтягивать\nимпортируемые файлы при добавлении одного исходника — иначе добавление\nодного файла затягивало бы в память весь граф импортов.",
+          "exports": []
+        },
+        {
+          "id": "src/analyzer/scanner.ts:extractJsDoc",
+          "name": "extractJsDoc",
+          "type": "function",
+          "path": "src/analyzer/scanner.ts",
+          "line": 70,
+          "signature": "extractJsDoc(node: { getJsDocs?: () => Array<{ getDescription(): string }> }): string | undefined",
+          "docComment": "Извлекает текст JSDoc-комментария у узла (описание без тегов).\nВозвращает undefined, если документации нет.",
+          "exports": []
+        },
+        {
+          "id": "src/analyzer/scanner.ts:functionSignature",
+          "name": "functionSignature",
+          "type": "function",
+          "path": "src/analyzer/scanner.ts",
+          "line": 83,
+          "signature": "functionSignature(name: string, fn: import('ts-morph').FunctionDeclaration): string",
+          "docComment": "Собирает текстовую сигнатуру функции/метода из узлов параметров и явного\nвозвращаемого типа. Намеренно НЕ выводит типы через type checker — это\nсохраняет «лёгкий» режим разбора (см. createScratchProject) и память.",
           "exports": []
         },
         {
@@ -127,7 +170,8 @@
           "name": "collectFileChildren",
           "type": "function",
           "path": "src/analyzer/scanner.ts",
-          "line": 66,
+          "line": 89,
+          "signature": "collectFileChildren(sf: import('ts-morph').SourceFile, filePath: string): ArchNode[]",
           "exports": []
         },
         {
@@ -135,7 +179,8 @@
           "name": "buildArchNodes",
           "type": "function",
           "path": "src/analyzer/scanner.ts",
-          "line": 146,
+          "line": 180,
+          "signature": "buildArchNodes(sourcePaths: string[], ignore: string[]): ArchNode[]",
           "exports": [
             "buildArchNodes"
           ]
@@ -145,7 +190,9 @@
           "name": "resolveImport",
           "type": "function",
           "path": "src/analyzer/scanner.ts",
-          "line": 183,
+          "line": 217,
+          "signature": "resolveImport(fromFile: string, specifier: string): string",
+          "docComment": "Разрешает относительный импорт в путь к файлу без загрузки всего проекта\nв type checker (что было основным источником потребления памяти в analyze).\nВозвращает путь относительно cwd либо исходный спецификатор для внешних модулей.",
           "exports": []
         },
         {
@@ -153,7 +200,8 @@
           "name": "collectFileDependencies",
           "type": "function",
           "path": "src/analyzer/scanner.ts",
-          "line": 213,
+          "line": 247,
+          "signature": "collectFileDependencies(sf: import('ts-morph').SourceFile, file: string, filePath: string): Dependency[]",
           "exports": []
         },
         {
@@ -161,7 +209,8 @@
           "name": "buildDependencies",
           "type": "function",
           "path": "src/analyzer/scanner.ts",
-          "line": 291,
+          "line": 325,
+          "signature": "buildDependencies(sourcePaths: string[], ignore: string[]): Dependency[]",
           "exports": [
             "buildDependencies"
           ]
@@ -196,7 +245,7 @@
           "name": "program",
           "type": "variable",
           "path": "src/cli.ts",
-          "line": 12,
+          "line": 14,
           "exports": []
         },
         {
@@ -204,7 +253,7 @@
           "name": "arch",
           "type": "variable",
           "path": "src/cli.ts",
-          "line": 37,
+          "line": 39,
           "exports": []
         },
         {
@@ -212,7 +261,7 @@
           "name": "doc",
           "type": "variable",
           "path": "src/cli.ts",
-          "line": 98,
+          "line": 117,
           "exports": []
         },
         {
@@ -220,7 +269,7 @@
           "name": "ui",
           "type": "variable",
           "path": "src/cli.ts",
-          "line": 147,
+          "line": 180,
           "exports": []
         }
       ]
@@ -231,6 +280,7 @@
       "type": "file",
       "path": "src/commands/analyze.ts",
       "exports": [
+        "loadDeps",
         "analyzeCommand",
         "depsCommand",
         "callsCommand",
@@ -243,7 +293,10 @@
           "type": "function",
           "path": "src/commands/analyze.ts",
           "line": 7,
-          "exports": []
+          "signature": "loadDeps(): Dependency[]",
+          "exports": [
+            "loadDeps"
+          ]
         },
         {
           "id": "src/commands/analyze.ts:analyzeCommand",
@@ -251,6 +304,7 @@
           "type": "function",
           "path": "src/commands/analyze.ts",
           "line": 16,
+          "signature": "analyzeCommand(options: { human?: boolean })",
           "exports": [
             "analyzeCommand"
           ]
@@ -261,6 +315,7 @@
           "type": "function",
           "path": "src/commands/analyze.ts",
           "line": 45,
+          "signature": "depsCommand(element: string, options: { human?: boolean })",
           "exports": [
             "depsCommand"
           ]
@@ -271,6 +326,7 @@
           "type": "function",
           "path": "src/commands/analyze.ts",
           "line": 63,
+          "signature": "callsCommand(element: string, options: { human?: boolean })",
           "exports": [
             "callsCommand"
           ]
@@ -281,6 +337,7 @@
           "type": "function",
           "path": "src/commands/analyze.ts",
           "line": 81,
+          "signature": "mapCommand(options: { format?: string; human?: boolean })",
           "exports": [
             "mapCommand"
           ]
@@ -302,7 +359,8 @@
           "name": "archBuildCommand",
           "type": "function",
           "path": "src/commands/arch.ts",
-          "line": 7,
+          "line": 9,
+          "signature": "archBuildCommand(options: { human?: boolean; seedDocs?: boolean })",
           "exports": [
             "archBuildCommand"
           ]
@@ -312,7 +370,8 @@
           "name": "archShowCommand",
           "type": "function",
           "path": "src/commands/arch.ts",
-          "line": 35,
+          "line": 51,
+          "signature": "archShowCommand(target: string | undefined, options: { format?: string; human?: boolean })",
           "exports": [
             "archShowCommand"
           ]
@@ -325,6 +384,7 @@
       "type": "file",
       "path": "src/commands/context.ts",
       "exports": [
+        "getPublicApi",
         "contextCommand"
       ],
       "children": [
@@ -334,6 +394,7 @@
           "type": "function",
           "path": "src/commands/context.ts",
           "line": 44,
+          "signature": "findEntryPoints(config: ArhitConfig, arch: Architecture | null): string[]",
           "exports": []
         },
         {
@@ -342,7 +403,10 @@
           "type": "function",
           "path": "src/commands/context.ts",
           "line": 70,
-          "exports": []
+          "signature": "getPublicApi(arch: Architecture): { name: string; type: string; file: string }[]",
+          "exports": [
+            "getPublicApi"
+          ]
         },
         {
           "id": "src/commands/context.ts:computeHotspots",
@@ -350,6 +414,7 @@
           "type": "function",
           "path": "src/commands/context.ts",
           "line": 84,
+          "signature": "computeHotspots(deps: DependencyMap): { element: string; inbound: number; outbound: number }[]",
           "exports": []
         },
         {
@@ -358,6 +423,7 @@
           "type": "function",
           "path": "src/commands/context.ts",
           "line": 107,
+          "signature": "contextCommand(options: { human?: boolean })",
           "exports": [
             "contextCommand"
           ]
@@ -368,6 +434,7 @@
           "type": "function",
           "path": "src/commands/context.ts",
           "line": 193,
+          "signature": "printHuman(brief: ContextBrief): void",
           "exports": []
         },
         {
@@ -376,6 +443,7 @@
           "type": "interface",
           "path": "src/commands/context.ts",
           "line": 13,
+          "signature": "interface ContextBrief",
           "exports": []
         }
       ]
@@ -386,12 +454,19 @@
       "type": "file",
       "path": "src/commands/doc.ts",
       "exports": [
+        "findDocFile",
+        "indexPath",
+        "loadIndex",
+        "saveIndex",
         "docAddCommand",
         "docShowCommand",
         "docListCommand",
         "docCreateCommand",
         "docSearchCommand",
-        "docAliasCommand"
+        "docAliasCommand",
+        "seedDocsFromArchitecture",
+        "docCoverageCommand",
+        "docStaleCommand"
       ],
       "children": [
         {
@@ -399,7 +474,8 @@
           "name": "typeDir",
           "type": "function",
           "path": "src/commands/doc.ts",
-          "line": 20,
+          "line": 22,
+          "signature": "typeDir(type: string): string",
           "exports": []
         },
         {
@@ -407,7 +483,8 @@
           "name": "detectTypeFromElement",
           "type": "function",
           "path": "src/commands/doc.ts",
-          "line": 26,
+          "line": 28,
+          "signature": "detectTypeFromElement(element: string): { type: string; path: string }",
           "exports": []
         },
         {
@@ -415,7 +492,8 @@
           "name": "docFilePath",
           "type": "function",
           "path": "src/commands/doc.ts",
-          "line": 36,
+          "line": 38,
+          "signature": "docFilePath(element: string, type: string): string",
           "exports": []
         },
         {
@@ -423,39 +501,52 @@
           "name": "findDocFile",
           "type": "function",
           "path": "src/commands/doc.ts",
-          "line": 46,
-          "exports": []
+          "line": 48,
+          "signature": "findDocFile(element: string, type?: string): string | null",
+          "exports": [
+            "findDocFile"
+          ]
         },
         {
           "id": "src/commands/doc.ts:indexPath",
           "name": "indexPath",
           "type": "function",
           "path": "src/commands/doc.ts",
-          "line": 79,
-          "exports": []
+          "line": 81,
+          "signature": "indexPath(): string",
+          "exports": [
+            "indexPath"
+          ]
         },
         {
           "id": "src/commands/doc.ts:loadIndex",
           "name": "loadIndex",
           "type": "function",
           "path": "src/commands/doc.ts",
-          "line": 83,
-          "exports": []
+          "line": 85,
+          "signature": "loadIndex(): DocEntry[]",
+          "exports": [
+            "loadIndex"
+          ]
         },
         {
           "id": "src/commands/doc.ts:saveIndex",
           "name": "saveIndex",
           "type": "function",
           "path": "src/commands/doc.ts",
-          "line": 87,
-          "exports": []
+          "line": 89,
+          "signature": "saveIndex(entries: DocEntry[]): void",
+          "exports": [
+            "saveIndex"
+          ]
         },
         {
           "id": "src/commands/doc.ts:docAddCommand",
           "name": "docAddCommand",
           "type": "function",
           "path": "src/commands/doc.ts",
-          "line": 92,
+          "line": 94,
+          "signature": "docAddCommand(element: string, options: { content?: string; human?: boolean })",
           "exports": [
             "docAddCommand"
           ]
@@ -465,7 +556,8 @@
           "name": "docShowCommand",
           "type": "function",
           "path": "src/commands/doc.ts",
-          "line": 169,
+          "line": 171,
+          "signature": "docShowCommand(element: string, options: { human?: boolean })",
           "exports": [
             "docShowCommand"
           ]
@@ -475,7 +567,8 @@
           "name": "docListCommand",
           "type": "function",
           "path": "src/commands/doc.ts",
-          "line": 190,
+          "line": 192,
+          "signature": "docListCommand(options: { human?: boolean })",
           "exports": [
             "docListCommand"
           ]
@@ -485,7 +578,8 @@
           "name": "docCreateCommand",
           "type": "function",
           "path": "src/commands/doc.ts",
-          "line": 219,
+          "line": 221,
+          "signature": "docCreateCommand(name: string, options: { content?: string; human?: boolean })",
           "exports": [
             "docCreateCommand"
           ]
@@ -495,7 +589,8 @@
           "name": "docSearchCommand",
           "type": "function",
           "path": "src/commands/doc.ts",
-          "line": 239,
+          "line": 241,
+          "signature": "docSearchCommand(query: string, options: { human?: boolean })",
           "exports": [
             "docSearchCommand"
           ]
@@ -505,9 +600,46 @@
           "name": "docAliasCommand",
           "type": "function",
           "path": "src/commands/doc.ts",
-          "line": 264,
+          "line": 273,
+          "signature": "docAliasCommand(element: string, alias: string, options: { human?: boolean })",
           "exports": [
             "docAliasCommand"
+          ]
+        },
+        {
+          "id": "src/commands/doc.ts:seedDocsFromArchitecture",
+          "name": "seedDocsFromArchitecture",
+          "type": "function",
+          "path": "src/commands/doc.ts",
+          "line": 314,
+          "signature": "seedDocsFromArchitecture(arch: Architecture): { created: number; skipped: number }",
+          "docComment": "Засевает документацию из JSDoc/docstring, извлечённых при сборке архитектуры.\nСоздаёт записи с source:'auto' только для элементов с docComment, которые ещё\nне задокументированы. Ручные записи (source:'manual' или без source) не трогаются.\nВозвращает счётчики для отчёта.",
+          "exports": [
+            "seedDocsFromArchitecture"
+          ]
+        },
+        {
+          "id": "src/commands/doc.ts:docCoverageCommand",
+          "name": "docCoverageCommand",
+          "type": "function",
+          "path": "src/commands/doc.ts",
+          "line": 355,
+          "signature": "docCoverageCommand(options: { human?: boolean })",
+          "docComment": "Покрытие документацией: какие элементы публичного API ещё не задокументированы.\nПомогает агенту увидеть пробелы и понять, что документировать.",
+          "exports": [
+            "docCoverageCommand"
+          ]
+        },
+        {
+          "id": "src/commands/doc.ts:docStaleCommand",
+          "name": "docStaleCommand",
+          "type": "function",
+          "path": "src/commands/doc.ts",
+          "line": 391,
+          "signature": "docStaleCommand(options: { human?: boolean })",
+          "docComment": "Устаревшая документация: записи, чей элемент удалён из архитектуры (orphaned),\nлибо чей исходный файл изменялся позже последнего обновления документации (outdated).\nЗащищает агента от доверия неактуальным докам.",
+          "exports": [
+            "docStaleCommand"
           ]
         },
         {
@@ -515,7 +647,7 @@
           "name": "TYPE_DIRS",
           "type": "variable",
           "path": "src/commands/doc.ts",
-          "line": 7,
+          "line": 9,
           "exports": []
         },
         {
@@ -523,7 +655,57 @@
           "name": "FILE_EXTENSIONS",
           "type": "variable",
           "path": "src/commands/doc.ts",
-          "line": 24,
+          "line": 26,
+          "exports": []
+        }
+      ]
+    },
+    {
+      "id": "src/commands/explain.ts",
+      "name": "explain.ts",
+      "type": "file",
+      "path": "src/commands/explain.ts",
+      "exports": [
+        "explainCommand"
+      ],
+      "children": [
+        {
+          "id": "src/commands/explain.ts:findNode",
+          "name": "findNode",
+          "type": "function",
+          "path": "src/commands/explain.ts",
+          "line": 11,
+          "signature": "findNode(arch: Architecture, element: string): ArchNode | null",
+          "docComment": "Находит элемент архитектуры по имени или id (`file:name`).\nСначала ищет среди файлов, затем среди их дочерних элементов.",
+          "exports": []
+        },
+        {
+          "id": "src/commands/explain.ts:explainCommand",
+          "name": "explainCommand",
+          "type": "function",
+          "path": "src/commands/explain.ts",
+          "line": 34,
+          "signature": "explainCommand(element: string, options: { human?: boolean })",
+          "exports": [
+            "explainCommand"
+          ]
+        },
+        {
+          "id": "src/commands/explain.ts:printHuman",
+          "name": "printHuman",
+          "type": "function",
+          "path": "src/commands/explain.ts",
+          "line": 92,
+          "signature": "printHuman(r: ExplainResult): void",
+          "exports": []
+        },
+        {
+          "id": "src/commands/explain.ts:ExplainResult",
+          "name": "ExplainResult",
+          "type": "interface",
+          "path": "src/commands/explain.ts",
+          "line": 22,
+          "signature": "interface ExplainResult",
           "exports": []
         }
       ]
@@ -543,6 +725,7 @@
           "type": "function",
           "path": "src/commands/onboarding.ts",
           "line": 5,
+          "signature": "ask(rl: readline.Interface, question: string, defaultVal?: string): Promise<string>",
           "exports": []
         },
         {
@@ -551,9 +734,42 @@
           "type": "function",
           "path": "src/commands/onboarding.ts",
           "line": 14,
+          "signature": "onboardingCommand(options: { human?: boolean })",
           "exports": [
             "onboardingCommand"
           ]
+        }
+      ]
+    },
+    {
+      "id": "src/commands/search.ts",
+      "name": "search.ts",
+      "type": "file",
+      "path": "src/commands/search.ts",
+      "exports": [
+        "searchCommand"
+      ],
+      "children": [
+        {
+          "id": "src/commands/search.ts:searchCommand",
+          "name": "searchCommand",
+          "type": "function",
+          "path": "src/commands/search.ts",
+          "line": 21,
+          "signature": "searchCommand(query: string, options: { human?: boolean })",
+          "docComment": "Единый fuzzy-поиск по архитектуре кода И документации.\nВозвращает ранжированные совпадения с `path:line`, чтобы агент сразу прыгнул в код,\nне прибегая к Grep/Glob/Explore.",
+          "exports": [
+            "searchCommand"
+          ]
+        },
+        {
+          "id": "src/commands/search.ts:SearchHit",
+          "name": "SearchHit",
+          "type": "interface",
+          "path": "src/commands/search.ts",
+          "line": 7,
+          "signature": "interface SearchHit",
+          "exports": []
         }
       ]
     },
@@ -563,7 +779,9 @@
       "type": "file",
       "path": "src/commands/start.ts",
       "exports": [
-        "startCommand"
+        "syncClaudeSection",
+        "startCommand",
+        "ClaudeSyncResult"
       ],
       "children": [
         {
@@ -571,7 +789,17 @@
           "name": "findClaudeMd",
           "type": "function",
           "path": "src/commands/start.ts",
-          "line": 88,
+          "line": 96,
+          "signature": "findClaudeMd(): string",
+          "exports": []
+        },
+        {
+          "id": "src/commands/start.ts:buildClaudeSection",
+          "name": "buildClaudeSection",
+          "type": "function",
+          "path": "src/commands/start.ts",
+          "line": 108,
+          "signature": "buildClaudeSection(): string",
           "exports": []
         },
         {
@@ -579,17 +807,41 @@
           "name": "generateClaudeAgent",
           "type": "function",
           "path": "src/commands/start.ts",
-          "line": 100,
+          "line": 112,
+          "signature": "generateClaudeAgent(): void",
           "exports": []
+        },
+        {
+          "id": "src/commands/start.ts:syncClaudeSection",
+          "name": "syncClaudeSection",
+          "type": "function",
+          "path": "src/commands/start.ts",
+          "line": 147,
+          "signature": "syncClaudeSection(): { result: ClaudeSyncResult; paths: string[] }",
+          "docComment": "Синхронизирует блок инструкций arhit во ВСЕХ существующих CLAUDE.md проекта\n(и `./CLAUDE.md`, и `.claude/CLAUDE.md` — оба читаются агентом как инструкции).\n\nОбновляет блок между маркерами, ТОЛЬКО если он уже присутствует — чтобы при\nвыходе новой версии arhit устаревшие инструкции автоматически подтягивались.\nНикогда не создаёт файл и не добавляет блок, которого не было (не навязывает\nсекцию проектам/пользователям, которые её удалили). Идемпотентна: если блок\nактуален, файл не трогается.\n\nИтоговый result: 'updated', если хотя бы один файл реально обновлён;\nиначе 'unchanged', если блок где-то найден, но уже актуален; иначе 'absent'.",
+          "exports": [
+            "syncClaudeSection"
+          ]
         },
         {
           "id": "src/commands/start.ts:startCommand",
           "name": "startCommand",
           "type": "function",
           "path": "src/commands/start.ts",
-          "line": 120,
+          "line": 177,
+          "signature": "startCommand(options: { human?: boolean })",
           "exports": [
             "startCommand"
+          ]
+        },
+        {
+          "id": "src/commands/start.ts:ClaudeSyncResult",
+          "name": "ClaudeSyncResult",
+          "type": "type",
+          "path": "src/commands/start.ts",
+          "line": 132,
+          "exports": [
+            "ClaudeSyncResult"
           ]
         },
         {
@@ -605,7 +857,7 @@
           "name": "ARHIT_MARKER_START",
           "type": "variable",
           "path": "src/commands/start.ts",
-          "line": 85,
+          "line": 93,
           "exports": []
         },
         {
@@ -613,7 +865,7 @@
           "name": "ARHIT_MARKER_END",
           "type": "variable",
           "path": "src/commands/start.ts",
-          "line": 86,
+          "line": 94,
           "exports": []
         }
       ]
@@ -635,6 +887,7 @@
           "type": "function",
           "path": "src/commands/ui.ts",
           "line": 13,
+          "signature": "saveDocContent(element: string, content: string): { status: string }",
           "exports": []
         },
         {
@@ -643,6 +896,7 @@
           "type": "function",
           "path": "src/commands/ui.ts",
           "line": 41,
+          "signature": "readBody(req: http.IncomingMessage): Promise<string>",
           "exports": []
         },
         {
@@ -651,6 +905,7 @@
           "type": "function",
           "path": "src/commands/ui.ts",
           "line": 50,
+          "signature": "jsonResponse(res: http.ServerResponse, data: unknown, status = 200)",
           "exports": []
         },
         {
@@ -659,6 +914,7 @@
           "type": "function",
           "path": "src/commands/ui.ts",
           "line": 55,
+          "signature": "htmlResponse(res: http.ServerResponse, html: string)",
           "exports": []
         },
         {
@@ -667,6 +923,7 @@
           "type": "function",
           "path": "src/commands/ui.ts",
           "line": 60,
+          "signature": "getDocsIndex(): DocEntry[]",
           "exports": []
         },
         {
@@ -675,6 +932,7 @@
           "type": "function",
           "path": "src/commands/ui.ts",
           "line": 69,
+          "signature": "getDocContent(element: string): string | null",
           "exports": []
         },
         {
@@ -683,6 +941,7 @@
           "type": "function",
           "path": "src/commands/ui.ts",
           "line": 548,
+          "signature": "pidFilePath(): string",
           "exports": []
         },
         {
@@ -691,6 +950,7 @@
           "type": "function",
           "path": "src/commands/ui.ts",
           "line": 552,
+          "signature": "getRunningPid(): number | null",
           "exports": []
         },
         {
@@ -699,6 +959,7 @@
           "type": "function",
           "path": "src/commands/ui.ts",
           "line": 565,
+          "signature": "createServer(port: number): http.Server",
           "exports": []
         },
         {
@@ -707,6 +968,7 @@
           "type": "function",
           "path": "src/commands/ui.ts",
           "line": 653,
+          "signature": "runDaemon(port: number): void",
           "exports": []
         },
         {
@@ -715,6 +977,7 @@
           "type": "function",
           "path": "src/commands/ui.ts",
           "line": 676,
+          "signature": "uiStartCommand(options: { port?: string; human?: boolean; daemon?: boolean })",
           "exports": [
             "uiStartCommand"
           ]
@@ -725,6 +988,7 @@
           "type": "function",
           "path": "src/commands/ui.ts",
           "line": 728,
+          "signature": "uiStopCommand(options: { human?: boolean })",
           "exports": [
             "uiStopCommand"
           ]
@@ -735,6 +999,7 @@
           "type": "function",
           "path": "src/commands/ui.ts",
           "line": 757,
+          "signature": "uiStatusCommand(options: { human?: boolean })",
           "exports": [
             "uiStatusCommand"
           ]
@@ -772,6 +1037,7 @@
           "type": "function",
           "path": "src/formatters/dot.ts",
           "line": 3,
+          "signature": "formatDepsDot(deps: Dependency[]): string",
           "exports": [
             "formatDepsDot"
           ]
@@ -801,6 +1067,7 @@
           "type": "function",
           "path": "src/formatters/json.ts",
           "line": 1,
+          "signature": "formatJson(data: unknown): string",
           "exports": [
             "formatJson"
           ]
@@ -823,6 +1090,7 @@
           "type": "function",
           "path": "src/formatters/mermaid.ts",
           "line": 3,
+          "signature": "sanitizeId(id: string): string",
           "exports": []
         },
         {
@@ -831,6 +1099,7 @@
           "type": "function",
           "path": "src/formatters/mermaid.ts",
           "line": 7,
+          "signature": "formatArchMermaid(nodes: ArchNode[]): string",
           "exports": [
             "formatArchMermaid"
           ]
@@ -841,6 +1110,7 @@
           "type": "function",
           "path": "src/formatters/mermaid.ts",
           "line": 23,
+          "signature": "formatDepsMermaid(deps: Dependency[]): string",
           "exports": [
             "formatDepsMermaid"
           ]
@@ -862,8 +1132,58 @@
           "type": "function",
           "path": "src/formatters/tree.ts",
           "line": 3,
+          "signature": "formatTree(nodes: ArchNode[], prefix = ''): string",
           "exports": [
             "formatTree"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "src/search/score.ts",
+      "name": "score.ts",
+      "type": "file",
+      "path": "src/search/score.ts",
+      "exports": [
+        "tokenize",
+        "levenshtein",
+        "scoreMatch"
+      ],
+      "children": [
+        {
+          "id": "src/search/score.ts:tokenize",
+          "name": "tokenize",
+          "type": "function",
+          "path": "src/search/score.ts",
+          "line": 13,
+          "signature": "tokenize(s: string): string[]",
+          "docComment": "Разбивает строку на токены нижнего регистра: по разделителям пути/имён\n(`/`, `_`, `-`, `.`, пробелы) и по границам camelCase.",
+          "exports": [
+            "tokenize"
+          ]
+        },
+        {
+          "id": "src/search/score.ts:levenshtein",
+          "name": "levenshtein",
+          "type": "function",
+          "path": "src/search/score.ts",
+          "line": 24,
+          "signature": "levenshtein(a: string, b: string): number",
+          "docComment": "Расстояние Левенштейна между двумя строками.",
+          "exports": [
+            "levenshtein"
+          ]
+        },
+        {
+          "id": "src/search/score.ts:scoreMatch",
+          "name": "scoreMatch",
+          "type": "function",
+          "path": "src/search/score.ts",
+          "line": 59,
+          "signature": "scoreMatch(query: string, target: string): number",
+          "docComment": "Оценивает релевантность цели запросу в диапазоне [0, 1].\n\nУровни (берётся максимум):\n - 1.0  точное совпадение целиком;\n - 0.9  цель содержит запрос как подстроку;\n - до 0.8  доля токенов запроса, точно встретившихся среди токенов цели;\n - до 0.6  fuzzy-совпадение токенов по Левенштейну (ловит опечатки popap≈popup).\n\n0 — нерелевантно.",
+          "exports": [
+            "scoreMatch"
           ]
         }
       ]
@@ -894,6 +1214,7 @@
           "type": "function",
           "path": "src/storage.ts",
           "line": 7,
+          "signature": "getArhitDir(root: string = process.cwd()): string",
           "exports": [
             "getArhitDir"
           ]
@@ -904,6 +1225,7 @@
           "type": "function",
           "path": "src/storage.ts",
           "line": 11,
+          "signature": "ensureArhitDir(root?: string): string",
           "exports": [
             "ensureArhitDir"
           ]
@@ -914,6 +1236,7 @@
           "type": "function",
           "path": "src/storage.ts",
           "line": 18,
+          "signature": "isInitialized(root?: string): boolean",
           "exports": [
             "isInitialized"
           ]
@@ -924,6 +1247,7 @@
           "type": "function",
           "path": "src/storage.ts",
           "line": 22,
+          "signature": "readJson(filePath: string): T | null",
           "exports": [
             "readJson"
           ]
@@ -934,6 +1258,7 @@
           "type": "function",
           "path": "src/storage.ts",
           "line": 33,
+          "signature": "requireConfig(): ArhitConfig",
           "exports": [
             "requireConfig"
           ]
@@ -944,6 +1269,7 @@
           "type": "function",
           "path": "src/storage.ts",
           "line": 42,
+          "signature": "writeJson(filePath: string, data: unknown): void",
           "exports": [
             "writeJson"
           ]
@@ -954,6 +1280,7 @@
           "type": "function",
           "path": "src/storage.ts",
           "line": 47,
+          "signature": "readMarkdown(filePath: string): string | null",
           "exports": [
             "readMarkdown"
           ]
@@ -964,6 +1291,7 @@
           "type": "function",
           "path": "src/storage.ts",
           "line": 55,
+          "signature": "writeMarkdown(filePath: string, content: string): void",
           "exports": [
             "writeMarkdown"
           ]
@@ -974,6 +1302,7 @@
           "type": "function",
           "path": "src/storage.ts",
           "line": 60,
+          "signature": "configPath(root?: string): string",
           "exports": [
             "configPath"
           ]
@@ -984,6 +1313,7 @@
           "type": "function",
           "path": "src/storage.ts",
           "line": 64,
+          "signature": "architecturePath(root?: string): string",
           "exports": [
             "architecturePath"
           ]
@@ -994,6 +1324,7 @@
           "type": "function",
           "path": "src/storage.ts",
           "line": 68,
+          "signature": "dependenciesPath(root?: string): string",
           "exports": [
             "dependenciesPath"
           ]
@@ -1004,6 +1335,7 @@
           "type": "function",
           "path": "src/storage.ts",
           "line": 72,
+          "signature": "docsDir(root?: string): string",
           "exports": [
             "docsDir"
           ]
@@ -1039,6 +1371,7 @@
           "type": "interface",
           "path": "src/types.ts",
           "line": 1,
+          "signature": "interface ArhitConfig",
           "exports": [
             "ArhitConfig"
           ]
@@ -1049,6 +1382,7 @@
           "type": "interface",
           "path": "src/types.ts",
           "line": 9,
+          "signature": "interface ArchNode",
           "exports": [
             "ArchNode"
           ]
@@ -1058,7 +1392,8 @@
           "name": "Architecture",
           "type": "interface",
           "path": "src/types.ts",
-          "line": 19,
+          "line": 21,
+          "signature": "interface Architecture",
           "exports": [
             "Architecture"
           ]
@@ -1068,7 +1403,8 @@
           "name": "Dependency",
           "type": "interface",
           "path": "src/types.ts",
-          "line": 25,
+          "line": 27,
+          "signature": "interface Dependency",
           "exports": [
             "Dependency"
           ]
@@ -1078,7 +1414,8 @@
           "name": "DependencyMap",
           "type": "interface",
           "path": "src/types.ts",
-          "line": 33,
+          "line": 35,
+          "signature": "interface DependencyMap",
           "exports": [
             "DependencyMap"
           ]
@@ -1088,7 +1425,8 @@
           "name": "DocEntry",
           "type": "interface",
           "path": "src/types.ts",
-          "line": 38,
+          "line": 40,
+          "signature": "interface DocEntry",
           "exports": [
             "DocEntry"
           ]
@@ -1098,7 +1436,8 @@
           "name": "OutputOptions",
           "type": "interface",
           "path": "src/types.ts",
-          "line": 48,
+          "line": 51,
+          "signature": "interface OutputOptions",
           "exports": [
             "OutputOptions"
           ]

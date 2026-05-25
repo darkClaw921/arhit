@@ -7,6 +7,41 @@ interface PythonElement {
   type: ArchNode['type'];
   line: number;
   exported: boolean;
+  signature?: string;
+  docComment?: string;
+}
+
+/**
+ * Извлекает docstring элемента: первый строковый литерал тела сразу после
+ * строки объявления (def/class). Возвращает undefined, если его нет.
+ */
+function extractDocstring(lines: string[], declIndex: number): string | undefined {
+  // ищем первую непустую строку тела
+  for (let i = declIndex + 1; i < lines.length && i < declIndex + 3; i++) {
+    const trimmed = lines[i].trim();
+    if (!trimmed) continue;
+    const m = trimmed.match(/^(["']{3}|["'])/);
+    if (!m) return undefined;
+    const quote = m[1];
+    // однострочный docstring: """текст"""
+    const rest = trimmed.slice(quote.length);
+    const closeIdx = rest.indexOf(quote);
+    if (closeIdx >= 0) {
+      return rest.slice(0, closeIdx).trim() || undefined;
+    }
+    // многострочный: собираем до закрывающей кавычки
+    const buf = [rest];
+    for (let j = i + 1; j < lines.length; j++) {
+      const idx = lines[j].indexOf(quote);
+      if (idx >= 0) {
+        buf.push(lines[j].slice(0, idx));
+        return buf.join('\n').trim() || undefined;
+      }
+      buf.push(lines[j]);
+    }
+    return buf.join('\n').trim() || undefined;
+  }
+  return undefined;
 }
 
 function parsePythonFile(content: string): PythonElement[] {
@@ -26,6 +61,8 @@ function parsePythonFile(content: string): PythonElement[] {
         type: 'function',
         line: lineNum,
         exported: !name.startsWith('_'),
+        signature: line.trim().replace(/^def\s+/, '').replace(/:\s*$/, ''),
+        docComment: extractDocstring(lines, i),
       });
     }
 
@@ -38,6 +75,8 @@ function parsePythonFile(content: string): PythonElement[] {
         type: 'class',
         line: lineNum,
         exported: !name.startsWith('_'),
+        signature: line.trim().replace(/:\s*$/, ''),
+        docComment: extractDocstring(lines, i),
       });
     }
 
@@ -101,7 +140,6 @@ function parsePythonCalls(content: string): Array<{ caller: string | undefined; 
   const lines = content.split('\n');
 
   let currentFunction: string | undefined;
-  let currentIndent = 0;
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
@@ -113,7 +151,6 @@ function parsePythonCalls(content: string): Array<{ caller: string | undefined; 
       const indent = fnMatch[1].length;
       if (indent === 0 || indent === 4) {
         currentFunction = fnMatch[2];
-        currentIndent = indent;
       }
     }
 
@@ -201,6 +238,8 @@ export function buildPythonArchNodes(sourcePaths: string[], ignore: string[]): A
       type: el.type,
       path: filePath,
       line: el.line,
+      signature: el.signature,
+      docComment: el.docComment,
       exports: el.exported ? [el.name] : [],
     }));
 

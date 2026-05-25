@@ -63,6 +63,29 @@ function createScratchProject(): Project {
   });
 }
 
+/**
+ * Извлекает текст JSDoc-комментария у узла (описание без тегов).
+ * Возвращает undefined, если документации нет.
+ */
+function extractJsDoc(node: { getJsDocs?: () => Array<{ getDescription(): string }> }): string | undefined {
+  if (typeof node.getJsDocs !== 'function') return undefined;
+  const docs = node.getJsDocs();
+  if (!docs.length) return undefined;
+  const text = docs[docs.length - 1].getDescription().trim();
+  return text || undefined;
+}
+
+/**
+ * Собирает текстовую сигнатуру функции/метода из узлов параметров и явного
+ * возвращаемого типа. Намеренно НЕ выводит типы через type checker — это
+ * сохраняет «лёгкий» режим разбора (см. createScratchProject) и память.
+ */
+function functionSignature(name: string, fn: import('ts-morph').FunctionDeclaration): string {
+  const params = fn.getParameters().map(p => p.getText()).join(', ');
+  const ret = fn.getReturnTypeNode()?.getText();
+  return `${name}(${params})${ret ? ': ' + ret : ''}`;
+}
+
 function collectFileChildren(sf: import('ts-morph').SourceFile, filePath: string): ArchNode[] {
   const children: ArchNode[] = [];
 
@@ -74,18 +97,23 @@ function collectFileChildren(sf: import('ts-morph').SourceFile, filePath: string
       type: 'function',
       path: filePath,
       line: fn.getStartLineNumber(),
+      signature: functionSignature(name, fn),
+      docComment: extractJsDoc(fn),
       exports: fn.isExported() ? [name] : [],
     });
   }
 
   for (const cls of sf.getClasses()) {
     const name = cls.getName() || '<anonymous>';
+    const ext = cls.getExtends()?.getText();
     children.push({
       id: `${filePath}:${name}`,
       name,
       type: 'class',
       path: filePath,
       line: cls.getStartLineNumber(),
+      signature: `class ${name}${ext ? ' extends ' + ext : ''}`,
+      docComment: extractJsDoc(cls),
       exports: cls.isExported() ? [name] : [],
     });
   }
@@ -98,6 +126,8 @@ function collectFileChildren(sf: import('ts-morph').SourceFile, filePath: string
       type: 'interface',
       path: filePath,
       line: iface.getStartLineNumber(),
+      signature: `interface ${name}`,
+      docComment: extractJsDoc(iface),
       exports: iface.isExported() ? [name] : [],
     });
   }
@@ -110,6 +140,7 @@ function collectFileChildren(sf: import('ts-morph').SourceFile, filePath: string
       type: 'type',
       path: filePath,
       line: typeAlias.getStartLineNumber(),
+      docComment: extractJsDoc(typeAlias),
       exports: typeAlias.isExported() ? [name] : [],
     });
   }
@@ -122,11 +153,13 @@ function collectFileChildren(sf: import('ts-morph').SourceFile, filePath: string
       type: 'enum',
       path: filePath,
       line: en.getStartLineNumber(),
+      docComment: extractJsDoc(en),
       exports: en.isExported() ? [name] : [],
     });
   }
 
   for (const varStmt of sf.getVariableStatements()) {
+    const varDoc = extractJsDoc(varStmt);
     for (const decl of varStmt.getDeclarations()) {
       const name = decl.getName();
       children.push({
@@ -135,6 +168,7 @@ function collectFileChildren(sf: import('ts-morph').SourceFile, filePath: string
         type: 'variable',
         path: filePath,
         line: decl.getStartLineNumber(),
+        docComment: varDoc,
         exports: varStmt.isExported() ? [name] : [],
       });
     }

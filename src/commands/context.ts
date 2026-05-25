@@ -67,7 +67,7 @@ function findEntryPoints(config: ArhitConfig, arch: Architecture | null): string
   return [...new Set(entries)];
 }
 
-function getPublicApi(arch: Architecture): { name: string; type: string; file: string }[] {
+export function getPublicApi(arch: Architecture): { name: string; type: string; file: string }[] {
   const api: { name: string; type: string; file: string }[] = [];
   for (const node of arch.nodes) {
     if (node.children) {

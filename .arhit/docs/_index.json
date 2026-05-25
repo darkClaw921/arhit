@@ -206,5 +206,148 @@
       "память сканер",
       "arch build падает"
     ]
+  },
+  {
+    "element": "extractDocstring",
+    "path": "src/analyzer/python-scanner.ts",
+    "type": "function",
+    "content": "Извлекает docstring элемента: первый строковый литерал тела сразу после\nстроки объявления (def/class). Возвращает undefined, если его нет.",
+    "source": "auto",
+    "createdAt": "2026-05-25T07:57:14.927Z",
+    "updatedAt": "2026-05-25T07:57:14.927Z"
+  },
+  {
+    "element": "findSourceFiles",
+    "path": "src/analyzer/scanner.ts",
+    "type": "function",
+    "content": "Обходит файловую систему и собирает пути к исходникам TS/JS.\n\nИгнорируемые каталоги (node_modules, dist, …) отсекаются ПРЯМО при обходе —\nих содержимое никогда не читается и не парсится. Это критично для памяти:\nраньше ts-morph загружал в AST весь node_modules и удалял его только после,\nчто приводило к OOM в V8 на больших проектах.",
+    "source": "auto",
+    "createdAt": "2026-05-25T07:57:14.927Z",
+    "updatedAt": "2026-05-25T07:57:14.927Z"
+  },
+  {
+    "element": "createScratchProject",
+    "path": "src/analyzer/scanner.ts",
+    "type": "function",
+    "content": "Создаёт «лёгкий» проект ts-morph для пофайлового разбора.\n\nskipFileDependencyResolution не даёт ts-morph автоматически подтягивать\nимпортируемые файлы при добавлении одного исходника — иначе добавление\nодного файла затягивало бы в память весь граф импортов.",
+    "source": "auto",
+    "createdAt": "2026-05-25T07:57:14.927Z",
+    "updatedAt": "2026-05-25T07:57:14.927Z"
+  },
+  {
+    "element": "extractJsDoc",
+    "path": "src/analyzer/scanner.ts",
+    "type": "function",
+    "content": "Извлекает текст JSDoc-комментария у узла (описание без тегов).\nВозвращает undefined, если документации нет.",
+    "source": "auto",
+    "createdAt": "2026-05-25T07:57:14.927Z",
+    "updatedAt": "2026-05-25T07:57:14.927Z"
+  },
+  {
+    "element": "functionSignature",
+    "path": "src/analyzer/scanner.ts",
+    "type": "function",
+    "content": "Собирает текстовую сигнатуру функции/метода из узлов параметров и явного\nвозвращаемого типа. Намеренно НЕ выводит типы через type checker — это\nсохраняет «лёгкий» режим разбора (см. createScratchProject) и память.",
+    "source": "auto",
+    "createdAt": "2026-05-25T07:57:14.927Z",
+    "updatedAt": "2026-05-25T07:57:14.927Z"
+  },
+  {
+    "element": "resolveImport",
+    "path": "src/analyzer/scanner.ts",
+    "type": "function",
+    "content": "Разрешает относительный импорт в путь к файлу без загрузки всего проекта\nв type checker (что было основным источником потребления памяти в analyze).\nВозвращает путь относительно cwd либо исходный спецификатор для внешних модулей.",
+    "source": "auto",
+    "createdAt": "2026-05-25T07:57:14.927Z",
+    "updatedAt": "2026-05-25T07:57:14.927Z"
+  },
+  {
+    "element": "seedDocsFromArchitecture",
+    "path": "src/commands/doc.ts",
+    "type": "function",
+    "content": "Засевает документацию из JSDoc/docstring, извлечённых при сборке архитектуры.\nСоздаёт записи с source:'auto' только для элементов с docComment, которые ещё\nне задокументированы. Ручные записи (source:'manual' или без source) не трогаются.\nВозвращает счётчики для отчёта.",
+    "source": "auto",
+    "createdAt": "2026-05-25T07:57:14.927Z",
+    "updatedAt": "2026-05-25T07:57:14.927Z"
+  },
+  {
+    "element": "docCoverageCommand",
+    "path": "src/commands/doc.ts",
+    "type": "function",
+    "content": "Покрытие документацией: какие элементы публичного API ещё не задокументированы.\nПомогает агенту увидеть пробелы и понять, что документировать.",
+    "source": "auto",
+    "createdAt": "2026-05-25T07:57:14.927Z",
+    "updatedAt": "2026-05-25T07:57:14.927Z"
+  },
+  {
+    "element": "docStaleCommand",
+    "path": "src/commands/doc.ts",
+    "type": "function",
+    "content": "Устаревшая документация: записи, чей элемент удалён из архитектуры (orphaned),\nлибо чей исходный файл изменялся позже последнего обновления документации (outdated).\nЗащищает агента от доверия неактуальным докам.",
+    "source": "auto",
+    "createdAt": "2026-05-25T07:57:14.927Z",
+    "updatedAt": "2026-05-25T07:57:14.927Z"
+  },
+  {
+    "element": "findNode",
+    "path": "src/commands/explain.ts",
+    "type": "function",
+    "content": "Находит элемент архитектуры по имени или id (`file:name`).\nСначала ищет среди файлов, затем среди их дочерних элементов.",
+    "source": "auto",
+    "createdAt": "2026-05-25T07:57:14.927Z",
+    "updatedAt": "2026-05-25T07:57:14.927Z"
+  },
+  {
+    "element": "searchCommand",
+    "path": "src/commands/search.ts",
+    "type": "function",
+    "content": "Единый fuzzy-поиск по архитектуре кода И документации.\nВозвращает ранжированные совпадения с `path:line`, чтобы агент сразу прыгнул в код,\nне прибегая к Grep/Glob/Explore.",
+    "source": "auto",
+    "createdAt": "2026-05-25T07:57:14.927Z",
+    "updatedAt": "2026-05-25T08:00:44.663Z",
+    "aliases": [
+      "умный поиск"
+    ]
+  },
+  {
+    "element": "tokenize",
+    "path": "src/search/score.ts",
+    "type": "function",
+    "content": "Разбивает строку на токены нижнего регистра: по разделителям пути/имён\n(`/`, `_`, `-`, `.`, пробелы) и по границам camelCase.",
+    "source": "auto",
+    "createdAt": "2026-05-25T07:57:14.927Z",
+    "updatedAt": "2026-05-25T07:57:14.927Z"
+  },
+  {
+    "element": "levenshtein",
+    "path": "src/search/score.ts",
+    "type": "function",
+    "content": "Расстояние Левенштейна между двумя строками.",
+    "source": "auto",
+    "createdAt": "2026-05-25T07:57:14.927Z",
+    "updatedAt": "2026-05-25T07:57:14.927Z"
+  },
+  {
+    "element": "scoreMatch",
+    "path": "src/search/score.ts",
+    "type": "function",
+    "content": "Оценивает релевантность цели запросу в диапазоне [0, 1].\n\nУровни (берётся максимум):\n - 1.0  точное совпадение целиком;\n - 0.9  цель содержит запрос как подстроку;\n - до 0.8  доля токенов запроса, точно встретившихся среди токенов цели;\n - до 0.6  fuzzy-совпадение токенов по Левенштейну (ловит опечатки popap≈popup).\n\n0 — нерелевантно.",
+    "source": "auto",
+    "createdAt": "2026-05-25T07:57:14.927Z",
+    "updatedAt": "2026-05-25T08:00:44.916Z",
+    "aliases": [
+      "fuzzy поиск опечатки"
+    ]
+  },
+  {
+    "element": "explainCommand",
+    "path": "src/commands/explain.ts",
+    "type": "function",
+    "content": "Команда 'arhit explain <element>': агрегированная карточка элемента в один вызов — путь:строка, сигнатура, exports, дочерние элементы, что вызывает (calls по точному fromElement), кто зависит (dependents по точному toElement) и документация. Заменяет связку arch show + deps + calls + doc show, экономя токены и раунд-трипы агента.",
+    "createdAt": "2026-05-25T08:00:44.149Z",
+    "updatedAt": "2026-05-25T08:00:44.411Z",
+    "aliases": [
+      "карточка элемента"
+    ]
   }
 ]

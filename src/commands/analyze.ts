@@ -4,7 +4,7 @@ import { buildPythonDependencies } from '../analyzer/python-scanner.js';
 import { formatJson, formatDepsMermaid, formatDepsDot } from '../formatters/index.js';
 import type { DependencyMap, Dependency } from '../types.js';
 
-function loadDeps(): Dependency[] {
+export function loadDeps(): Dependency[] {
   const data = readJson<DependencyMap>(dependenciesPath());
   if (!data) {
     console.error('No dependency data. Run `arhit analyze` first.');

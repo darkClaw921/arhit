@@ -12,6 +12,8 @@ export interface ArchNode {
   type: 'file' | 'module' | 'class' | 'function' | 'variable' | 'interface' | 'type' | 'enum';
   path: string;
   line?: number;
+  signature?: string;
+  docComment?: string;
   exports: string[];
   children?: ArchNode[];
 }
@@ -41,6 +43,7 @@ export interface DocEntry {
   type: string;
   content: string;
   aliases?: string[];
+  source?: 'manual' | 'auto';
   createdAt: string;
   updatedAt: string;
 }

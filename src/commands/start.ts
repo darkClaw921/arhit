@@ -20,6 +20,8 @@ arhit analyze       # Проанализировать зависимости
 
 ### Исследование кодовой базы
 \`\`\`bash
+arhit search <запрос>              # Fuzzy-поиск по коду И докам (терпит опечатки) — начни отсюда
+arhit explain <элемент>            # Всё об элементе разом: путь:строка, сигнатура, вызовы, зависимые, доки
 arhit arch show                    # Показать архитектуру (JSON для агента)
 arhit arch show --format tree      # Дерево архитектуры
 arhit deps <элемент>               # Что зависит от элемента
@@ -32,22 +34,27 @@ arhit map --format mermaid         # Карта взаимодействий
 arhit doc add <элемент> --content "Описание"   # Задокументировать элемент
 arhit doc show <элемент>                        # Прочитать документацию
 arhit doc list                                  # Все задокументированные элементы
-arhit doc search <запрос>                       # Поиск по документации (element, content, path, aliases)
+arhit doc search <запрос>                       # Fuzzy-поиск по докам (element, content, path, aliases)
 arhit doc create <имя> --content "..."          # Свободная страница
 arhit doc alias <элемент> <алиас>              # Добавить поисковый алиас к существующей записи
+arhit doc coverage                              # Какие публичные элементы ещё не задокументированы
+arhit doc stale                                 # Доки, устаревшие или указывающие на удалённый код
+arhit arch build --seed-docs                    # Засеять доки из JSDoc/docstring исходников
 \`\`\`
 
 ## Правила для агента
 
 ### Исследование кодовой базы — ТОЛЬКО через arhit
 - **НЕ используй Explore-агентов и массовый Grep/Glob для исследования структуры проекта.** Вместо этого используй команды \`arhit\`:
+  - Найти что-либо по теме/имени → \`arhit search <запрос>\` (fuzzy, по коду и докам — первый шаг разведки)
+  - Всё об элементе одним вызовом → \`arhit explain <элемент>\` (путь:строка, сигнатура, вызовы, зависимые, доки)
   - Структура и архитектура → \`arhit arch show\` / \`arhit arch show --format tree\`
   - Зависимости элемента → \`arhit deps <элемент>\`
   - Что вызывает элемент → \`arhit calls <элемент>\`
   - Карта взаимодействий → \`arhit map --format mermaid\`
   - Поиск по документации → \`arhit doc search <запрос>\`
   - Контекст проекта → \`arhit context\`
-- Explore-агент и subagent_type=Explore допустимы **только** если arhit не содержит нужной информации (например, поиск конкретной строки в коде). В этом случае сначала проверь \`arhit doc search\`, и только потом переходи к прямому поиску.
+- Explore-агент и subagent_type=Explore допустимы **только** если arhit не содержит нужной информации (например, поиск конкретной строки в коде). В этом случае сначала проверь \`arhit search\`, и только потом переходи к прямому поиску.
 
 ### Документирование — ОБЯЗАТЕЛЬНО
 - **Документируй ВСЮ разработку.** Каждое изменение в коде должно быть отражено в документации.
@@ -66,7 +73,9 @@ arhit doc alias <элемент> <алиас>              # Добавить п
 - Перед крупными изменениями проверь зависимости через \`arhit deps\` и \`arhit calls\`
 
 ### Алиасы документации
-Если \`arhit doc search <запрос>\` вернул \`[]\` — после выполнения задачи добавь алиас:
+Поиск (\`arhit search\` / \`arhit doc search\`) теперь fuzzy и терпит опечатки и формы слов,
+поэтому алиасы нужны реже. Но если запрос всё же ничего не нашёл — после выполнения задачи
+закрепи его алиасом, чтобы будущие поиски по той же формулировке точно срабатывали:
 \`\`\`bash
 # Привязать запрос к существующей записи
 arhit doc alias <существующий-элемент> "<запрос>"
@@ -75,7 +84,6 @@ arhit doc alias <существующий-элемент> "<запрос>"
 arhit doc add <элемент> --content "..."
 arhit doc alias <элемент> "<запрос>"
 \`\`\`
-Это позволяет будущим поискам по тому же запросу находить нужную документацию.
 
 ### Прочие правила
 - Не редактируй файлы в \`.arhit/\` напрямую — используй команды CLI
@@ -97,9 +105,13 @@ function findClaudeMd(): string {
   return rootPath;
 }
 
+function buildClaudeSection(): string {
+  return `${ARHIT_MARKER_START}\n${ARHIT_CLAUDE_SECTION}\n${ARHIT_MARKER_END}`;
+}
+
 function generateClaudeAgent(): void {
   const claudeMdPath = findClaudeMd();
-  const section = `${ARHIT_MARKER_START}\n${ARHIT_CLAUDE_SECTION}\n${ARHIT_MARKER_END}`;
+  const section = buildClaudeSection();
 
   if (fs.existsSync(claudeMdPath)) {
     const existing = fs.readFileSync(claudeMdPath, 'utf-8');
@@ -117,13 +129,64 @@ function generateClaudeAgent(): void {
   }
 }
 
+export type ClaudeSyncResult = 'created' | 'updated' | 'unchanged' | 'absent';
+
+/**
+ * Синхронизирует блок инструкций arhit во ВСЕХ существующих CLAUDE.md проекта
+ * (и `./CLAUDE.md`, и `.claude/CLAUDE.md` — оба читаются агентом как инструкции).
+ *
+ * Обновляет блок между маркерами, ТОЛЬКО если он уже присутствует — чтобы при
+ * выходе новой версии arhit устаревшие инструкции автоматически подтягивались.
+ * Никогда не создаёт файл и не добавляет блок, которого не было (не навязывает
+ * секцию проектам/пользователям, которые её удалили). Идемпотентна: если блок
+ * актуален, файл не трогается.
+ *
+ * Итоговый result: 'updated', если хотя бы один файл реально обновлён;
+ * иначе 'unchanged', если блок где-то найден, но уже актуален; иначе 'absent'.
+ */
+export function syncClaudeSection(): { result: ClaudeSyncResult; paths: string[] } {
+  const candidates = [
+    path.join(process.cwd(), 'CLAUDE.md'),
+    path.join(process.cwd(), '.claude', 'CLAUDE.md'),
+  ];
+  const section = buildClaudeSection();
+  const updatedPaths: string[] = [];
+  let foundBlock = false;
+
+  for (const p of candidates) {
+    if (!fs.existsSync(p)) continue;
+    const existing = fs.readFileSync(p, 'utf-8');
+    if (!existing.includes(ARHIT_MARKER_START)) continue;
+    foundBlock = true;
+
+    const updated = existing.replace(
+      new RegExp(`${ARHIT_MARKER_START}[\\s\\S]*?${ARHIT_MARKER_END}`),
+      section
+    );
+    if (updated !== existing) {
+      fs.writeFileSync(p, updated);
+      updatedPaths.push(p);
+    }
+  }
+
+  if (updatedPaths.length > 0) return { result: 'updated', paths: updatedPaths };
+  if (foundBlock) return { result: 'unchanged', paths: [] };
+  return { result: 'absent', paths: [] };
+}
+
 export function startCommand(options: { human?: boolean }) {
   if (isInitialized()) {
-    const msg = 'Already initialized. Run `arhit onboarding` to reconfigure.';
+    // Проект уже инициализирован — но блок инструкций в CLAUDE.md мог устареть.
+    // Подтянем его до актуальной версии, если он там есть.
+    const sync = syncClaudeSection();
     if (options.human) {
-      console.log(msg);
+      if (sync.result === 'updated') {
+        console.log(`Already initialized. Обновлён блок инструкций arhit в: ${sync.paths.join(', ')}.`);
+      } else {
+        console.log('Already initialized. Run `arhit onboarding` to reconfigure.');
+      }
     } else {
-      console.log(JSON.stringify({ status: 'already_initialized', message: msg }));
+      console.log(JSON.stringify({ status: 'already_initialized', claudeMd: sync.result }));
     }
     return;
   }

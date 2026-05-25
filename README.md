@@ -54,6 +54,8 @@ arhit init                          # Инициализация (автоопр
 arhit arch build                     # Построить архитектуру
 arhit -H arch show                   # Посмотреть дерево
 arhit analyze                        # Анализ зависимостей
+arhit -H search "оплата"             # Fuzzy-поиск по коду и докам
+arhit -H explain myFunction          # Всё об элементе одним вызовом
 arhit -H deps myFunction             # Кто зависит от myFunction?
 arhit -H calls myFunction            # Что вызывает myFunction?
 arhit -H map --format mermaid        # Карта взаимодействий
@@ -88,6 +90,13 @@ arhit doc add myFunction --content "Описание функции"
 | `arhit calls <element>` | Прямые зависимости: что элемент вызывает |
 | `arhit map -f json\|mermaid\|dot` | Полная карта взаимодействий |
 
+### Поиск и навигация (для агента)
+
+| Команда | Описание |
+|---------|----------|
+| `arhit search <query>` | Fuzzy-поиск по коду И документации (терпит опечатки/формы слов) |
+| `arhit explain <element>` | Карточка элемента: `путь:строка`, сигнатура, вызовы, зависимые, документация — в одном вызове |
+
 ### Документация
 
 | Команда | Описание |
@@ -96,7 +105,10 @@ arhit doc add myFunction --content "Описание функции"
 | `arhit doc show <element>` | Просмотр документации элемента |
 | `arhit doc list` | Список всех задокументированных элементов |
 | `arhit doc create <name>` | Создать свободную страницу документации |
-| `arhit doc search <query>` | Поиск по документации |
+| `arhit doc search <query>` | Fuzzy-поиск по документации |
+| `arhit doc coverage` | Покрытие документацией публичного API |
+| `arhit doc stale` | Осиротевшие/устаревшие записи документации |
+| `arhit arch build --seed-docs` | Засеять документацию из JSDoc/docstring исходников |
 
 ---
 

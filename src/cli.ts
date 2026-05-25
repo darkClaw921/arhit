@@ -5,9 +5,11 @@ import { startCommand } from './commands/start.js';
 import { onboardingCommand } from './commands/onboarding.js';
 import { archBuildCommand, archShowCommand } from './commands/arch.js';
 import { analyzeCommand, depsCommand, callsCommand, mapCommand } from './commands/analyze.js';
-import { docAddCommand, docShowCommand, docListCommand, docCreateCommand, docSearchCommand, docAliasCommand } from './commands/doc.js';
+import { docAddCommand, docShowCommand, docListCommand, docCreateCommand, docSearchCommand, docAliasCommand, docCoverageCommand, docStaleCommand } from './commands/doc.js';
 import { uiStartCommand, uiStopCommand, uiStatusCommand } from './commands/ui.js';
 import { contextCommand } from './commands/context.js';
+import { explainCommand } from './commands/explain.js';
+import { searchCommand } from './commands/search.js';
 
 const program = new Command();
 
@@ -41,8 +43,9 @@ const arch = program
 arch
   .command('build')
   .description('Scan source code and build architecture graph')
-  .action(() => {
-    archBuildCommand({ human: program.opts().human });
+  .option('--seed-docs', 'Seed documentation from JSDoc/docstring comments in source')
+  .action((opts: { seedDocs?: boolean }) => {
+    archBuildCommand({ human: program.opts().human, seedDocs: opts.seedDocs });
   });
 
 arch
@@ -94,6 +97,22 @@ program
     contextCommand({ human: program.opts().human });
   });
 
+// Explain (aggregated element card: location, signature, calls, dependents, docs)
+program
+  .command('explain <element>')
+  .description('Aggregated card for an element: location, signature, calls, dependents, docs')
+  .action((element: string) => {
+    explainCommand(element, { human: program.opts().human });
+  });
+
+// Search (fuzzy search across code architecture and documentation)
+program
+  .command('search <query>')
+  .description('Fuzzy search across code and documentation')
+  .action((query: string) => {
+    searchCommand(query, { human: program.opts().human });
+  });
+
 // Documentation
 const doc = program
   .command('doc')
@@ -141,6 +160,20 @@ doc
   .description('Add a search alias to an existing documentation entry')
   .action((element: string, alias: string) => {
     docAliasCommand(element, alias, { human: program.opts().human });
+  });
+
+doc
+  .command('coverage')
+  .description('Show documentation coverage of the public API')
+  .action(() => {
+    docCoverageCommand({ human: program.opts().human });
+  });
+
+doc
+  .command('stale')
+  .description('Find orphaned or outdated documentation entries')
+  .action(() => {
+    docStaleCommand({ human: program.opts().human });
   });
 
 // UI

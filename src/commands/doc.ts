@@ -2,6 +2,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { docsDir, readJson, architecturePath, readMarkdown, writeMarkdown } from '../storage.js';
 import { formatJson } from '../formatters/index.js';
+import { scoreMatch } from '../search/score.js';
+import { getPublicApi } from './context.js';
 import type { Architecture, DocEntry } from '../types.js';
 
 const TYPE_DIRS: Record<string, string> = {
@@ -43,7 +45,7 @@ function docFilePath(element: string, type: string): string {
 }
 
 // Search for doc file in categorized dirs, then fallback to flat (legacy)
-function findDocFile(element: string, type?: string): string | null {
+export function findDocFile(element: string, type?: string): string | null {
   const parts = element.split('/');
   const safeParts = parts.map(p => p.replace(/[^\p{L}\p{N}._-]/gu, '_'));
   const nestedPath = path.join(...safeParts.slice(0, -1), `${safeParts[safeParts.length - 1]}.md`);
@@ -76,15 +78,15 @@ function findDocFile(element: string, type?: string): string | null {
   return null;
 }
 
-function indexPath(): string {
+export function indexPath(): string {
   return path.join(docsDir(), '_index.json');
 }
 
-function loadIndex(): DocEntry[] {
+export function loadIndex(): DocEntry[] {
   return readJson<DocEntry[]>(indexPath()) || [];
 }
 
-function saveIndex(entries: DocEntry[]): void {
+export function saveIndex(entries: DocEntry[]): void {
   fs.mkdirSync(docsDir(), { recursive: true });
   fs.writeFileSync(indexPath(), JSON.stringify(entries, null, 2) + '\n');
 }
@@ -238,26 +240,33 @@ export function docCreateCommand(name: string, options: { content?: string; huma
 
 export function docSearchCommand(query: string, options: { human?: boolean }) {
   const index = loadIndex();
-  const q = query.toLowerCase();
-  const matches = index.filter(e =>
-    e.element.toLowerCase().includes(q) ||
-    e.content.toLowerCase().includes(q) ||
-    e.path.toLowerCase().includes(q) ||
-    e.aliases?.some(a => a.toLowerCase().includes(q))
-  );
+
+  // Ранжируем по релевантности: имя элемента и алиасы важнее пути/содержимого.
+  // Fuzzy-скоринг ловит опечатки и синонимы — ручные алиасы больше не обязательны.
+  const scored = index
+    .map(e => {
+      const nameScore = scoreMatch(query, e.element);
+      const aliasScore = Math.max(0, ...(e.aliases || []).map(a => scoreMatch(query, a)));
+      const pathScore = scoreMatch(query, e.path) * 0.7;
+      const contentScore = scoreMatch(query, e.content) * 0.5;
+      const score = Math.max(nameScore, aliasScore, pathScore, contentScore);
+      return { entry: e, score };
+    })
+    .filter(x => x.score >= 0.3)
+    .sort((a, b) => b.score - a.score);
 
   if (options.human) {
-    if (matches.length === 0) {
+    if (scored.length === 0) {
       console.log(`No results for "${query}"`);
       return;
     }
-    console.log(`Found ${matches.length} result(s) for "${query}":\n`);
-    for (const m of matches) {
+    console.log(`Found ${scored.length} result(s) for "${query}":\n`);
+    for (const { entry: m, score } of scored) {
       const aliasHint = m.aliases?.length ? ` (aliases: ${m.aliases.join(', ')})` : '';
-      console.log(`  ${m.element} [${m.type}] — ${m.path || 'N/A'}${aliasHint}`);
+      console.log(`  ${m.element} [${m.type}] — ${m.path || 'N/A'}${aliasHint}  (${score.toFixed(2)})`);
     }
   } else {
-    console.log(formatJson(matches));
+    console.log(formatJson(scored.map(x => ({ ...x.entry, score: Number(x.score.toFixed(3)) }))));
   }
 }
 
@@ -293,5 +302,144 @@ export function docAliasCommand(element: string, alias: string, options: { human
     console.log(`Alias "${alias}" added to "${entry.element}"`);
   } else {
     console.log(JSON.stringify({ status: 'added', element: entry.element, alias }));
+  }
+}
+
+/**
+ * Засевает документацию из JSDoc/docstring, извлечённых при сборке архитектуры.
+ * Создаёт записи с source:'auto' только для элементов с docComment, которые ещё
+ * не задокументированы. Ручные записи (source:'manual' или без source) не трогаются.
+ * Возвращает счётчики для отчёта.
+ */
+export function seedDocsFromArchitecture(arch: Architecture): { created: number; skipped: number } {
+  const index = loadIndex();
+  const byElement = new Map(index.map(e => [e.element, e]));
+  let created = 0;
+  let skipped = 0;
+  const now = new Date().toISOString();
+
+  for (const node of arch.nodes) {
+    for (const child of node.children || []) {
+      if (!child.docComment) continue;
+      const existing = byElement.get(child.name);
+      // не перезаписываем ручную документацию
+      if (existing && existing.source !== 'auto') { skipped++; continue; }
+      // авто-запись уже есть с тем же содержимым — пропускаем
+      if (existing && existing.source === 'auto' && existing.content === child.docComment) { skipped++; continue; }
+
+      const entry: DocEntry = {
+        element: child.name,
+        path: child.path,
+        type: child.type,
+        content: child.docComment,
+        source: 'auto',
+        createdAt: existing?.createdAt || now,
+        updatedAt: now,
+      };
+      byElement.set(child.name, entry);
+
+      const filePath = docFilePath(child.name, child.type);
+      writeMarkdown(filePath, `# ${child.name}\n\n${child.docComment}\n`);
+      created++;
+    }
+  }
+
+  saveIndex([...byElement.values()]);
+  return { created, skipped };
+}
+
+/**
+ * Покрытие документацией: какие элементы публичного API ещё не задокументированы.
+ * Помогает агенту увидеть пробелы и понять, что документировать.
+ */
+export function docCoverageCommand(options: { human?: boolean }) {
+  const arch = readJson<Architecture>(architecturePath());
+  if (!arch) {
+    const msg = 'No architecture data. Run `arhit arch build` first.';
+    if (options.human) console.log(msg);
+    else console.log(JSON.stringify({ error: 'no_architecture', message: msg }));
+    return;
+  }
+
+  const api = getPublicApi(arch);
+  const index = loadIndex();
+  const documented = new Set(index.map(e => e.element));
+
+  const undocumented = api.filter(a => !documented.has(a.name));
+  const total = api.length;
+  const covered = total - undocumented.length;
+  const percent = total === 0 ? 100 : Math.round((covered / total) * 100);
+
+  if (options.human) {
+    console.log(`Покрытие документацией: ${covered}/${total} (${percent}%)`);
+    if (undocumented.length > 0) {
+      console.log(`\nНе задокументировано (${undocumented.length}):`);
+      for (const a of undocumented) {
+        console.log(`  ${a.type} ${a.name} — ${a.file}`);
+      }
+    }
+  } else {
+    console.log(formatJson({ total, covered, percent, undocumented }));
+  }
+}
+
+/**
+ * Устаревшая документация: записи, чей элемент удалён из архитектуры (orphaned),
+ * либо чей исходный файл изменялся позже последнего обновления документации (outdated).
+ * Защищает агента от доверия неактуальным докам.
+ */
+export function docStaleCommand(options: { human?: boolean }) {
+  const arch = readJson<Architecture>(architecturePath());
+  const index = loadIndex();
+
+  // Множество известных элементов архитектуры (имена и id)
+  const known = new Set<string>();
+  if (arch) {
+    for (const node of arch.nodes) {
+      known.add(node.name);
+      known.add(node.id);
+      for (const child of node.children || []) {
+        known.add(child.name);
+        known.add(child.id);
+      }
+    }
+  }
+
+  const orphaned: { element: string; reason: string }[] = [];
+  const outdated: { element: string; reason: string }[] = [];
+
+  for (const e of index) {
+    if (e.type === 'page') continue; // свободные страницы не привязаны к коду
+    if (arch && !known.has(e.element)) {
+      orphaned.push({ element: e.element, reason: 'элемент отсутствует в архитектуре' });
+      continue;
+    }
+    if (e.path) {
+      try {
+        const mtime = fs.statSync(e.path).mtime.toISOString();
+        if (mtime > e.updatedAt) {
+          outdated.push({ element: e.element, reason: `код изменён ${mtime.split('T')[0]}, доку обновляли ${e.updatedAt.split('T')[0]}` });
+        }
+      } catch {
+        orphaned.push({ element: e.element, reason: `файл не найден: ${e.path}` });
+      }
+    }
+  }
+
+  if (options.human) {
+    if (orphaned.length === 0 && outdated.length === 0) {
+      console.log('Вся документация актуальна.');
+      return;
+    }
+    if (orphaned.length > 0) {
+      console.log(`Осиротевшие (${orphaned.length}):`);
+      for (const o of orphaned) console.log(`  ${o.element} — ${o.reason}`);
+    }
+    if (outdated.length > 0) {
+      console.log(`\nУстаревшие (${outdated.length}):`);
+      for (const o of outdated) console.log(`  ${o.element} — ${o.reason}`);
+    }
+  } else {
+    console.log(formatJson({ orphaned, outdated }));
   }
 }
