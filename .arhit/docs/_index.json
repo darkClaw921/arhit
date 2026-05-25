@@ -193,5 +193,18 @@
     "content": "Команда arhit doc search <query>. Ищет по полям: element, content, path, а также по массиву aliases[]. Если результатов нет — возвращает []. В human-режиме показывает список алиасов рядом с найденным элементом.",
     "createdAt": "2026-04-15T11:07:38.034Z",
     "updatedAt": "2026-04-15T11:07:38.034Z"
+  },
+  {
+    "element": "src/analyzer/scanner.ts:buildArchNodes",
+    "path": "src/analyzer/scanner.ts",
+    "type": "function",
+    "content": "Потоковый разбор TS/JS для графа архитектуры. findSourceFiles обходит ФС и отсекает игнор-каталоги (node_modules, dist) ПРЯМО при обходе — их содержимое не читается. Каждый файл парсится по одному в 'лёгкий' проект ts-morph (skipFileDependencyResolution, чтобы не подтягивать граф импортов) и после извлечения AST освобождается через removeSourceFile. Это устраняет OOM в V8 на больших проектах (раньше ts-morph грузил в AST весь node_modules и удалял лишь после). buildDependencies работает так же; импорты резолвятся вручную через resolveImport без загрузки всего проекта в type checker.",
+    "createdAt": "2026-05-25T06:19:34.710Z",
+    "updatedAt": "2026-05-25T06:19:35.518Z",
+    "aliases": [
+      "OOM",
+      "память сканер",
+      "arch build падает"
+    ]
   }
 ]

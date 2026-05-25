@@ -1,5 +1,5 @@
 import { requireConfig, readJson, architecturePath, writeJson } from '../storage.js';
-import { createProject, buildArchNodes } from '../analyzer/scanner.js';
+import { buildArchNodes } from '../analyzer/scanner.js';
 import { buildPythonArchNodes } from '../analyzer/python-scanner.js';
 import { formatJson, formatTree, formatArchMermaid } from '../formatters/index.js';
 import type { Architecture, ArchNode } from '../types.js';
@@ -10,8 +10,7 @@ export function archBuildCommand(options: { human?: boolean }) {
   if (config.language === 'python') {
     nodes = buildPythonArchNodes(config.sourcePaths, config.ignore);
   } else {
-    const project = createProject(config.sourcePaths, config.ignore);
-    nodes = buildArchNodes(project);
+    nodes = buildArchNodes(config.sourcePaths, config.ignore);
   }
 
   const arch: Architecture = {

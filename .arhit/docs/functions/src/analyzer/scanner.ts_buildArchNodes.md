@@ -1,0 +1,3 @@
+# src/analyzer/scanner.ts:buildArchNodes
+
+Потоковый разбор TS/JS для графа архитектуры. findSourceFiles обходит ФС и отсекает игнор-каталоги (node_modules, dist) ПРЯМО при обходе — их содержимое не читается. Каждый файл парсится по одному в 'лёгкий' проект ts-morph (skipFileDependencyResolution, чтобы не подтягивать граф импортов) и после извлечения AST освобождается через removeSourceFile. Это устраняет OOM в V8 на больших проектах (раньше ts-morph грузил в AST весь node_modules и удалял лишь после). buildDependencies работает так же; импорты резолвятся вручную через resolveImport без загрузки всего проекта в type checker.

@@ -1,5 +1,5 @@
 import { requireConfig, readJson, dependenciesPath, writeJson } from '../storage.js';
-import { createProject, buildDependencies } from '../analyzer/scanner.js';
+import { buildDependencies } from '../analyzer/scanner.js';
 import { buildPythonDependencies } from '../analyzer/python-scanner.js';
 import { formatJson, formatDepsMermaid, formatDepsDot } from '../formatters/index.js';
 import type { DependencyMap, Dependency } from '../types.js';
@@ -19,8 +19,7 @@ export function analyzeCommand(options: { human?: boolean }) {
   if (config.language === 'python') {
     dependencies = buildPythonDependencies(config.sourcePaths, config.ignore);
   } else {
-    const project = createProject(config.sourcePaths, config.ignore);
-    dependencies = buildDependencies(project);
+    dependencies = buildDependencies(config.sourcePaths, config.ignore);
   }
 
   const depMap: DependencyMap = {

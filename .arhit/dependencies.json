@@ -1,570 +1,6 @@
 {
-  "generatedAt": "2026-04-15T11:07:32.117Z",
+  "generatedAt": "2026-05-25T06:19:20.654Z",
   "dependencies": [
-    {
-      "from": "src/cli.ts",
-      "to": "node_modules/commander/typings/index.d.ts",
-      "type": "import",
-      "toElement": "Command"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/commands/start.ts",
-      "type": "import",
-      "toElement": "startCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/commands/onboarding.ts",
-      "type": "import",
-      "toElement": "onboardingCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/commands/arch.ts",
-      "type": "import",
-      "toElement": "archBuildCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/commands/arch.ts",
-      "type": "import",
-      "toElement": "archShowCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/commands/analyze.ts",
-      "type": "import",
-      "toElement": "analyzeCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/commands/analyze.ts",
-      "type": "import",
-      "toElement": "depsCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/commands/analyze.ts",
-      "type": "import",
-      "toElement": "callsCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/commands/analyze.ts",
-      "type": "import",
-      "toElement": "mapCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/commands/doc.ts",
-      "type": "import",
-      "toElement": "docAddCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/commands/doc.ts",
-      "type": "import",
-      "toElement": "docShowCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/commands/doc.ts",
-      "type": "import",
-      "toElement": "docListCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/commands/doc.ts",
-      "type": "import",
-      "toElement": "docCreateCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/commands/doc.ts",
-      "type": "import",
-      "toElement": "docSearchCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/commands/doc.ts",
-      "type": "import",
-      "toElement": "docAliasCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/commands/ui.ts",
-      "type": "import",
-      "toElement": "uiStartCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/commands/ui.ts",
-      "type": "import",
-      "toElement": "uiStopCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/commands/ui.ts",
-      "type": "import",
-      "toElement": "uiStatusCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/commands/context.ts",
-      "type": "import",
-      "toElement": "contextCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "startCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "program.opts"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "onboardingCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "program.opts"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "archBuildCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "program.opts"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "archShowCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "program.opts"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "analyzeCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "program.opts"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "depsCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "program.opts"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "callsCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "program.opts"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "mapCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "program.opts"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "contextCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "program.opts"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "docAddCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "program.opts"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "docShowCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "program.opts"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "docListCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "program.opts"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "docCreateCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "program.opts"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "docSearchCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "program.opts"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "docAliasCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "program.opts"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "uiStartCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "program.opts"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "uiStopCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "program.opts"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "uiStatusCommand"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "program.opts"
-    },
-    {
-      "from": "src/cli.ts",
-      "to": "src/cli.ts",
-      "type": "call",
-      "toElement": "program.parse"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "node:fs",
-      "type": "import",
-      "toElement": "default"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "node:path",
-      "type": "import",
-      "toElement": "default"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/types.ts",
-      "type": "import",
-      "toElement": "ArhitConfig"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "getArhitDir",
-      "toElement": "process.cwd"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "getArhitDir",
-      "toElement": "path.join"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "ensureArhitDir",
-      "toElement": "getArhitDir"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "ensureArhitDir",
-      "toElement": "fs.mkdirSync"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "ensureArhitDir",
-      "toElement": "fs.mkdirSync"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "ensureArhitDir",
-      "toElement": "path.join"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "isInitialized",
-      "toElement": "fs.existsSync"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "isInitialized",
-      "toElement": "getArhitDir"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "readJson",
-      "toElement": "JSON.parse"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "readJson",
-      "toElement": "fs.readFileSync"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "requireConfig",
-      "toElement": "readJson"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "requireConfig",
-      "toElement": "configPath"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "requireConfig",
-      "toElement": "console.error"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "requireConfig",
-      "toElement": "process.exit"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "writeJson",
-      "toElement": "fs.mkdirSync"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "writeJson",
-      "toElement": "path.dirname"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "writeJson",
-      "toElement": "fs.writeFileSync"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "writeJson",
-      "toElement": "JSON.stringify"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "readMarkdown",
-      "toElement": "fs.readFileSync"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "writeMarkdown",
-      "toElement": "fs.mkdirSync"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "writeMarkdown",
-      "toElement": "path.dirname"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "writeMarkdown",
-      "toElement": "fs.writeFileSync"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "configPath",
-      "toElement": "path.join"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "configPath",
-      "toElement": "getArhitDir"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "architecturePath",
-      "toElement": "path.join"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "architecturePath",
-      "toElement": "getArhitDir"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "dependenciesPath",
-      "toElement": "path.join"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "dependenciesPath",
-      "toElement": "getArhitDir"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "docsDir",
-      "toElement": "path.join"
-    },
-    {
-      "from": "src/storage.ts",
-      "to": "src/storage.ts",
-      "type": "call",
-      "fromElement": "docsDir",
-      "toElement": "getArhitDir"
-    },
     {
       "from": "src/analyzer/python-scanner.ts",
       "to": "node:fs",
@@ -1060,27 +496,27 @@
     },
     {
       "from": "src/analyzer/scanner.ts",
-      "to": "node_modules/ts-morph/lib/ts-morph.d.ts",
+      "to": "ts-morph",
       "type": "import",
       "toElement": "Project"
     },
     {
       "from": "src/analyzer/scanner.ts",
-      "to": "node_modules/ts-morph/lib/ts-morph.d.ts",
-      "type": "import",
-      "toElement": "SourceFile"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "node_modules/ts-morph/lib/ts-morph.d.ts",
+      "to": "ts-morph",
       "type": "import",
       "toElement": "SyntaxKind"
     },
     {
       "from": "src/analyzer/scanner.ts",
-      "to": "node_modules/ts-morph/lib/ts-morph.d.ts",
+      "to": "ts-morph",
       "type": "import",
       "toElement": "Node"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "node:fs",
+      "type": "import",
+      "toElement": "default"
     },
     {
       "from": "src/analyzer/scanner.ts",
@@ -1104,92 +540,351 @@
       "from": "src/analyzer/scanner.ts",
       "to": "src/analyzer/scanner.ts",
       "type": "call",
-      "fromElement": "createProject",
-      "toElement": "project.addSourceFilesAtPaths"
+      "fromElement": "walk",
+      "toElement": "fs.readdirSync"
     },
     {
       "from": "src/analyzer/scanner.ts",
       "to": "src/analyzer/scanner.ts",
       "type": "call",
-      "fromElement": "createProject",
+      "fromElement": "walk",
       "toElement": "path.join"
     },
     {
       "from": "src/analyzer/scanner.ts",
       "to": "src/analyzer/scanner.ts",
       "type": "call",
-      "fromElement": "createProject",
-      "toElement": "path.join"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "createProject",
-      "toElement": "path.join"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "createProject",
-      "toElement": "path.join"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "createProject",
-      "toElement": "project.getSourceFiles"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "createProject",
+      "fromElement": "walk",
       "toElement": "path.relative"
     },
     {
       "from": "src/analyzer/scanner.ts",
       "to": "src/analyzer/scanner.ts",
       "type": "call",
-      "fromElement": "createProject",
+      "fromElement": "walk",
       "toElement": "process.cwd"
     },
     {
       "from": "src/analyzer/scanner.ts",
       "to": "src/analyzer/scanner.ts",
       "type": "call",
-      "fromElement": "createProject",
-      "toElement": "sf.getFilePath"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "createProject",
+      "fromElement": "walk",
       "toElement": "ignore.some"
     },
     {
       "from": "src/analyzer/scanner.ts",
       "to": "src/analyzer/scanner.ts",
       "type": "call",
-      "fromElement": "createProject",
+      "fromElement": "walk",
       "toElement": "rel.includes"
     },
     {
       "from": "src/analyzer/scanner.ts",
       "to": "src/analyzer/scanner.ts",
       "type": "call",
-      "fromElement": "createProject",
-      "toElement": "project.removeSourceFile"
+      "fromElement": "walk",
+      "toElement": "entry.isDirectory"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "walk",
+      "toElement": "walk"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "walk",
+      "toElement": "SOURCE_EXTENSIONS.includes"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "walk",
+      "toElement": "path.extname"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "walk",
+      "toElement": "seen.has"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "walk",
+      "toElement": "seen.add"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "walk",
+      "toElement": "files.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "findSourceFiles",
+      "toElement": "path.isAbsolute"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "findSourceFiles",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "findSourceFiles",
+      "toElement": "process.cwd"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "findSourceFiles",
+      "toElement": "walk"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "sf.getFunctions"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "fn.getName"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "children.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "fn.getStartLineNumber"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "fn.isExported"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "sf.getClasses"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "cls.getName"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "children.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "cls.getStartLineNumber"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "cls.isExported"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "sf.getInterfaces"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "iface.getName"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "children.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "iface.getStartLineNumber"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "iface.isExported"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "sf.getTypeAliases"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "typeAlias.getName"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "children.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "typeAlias.getStartLineNumber"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "typeAlias.isExported"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "sf.getEnums"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "en.getName"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "children.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "en.getStartLineNumber"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "en.isExported"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "sf.getVariableStatements"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "varStmt.getDeclarations"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "decl.getName"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "children.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "decl.getStartLineNumber"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileChildren",
+      "toElement": "varStmt.isExported"
     },
     {
       "from": "src/analyzer/scanner.ts",
       "to": "src/analyzer/scanner.ts",
       "type": "call",
       "fromElement": "buildArchNodes",
-      "toElement": "project.getSourceFiles"
+      "toElement": "findSourceFiles"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildArchNodes",
+      "toElement": "createScratchProject"
     },
     {
       "from": "src/analyzer/scanner.ts",
@@ -1210,224 +905,14 @@
       "to": "src/analyzer/scanner.ts",
       "type": "call",
       "fromElement": "buildArchNodes",
-      "toElement": "sf.getFilePath"
+      "toElement": "project.addSourceFileAtPath"
     },
     {
       "from": "src/analyzer/scanner.ts",
       "to": "src/analyzer/scanner.ts",
       "type": "call",
       "fromElement": "buildArchNodes",
-      "toElement": "sf.getFunctions"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "fn.getName"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "children.push"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "fn.getStartLineNumber"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "fn.isExported"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "sf.getClasses"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "cls.getName"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "children.push"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "cls.getStartLineNumber"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "cls.isExported"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "sf.getInterfaces"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "iface.getName"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "children.push"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "iface.getStartLineNumber"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "iface.isExported"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "sf.getTypeAliases"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "typeAlias.getName"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "children.push"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "typeAlias.getStartLineNumber"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "typeAlias.isExported"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "sf.getEnums"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "en.getName"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "children.push"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "en.getStartLineNumber"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "en.isExported"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "sf.getVariableStatements"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "varStmt.getDeclarations"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "decl.getName"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "children.push"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "decl.getStartLineNumber"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildArchNodes",
-      "toElement": "varStmt.isExported"
+      "toElement": "collectFileChildren"
     },
     {
       "from": "src/analyzer/scanner.ts",
@@ -1454,50 +939,302 @@
       "from": "src/analyzer/scanner.ts",
       "to": "src/analyzer/scanner.ts",
       "type": "call",
-      "fromElement": "buildDependencies",
-      "toElement": "project.getSourceFiles"
+      "fromElement": "buildArchNodes",
+      "toElement": "project.removeSourceFile"
     },
     {
       "from": "src/analyzer/scanner.ts",
       "to": "src/analyzer/scanner.ts",
       "type": "call",
-      "fromElement": "buildDependencies",
+      "fromElement": "resolveImport",
+      "toElement": "specifier.startsWith"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "resolveImport",
+      "toElement": "path.dirname"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "resolveImport",
+      "toElement": "path.resolve"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "resolveImport",
+      "toElement": "SOURCE_EXTENSIONS.map"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "resolveImport",
+      "toElement": "SOURCE_EXTENSIONS.map"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "resolveImport",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "resolveImport",
+      "toElement": "specifier.match"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "resolveImport",
+      "toElement": "resolvedAbs.replace"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "resolveImport",
+      "toElement": "candidates.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "resolveImport",
+      "toElement": "fs.statSync"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "resolveImport",
       "toElement": "path.relative"
     },
     {
       "from": "src/analyzer/scanner.ts",
       "to": "src/analyzer/scanner.ts",
       "type": "call",
-      "fromElement": "buildDependencies",
+      "fromElement": "resolveImport",
       "toElement": "process.cwd"
     },
     {
       "from": "src/analyzer/scanner.ts",
       "to": "src/analyzer/scanner.ts",
       "type": "call",
-      "fromElement": "buildDependencies",
-      "toElement": "sf.getFilePath"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildDependencies",
+      "fromElement": "collectFileDependencies",
       "toElement": "sf.getImportDeclarations"
     },
     {
       "from": "src/analyzer/scanner.ts",
       "to": "src/analyzer/scanner.ts",
       "type": "call",
-      "fromElement": "buildDependencies",
+      "fromElement": "collectFileDependencies",
       "toElement": "imp.getModuleSpecifierValue"
     },
     {
       "from": "src/analyzer/scanner.ts",
       "to": "src/analyzer/scanner.ts",
       "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "resolveImport"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "imp.getNamedImports"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "deps.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "named.getName"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "imp.getDefaultImport"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "deps.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "sf.getClasses"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "cls.getExtends"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "deps.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "cls.getName"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "ext.getText"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "cls.getImplements"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "deps.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "cls.getName"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "impl.getText"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "sf.forEachDescendant"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "Node.isCallExpression"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "node.getExpression"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "expr.getText"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "text.match"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "node.getFirstAncestorByKind"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "node.getFirstAncestorByKind"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "node.getFirstAncestorByKind"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "Node.isFunctionDeclaration"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "containingFn.getName"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "collectFileDependencies",
+      "toElement": "deps.push"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
       "fromElement": "buildDependencies",
-      "toElement": "imp.getModuleSpecifierSourceFile"
+      "toElement": "findSourceFiles"
+    },
+    {
+      "from": "src/analyzer/scanner.ts",
+      "to": "src/analyzer/scanner.ts",
+      "type": "call",
+      "fromElement": "buildDependencies",
+      "toElement": "createScratchProject"
     },
     {
       "from": "src/analyzer/scanner.ts",
@@ -1518,14 +1255,7 @@
       "to": "src/analyzer/scanner.ts",
       "type": "call",
       "fromElement": "buildDependencies",
-      "toElement": "resolved.getFilePath"
-    },
-    {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildDependencies",
-      "toElement": "imp.getNamedImports"
+      "toElement": "project.addSourceFileAtPath"
     },
     {
       "from": "src/analyzer/scanner.ts",
@@ -1539,161 +1269,350 @@
       "to": "src/analyzer/scanner.ts",
       "type": "call",
       "fromElement": "buildDependencies",
-      "toElement": "named.getName"
+      "toElement": "collectFileDependencies"
     },
     {
       "from": "src/analyzer/scanner.ts",
       "to": "src/analyzer/scanner.ts",
       "type": "call",
       "fromElement": "buildDependencies",
-      "toElement": "imp.getDefaultImport"
+      "toElement": "project.removeSourceFile"
     },
     {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildDependencies",
-      "toElement": "deps.push"
+      "from": "src/cli.ts",
+      "to": "commander",
+      "type": "import",
+      "toElement": "Command"
     },
     {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildDependencies",
-      "toElement": "sf.getClasses"
+      "from": "src/cli.ts",
+      "to": "src/commands/start.ts",
+      "type": "import",
+      "toElement": "startCommand"
     },
     {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildDependencies",
-      "toElement": "cls.getExtends"
+      "from": "src/cli.ts",
+      "to": "src/commands/onboarding.ts",
+      "type": "import",
+      "toElement": "onboardingCommand"
     },
     {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildDependencies",
-      "toElement": "deps.push"
+      "from": "src/cli.ts",
+      "to": "src/commands/arch.ts",
+      "type": "import",
+      "toElement": "archBuildCommand"
     },
     {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildDependencies",
-      "toElement": "cls.getName"
+      "from": "src/cli.ts",
+      "to": "src/commands/arch.ts",
+      "type": "import",
+      "toElement": "archShowCommand"
     },
     {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildDependencies",
-      "toElement": "ext.getText"
+      "from": "src/cli.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "import",
+      "toElement": "analyzeCommand"
     },
     {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildDependencies",
-      "toElement": "cls.getImplements"
+      "from": "src/cli.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "import",
+      "toElement": "depsCommand"
     },
     {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildDependencies",
-      "toElement": "deps.push"
+      "from": "src/cli.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "import",
+      "toElement": "callsCommand"
     },
     {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildDependencies",
-      "toElement": "cls.getName"
+      "from": "src/cli.ts",
+      "to": "src/commands/analyze.ts",
+      "type": "import",
+      "toElement": "mapCommand"
     },
     {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildDependencies",
-      "toElement": "impl.getText"
+      "from": "src/cli.ts",
+      "to": "src/commands/doc.ts",
+      "type": "import",
+      "toElement": "docAddCommand"
     },
     {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildDependencies",
-      "toElement": "sf.forEachDescendant"
+      "from": "src/cli.ts",
+      "to": "src/commands/doc.ts",
+      "type": "import",
+      "toElement": "docShowCommand"
     },
     {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildDependencies",
-      "toElement": "Node.isCallExpression"
+      "from": "src/cli.ts",
+      "to": "src/commands/doc.ts",
+      "type": "import",
+      "toElement": "docListCommand"
     },
     {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildDependencies",
-      "toElement": "node.getExpression"
+      "from": "src/cli.ts",
+      "to": "src/commands/doc.ts",
+      "type": "import",
+      "toElement": "docCreateCommand"
     },
     {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildDependencies",
-      "toElement": "expr.getText"
+      "from": "src/cli.ts",
+      "to": "src/commands/doc.ts",
+      "type": "import",
+      "toElement": "docSearchCommand"
     },
     {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildDependencies",
-      "toElement": "text.match"
+      "from": "src/cli.ts",
+      "to": "src/commands/doc.ts",
+      "type": "import",
+      "toElement": "docAliasCommand"
     },
     {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildDependencies",
-      "toElement": "node.getFirstAncestorByKind"
+      "from": "src/cli.ts",
+      "to": "src/commands/ui.ts",
+      "type": "import",
+      "toElement": "uiStartCommand"
     },
     {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildDependencies",
-      "toElement": "node.getFirstAncestorByKind"
+      "from": "src/cli.ts",
+      "to": "src/commands/ui.ts",
+      "type": "import",
+      "toElement": "uiStopCommand"
     },
     {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildDependencies",
-      "toElement": "node.getFirstAncestorByKind"
+      "from": "src/cli.ts",
+      "to": "src/commands/ui.ts",
+      "type": "import",
+      "toElement": "uiStatusCommand"
     },
     {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "call",
-      "fromElement": "buildDependencies",
-      "toElement": "Node.isFunctionDeclaration"
+      "from": "src/cli.ts",
+      "to": "src/commands/context.ts",
+      "type": "import",
+      "toElement": "contextCommand"
     },
     {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
       "type": "call",
-      "fromElement": "buildDependencies",
-      "toElement": "containingFn.getName"
+      "toElement": "startCommand"
     },
     {
-      "from": "src/analyzer/scanner.ts",
-      "to": "src/analyzer/scanner.ts",
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
       "type": "call",
-      "fromElement": "buildDependencies",
-      "toElement": "deps.push"
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "onboardingCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "archBuildCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "archShowCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "analyzeCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "depsCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "callsCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "mapCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "contextCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "docAddCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "docShowCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "docListCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "docCreateCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "docSearchCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "docAliasCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "uiStartCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "uiStopCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "uiStatusCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.parse"
     },
     {
       "from": "src/commands/analyze.ts",
@@ -1718,12 +1637,6 @@
       "to": "src/storage.ts",
       "type": "import",
       "toElement": "writeJson"
-    },
-    {
-      "from": "src/commands/analyze.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "import",
-      "toElement": "createProject"
     },
     {
       "from": "src/commands/analyze.ts",
@@ -1808,13 +1721,6 @@
       "type": "call",
       "fromElement": "analyzeCommand",
       "toElement": "buildPythonDependencies"
-    },
-    {
-      "from": "src/commands/analyze.ts",
-      "to": "src/commands/analyze.ts",
-      "type": "call",
-      "fromElement": "analyzeCommand",
-      "toElement": "createProject"
     },
     {
       "from": "src/commands/analyze.ts",
@@ -2082,12 +1988,6 @@
       "from": "src/commands/arch.ts",
       "to": "src/analyzer/scanner.ts",
       "type": "import",
-      "toElement": "createProject"
-    },
-    {
-      "from": "src/commands/arch.ts",
-      "to": "src/analyzer/scanner.ts",
-      "type": "import",
       "toElement": "buildArchNodes"
     },
     {
@@ -2139,13 +2039,6 @@
       "type": "call",
       "fromElement": "archBuildCommand",
       "toElement": "buildPythonArchNodes"
-    },
-    {
-      "from": "src/commands/arch.ts",
-      "to": "src/commands/arch.ts",
-      "type": "call",
-      "fromElement": "archBuildCommand",
-      "toElement": "createProject"
     },
     {
       "from": "src/commands/arch.ts",
@@ -5709,6 +5602,234 @@
       "type": "call",
       "fromElement": "formatTree",
       "toElement": "lines.join"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "node:fs",
+      "type": "import",
+      "toElement": "default"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "node:path",
+      "type": "import",
+      "toElement": "default"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "ArhitConfig"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "getArhitDir",
+      "toElement": "process.cwd"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "getArhitDir",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "ensureArhitDir",
+      "toElement": "getArhitDir"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "ensureArhitDir",
+      "toElement": "fs.mkdirSync"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "ensureArhitDir",
+      "toElement": "fs.mkdirSync"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "ensureArhitDir",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "isInitialized",
+      "toElement": "fs.existsSync"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "isInitialized",
+      "toElement": "getArhitDir"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "readJson",
+      "toElement": "JSON.parse"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "readJson",
+      "toElement": "fs.readFileSync"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "requireConfig",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "requireConfig",
+      "toElement": "configPath"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "requireConfig",
+      "toElement": "console.error"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "requireConfig",
+      "toElement": "process.exit"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "writeJson",
+      "toElement": "fs.mkdirSync"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "writeJson",
+      "toElement": "path.dirname"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "writeJson",
+      "toElement": "fs.writeFileSync"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "writeJson",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "readMarkdown",
+      "toElement": "fs.readFileSync"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "writeMarkdown",
+      "toElement": "fs.mkdirSync"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "writeMarkdown",
+      "toElement": "path.dirname"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "writeMarkdown",
+      "toElement": "fs.writeFileSync"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "configPath",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "configPath",
+      "toElement": "getArhitDir"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "architecturePath",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "architecturePath",
+      "toElement": "getArhitDir"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "dependenciesPath",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "dependenciesPath",
+      "toElement": "getArhitDir"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "docsDir",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/storage.ts",
+      "to": "src/storage.ts",
+      "type": "call",
+      "fromElement": "docsDir",
+      "toElement": "getArhitDir"
     }
   ]
 }
