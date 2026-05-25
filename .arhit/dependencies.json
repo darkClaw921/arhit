@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-30T18:20:38.878Z",
+  "generatedAt": "2026-04-15T11:07:32.117Z",
   "dependencies": [
     {
       "from": "src/cli.ts",
@@ -87,6 +87,12 @@
     },
     {
       "from": "src/cli.ts",
+      "to": "src/commands/doc.ts",
+      "type": "import",
+      "toElement": "docAliasCommand"
+    },
+    {
+      "from": "src/cli.ts",
       "to": "src/commands/ui.ts",
       "type": "import",
       "toElement": "uiStartCommand"
@@ -102,6 +108,12 @@
       "to": "src/commands/ui.ts",
       "type": "import",
       "toElement": "uiStatusCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/commands/context.ts",
+      "type": "import",
+      "toElement": "contextCommand"
     },
     {
       "from": "src/cli.ts",
@@ -203,6 +215,18 @@
       "from": "src/cli.ts",
       "to": "src/cli.ts",
       "type": "call",
+      "toElement": "contextCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
       "toElement": "docAddCommand"
     },
     {
@@ -252,6 +276,18 @@
       "to": "src/cli.ts",
       "type": "call",
       "toElement": "docSearchCommand"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "program.opts"
+    },
+    {
+      "from": "src/cli.ts",
+      "to": "src/cli.ts",
+      "type": "call",
+      "toElement": "docAliasCommand"
     },
     {
       "from": "src/cli.ts",
@@ -2287,6 +2323,616 @@
       "toElement": "formatJson"
     },
     {
+      "from": "src/commands/context.ts",
+      "to": "node:fs",
+      "type": "import",
+      "toElement": "default"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "node:path",
+      "type": "import",
+      "toElement": "default"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "isInitialized"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "configPath"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "architecturePath"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "dependenciesPath"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "docsDir"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "ArhitConfig"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "Architecture"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "DependencyMap"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "ArchNode"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/types.ts",
+      "type": "import",
+      "toElement": "DocEntry"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "findEntryPoints",
+      "toElement": "path.basename"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "findEntryPoints",
+      "toElement": "path.extname"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "findEntryPoints",
+      "toElement": "candidates.includes"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "findEntryPoints",
+      "toElement": "entries.push"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "findEntryPoints",
+      "toElement": "JSON.parse"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "findEntryPoints",
+      "toElement": "fs.readFileSync"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "findEntryPoints",
+      "toElement": "entries.push"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "findEntryPoints",
+      "toElement": "Object.values"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "findEntryPoints",
+      "toElement": "entries.push"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "getPublicApi",
+      "toElement": "api.push"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "computeHotspots",
+      "toElement": "Object.keys"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "computeHotspots",
+      "toElement": "Object.keys"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "computeHotspots",
+      "toElement": "hotspots.sort"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "computeHotspots",
+      "toElement": "hotspots.slice"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "isInitialized"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "configPath"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "architecturePath"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "dependenciesPath"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "docsDir"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "readJson"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "findEntryPoints"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "arch.nodes.reduce"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "getPublicApi"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "deps.dependencies.filter"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "deps.dependencies.filter"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "deps.dependencies.filter"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "deps.dependencies.filter"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "computeHotspots"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "b.updatedAt.localeCompare"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "printHuman"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "contextCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "brief.project.sourcePaths.join"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "brief.architecture.topFiles.slice"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "brief.dependencies.hotspots.slice"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "Object.keys"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "Object.entries"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "r.updatedAt.split"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "brief.publicApi.slice"
+    },
+    {
+      "from": "src/commands/context.ts",
+      "to": "src/commands/context.ts",
+      "type": "call",
+      "fromElement": "printHuman",
+      "toElement": "console.log"
+    },
+    {
       "from": "src/commands/doc.ts",
       "to": "node:fs",
       "type": "import",
@@ -2350,8 +2996,29 @@
       "from": "src/commands/doc.ts",
       "to": "src/commands/doc.ts",
       "type": "call",
+      "fromElement": "detectTypeFromElement",
+      "toElement": "element.endsWith"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
       "fromElement": "docFilePath",
-      "toElement": "element.replace"
+      "toElement": "element.split"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docFilePath",
+      "toElement": "parts.map"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docFilePath",
+      "toElement": "p.replace"
     },
     {
       "from": "src/commands/doc.ts",
@@ -2366,6 +3033,209 @@
       "type": "call",
       "fromElement": "docFilePath",
       "toElement": "docsDir"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docFilePath",
+      "toElement": "typeDir"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docFilePath",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docFilePath",
+      "toElement": "safeParts.slice"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docFilePath",
+      "toElement": "fs.mkdirSync"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docFilePath",
+      "toElement": "path.dirname"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "findDocFile",
+      "toElement": "element.split"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "findDocFile",
+      "toElement": "parts.map"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "findDocFile",
+      "toElement": "p.replace"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "findDocFile",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "findDocFile",
+      "toElement": "safeParts.slice"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "findDocFile",
+      "toElement": "safeParts.join"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "findDocFile",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "findDocFile",
+      "toElement": "docsDir"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "findDocFile",
+      "toElement": "typeDir"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "findDocFile",
+      "toElement": "fs.existsSync"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "findDocFile",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "findDocFile",
+      "toElement": "docsDir"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "findDocFile",
+      "toElement": "typeDir"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "findDocFile",
+      "toElement": "fs.existsSync"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "findDocFile",
+      "toElement": "docsDir"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "findDocFile",
+      "toElement": "fs.readdirSync"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "findDocFile",
+      "toElement": "dir.isDirectory"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "findDocFile",
+      "toElement": "dir.name.startsWith"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "findDocFile",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "findDocFile",
+      "toElement": "fs.existsSync"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "findDocFile",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "findDocFile",
+      "toElement": "fs.existsSync"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "findDocFile",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "findDocFile",
+      "toElement": "fs.existsSync"
     },
     {
       "from": "src/commands/doc.ts",
@@ -2470,6 +3340,13 @@
       "to": "src/commands/doc.ts",
       "type": "call",
       "fromElement": "docAddCommand",
+      "toElement": "detectTypeFromElement"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAddCommand",
       "toElement": "loadIndex"
     },
     {
@@ -2478,6 +3355,20 @@
       "type": "call",
       "fromElement": "docAddCommand",
       "toElement": "index.findIndex"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAddCommand",
+      "toElement": "findDocFile"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAddCommand",
+      "toElement": "fs.unlinkSync"
     },
     {
       "from": "src/commands/doc.ts",
@@ -2498,6 +3389,13 @@
       "to": "src/commands/doc.ts",
       "type": "call",
       "fromElement": "docAddCommand",
+      "toElement": "docFilePath"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAddCommand",
       "toElement": "writeMarkdown"
     },
     {
@@ -2505,13 +3403,6 @@
       "to": "src/commands/doc.ts",
       "type": "call",
       "fromElement": "docAddCommand",
-      "toElement": "docFilePath"
-    },
-    {
-      "from": "src/commands/doc.ts",
-      "to": "src/commands/doc.ts",
-      "type": "call",
-      "fromElement": "docAddCommand",
       "toElement": "console.log"
     },
     {
@@ -2527,48 +3418,6 @@
       "type": "call",
       "fromElement": "docAddCommand",
       "toElement": "JSON.stringify"
-    },
-    {
-      "from": "src/commands/doc.ts",
-      "to": "src/commands/doc.ts",
-      "type": "call",
-      "fromElement": "docShowCommand",
-      "toElement": "readMarkdown"
-    },
-    {
-      "from": "src/commands/doc.ts",
-      "to": "src/commands/doc.ts",
-      "type": "call",
-      "fromElement": "docShowCommand",
-      "toElement": "docFilePath"
-    },
-    {
-      "from": "src/commands/doc.ts",
-      "to": "src/commands/doc.ts",
-      "type": "call",
-      "fromElement": "docShowCommand",
-      "toElement": "console.log"
-    },
-    {
-      "from": "src/commands/doc.ts",
-      "to": "src/commands/doc.ts",
-      "type": "call",
-      "fromElement": "docShowCommand",
-      "toElement": "console.log"
-    },
-    {
-      "from": "src/commands/doc.ts",
-      "to": "src/commands/doc.ts",
-      "type": "call",
-      "fromElement": "docShowCommand",
-      "toElement": "JSON.stringify"
-    },
-    {
-      "from": "src/commands/doc.ts",
-      "to": "src/commands/doc.ts",
-      "type": "call",
-      "fromElement": "docShowCommand",
-      "toElement": "console.log"
     },
     {
       "from": "src/commands/doc.ts",
@@ -2589,6 +3438,48 @@
       "to": "src/commands/doc.ts",
       "type": "call",
       "fromElement": "docShowCommand",
+      "toElement": "findDocFile"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docShowCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docShowCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docShowCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docShowCommand",
+      "toElement": "readMarkdown"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docShowCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docShowCommand",
       "toElement": "console.log"
     },
     {
@@ -2611,6 +3502,27 @@
       "type": "call",
       "fromElement": "docListCommand",
       "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docListCommand",
+      "toElement": "typeDir"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docListCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docListCommand",
+      "toElement": "Object.entries"
     },
     {
       "from": "src/commands/doc.ts",
@@ -2645,21 +3557,7 @@
       "to": "src/commands/doc.ts",
       "type": "call",
       "fromElement": "docCreateCommand",
-      "toElement": "path.join"
-    },
-    {
-      "from": "src/commands/doc.ts",
-      "to": "src/commands/doc.ts",
-      "type": "call",
-      "fromElement": "docCreateCommand",
-      "toElement": "docsDir"
-    },
-    {
-      "from": "src/commands/doc.ts",
-      "to": "src/commands/doc.ts",
-      "type": "call",
-      "fromElement": "docCreateCommand",
-      "toElement": "name.replace"
+      "toElement": "docFilePath"
     },
     {
       "from": "src/commands/doc.ts",
@@ -2764,6 +3662,13 @@
       "to": "src/commands/doc.ts",
       "type": "call",
       "fromElement": "docSearchCommand",
+      "toElement": "a.toLowerCase"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docSearchCommand",
       "toElement": "console.log"
     },
     {
@@ -2772,6 +3677,13 @@
       "type": "call",
       "fromElement": "docSearchCommand",
       "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docSearchCommand",
+      "toElement": "m.aliases.join"
     },
     {
       "from": "src/commands/doc.ts",
@@ -2793,6 +3705,104 @@
       "type": "call",
       "fromElement": "docSearchCommand",
       "toElement": "formatJson"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAliasCommand",
+      "toElement": "loadIndex"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAliasCommand",
+      "toElement": "index.find"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAliasCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAliasCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAliasCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAliasCommand",
+      "toElement": "entry.aliases.includes"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAliasCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAliasCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAliasCommand",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAliasCommand",
+      "toElement": "entry.aliases.push"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAliasCommand",
+      "toElement": "saveIndex"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAliasCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAliasCommand",
+      "toElement": "console.log"
+    },
+    {
+      "from": "src/commands/doc.ts",
+      "to": "src/commands/doc.ts",
+      "type": "call",
+      "fromElement": "docAliasCommand",
+      "toElement": "JSON.stringify"
     },
     {
       "from": "src/commands/onboarding.ts",
@@ -3420,6 +4430,12 @@
     },
     {
       "from": "src/commands/ui.ts",
+      "to": "src/storage.ts",
+      "type": "import",
+      "toElement": "writeMarkdown"
+    },
+    {
+      "from": "src/commands/ui.ts",
       "to": "src/types.ts",
       "type": "import",
       "toElement": "Architecture"
@@ -3465,6 +4481,132 @@
       "to": "node:child_process",
       "type": "import",
       "toElement": "spawn"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "saveDocContent",
+      "toElement": "getDocsIndex"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "saveDocContent",
+      "toElement": "index.find"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "saveDocContent",
+      "toElement": "index.push"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "saveDocContent",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "saveDocContent",
+      "toElement": "docsDir"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "saveDocContent",
+      "toElement": "fs.mkdirSync"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "saveDocContent",
+      "toElement": "docsDir"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "saveDocContent",
+      "toElement": "fs.writeFileSync"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "saveDocContent",
+      "toElement": "JSON.stringify"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "saveDocContent",
+      "toElement": "element.replace"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "saveDocContent",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "saveDocContent",
+      "toElement": "docsDir"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "saveDocContent",
+      "toElement": "writeMarkdown"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "readBody",
+      "toElement": "req.on"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "readBody",
+      "toElement": "chunk.toString"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "readBody",
+      "toElement": "req.on"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "readBody",
+      "toElement": "resolve"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "readBody",
+      "toElement": "req.on"
     },
     {
       "from": "src/commands/ui.ts",
@@ -3541,13 +4683,6 @@
       "to": "src/commands/ui.ts",
       "type": "call",
       "fromElement": "getDocContent",
-      "toElement": "path.join"
-    },
-    {
-      "from": "src/commands/ui.ts",
-      "to": "src/commands/ui.ts",
-      "type": "call",
-      "fromElement": "getDocContent",
       "toElement": "docsDir"
     },
     {
@@ -3555,7 +4690,56 @@
       "to": "src/commands/ui.ts",
       "type": "call",
       "fromElement": "getDocContent",
+      "toElement": "fs.readdirSync"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "getDocContent",
+      "toElement": "dir.isDirectory"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "getDocContent",
+      "toElement": "dir.name.startsWith"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "getDocContent",
+      "toElement": "path.join"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "getDocContent",
+      "toElement": "fs.existsSync"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "getDocContent",
       "toElement": "fs.readFileSync"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "getDocContent",
+      "toElement": "fs.readFileSync"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "getDocContent",
+      "toElement": "path.join"
     },
     {
       "from": "src/commands/ui.ts",
@@ -3619,6 +4803,76 @@
       "type": "call",
       "fromElement": "createServer",
       "toElement": "http.createServer"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "res.writeHead"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "res.end"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "pathname.startsWith"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "decodeURIComponent"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "pathname.slice"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "JSON.parse"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "readBody"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "saveDocContent"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "jsonResponse"
+    },
+    {
+      "from": "src/commands/ui.ts",
+      "to": "src/commands/ui.ts",
+      "type": "call",
+      "fromElement": "createServer",
+      "toElement": "jsonResponse"
     },
     {
       "from": "src/commands/ui.ts",

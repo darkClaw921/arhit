@@ -5,7 +5,7 @@ import { startCommand } from './commands/start.js';
 import { onboardingCommand } from './commands/onboarding.js';
 import { archBuildCommand, archShowCommand } from './commands/arch.js';
 import { analyzeCommand, depsCommand, callsCommand, mapCommand } from './commands/analyze.js';
-import { docAddCommand, docShowCommand, docListCommand, docCreateCommand, docSearchCommand } from './commands/doc.js';
+import { docAddCommand, docShowCommand, docListCommand, docCreateCommand, docSearchCommand, docAliasCommand } from './commands/doc.js';
 import { uiStartCommand, uiStopCommand, uiStatusCommand } from './commands/ui.js';
 import { contextCommand } from './commands/context.js';
 
@@ -134,6 +134,13 @@ doc
   .description('Search documentation')
   .action((query: string) => {
     docSearchCommand(query, { human: program.opts().human });
+  });
+
+doc
+  .command('alias <element> <alias>')
+  .description('Add a search alias to an existing documentation entry')
+  .action((element: string, alias: string) => {
+    docAliasCommand(element, alias, { human: program.opts().human });
   });
 
 // UI

@@ -242,7 +242,8 @@ export function docSearchCommand(query: string, options: { human?: boolean }) {
   const matches = index.filter(e =>
     e.element.toLowerCase().includes(q) ||
     e.content.toLowerCase().includes(q) ||
-    e.path.toLowerCase().includes(q)
+    e.path.toLowerCase().includes(q) ||
+    e.aliases?.some(a => a.toLowerCase().includes(q))
   );
 
   if (options.human) {
@@ -252,9 +253,45 @@ export function docSearchCommand(query: string, options: { human?: boolean }) {
     }
     console.log(`Found ${matches.length} result(s) for "${query}":\n`);
     for (const m of matches) {
-      console.log(`  ${m.element} [${m.type}] — ${m.path || 'N/A'}`);
+      const aliasHint = m.aliases?.length ? ` (aliases: ${m.aliases.join(', ')})` : '';
+      console.log(`  ${m.element} [${m.type}] — ${m.path || 'N/A'}${aliasHint}`);
     }
   } else {
     console.log(formatJson(matches));
+  }
+}
+
+export function docAliasCommand(element: string, alias: string, options: { human?: boolean }) {
+  const index = loadIndex();
+  const entry = index.find(e => e.element === element || e.aliases?.includes(element));
+
+  if (!entry) {
+    if (options.human) {
+      console.log(`No documentation found for "${element}"`);
+    } else {
+      console.log(JSON.stringify({ error: 'not_found', element }));
+    }
+    return;
+  }
+
+  if (!entry.aliases) entry.aliases = [];
+
+  if (entry.aliases.includes(alias)) {
+    if (options.human) {
+      console.log(`Alias "${alias}" already exists for "${entry.element}"`);
+    } else {
+      console.log(JSON.stringify({ status: 'already_exists', element: entry.element, alias }));
+    }
+    return;
+  }
+
+  entry.aliases.push(alias);
+  entry.updatedAt = new Date().toISOString();
+  saveIndex(index);
+
+  if (options.human) {
+    console.log(`Alias "${alias}" added to "${entry.element}"`);
+  } else {
+    console.log(JSON.stringify({ status: 'added', element: entry.element, alias }));
   }
 }

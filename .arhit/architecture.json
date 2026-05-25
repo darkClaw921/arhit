@@ -1,6 +1,6 @@
 {
   "root": "/Users/igorgerasimov/claudeWorkspace/arhit",
-  "generatedAt": "2026-03-30T18:20:38.205Z",
+  "generatedAt": "2026-04-15T11:07:31.419Z",
   "nodes": [
     {
       "id": "src/cli.ts",
@@ -10,11 +10,19 @@
       "exports": [],
       "children": [
         {
+          "id": "src/cli.ts:PKG_VERSION",
+          "name": "PKG_VERSION",
+          "type": "variable",
+          "path": "src/cli.ts",
+          "line": 2,
+          "exports": []
+        },
+        {
           "id": "src/cli.ts:program",
           "name": "program",
           "type": "variable",
           "path": "src/cli.ts",
-          "line": 10,
+          "line": 12,
           "exports": []
         },
         {
@@ -22,7 +30,7 @@
           "name": "arch",
           "type": "variable",
           "path": "src/cli.ts",
-          "line": 35,
+          "line": 37,
           "exports": []
         },
         {
@@ -30,7 +38,7 @@
           "name": "doc",
           "type": "variable",
           "path": "src/cli.ts",
-          "line": 88,
+          "line": 98,
           "exports": []
         },
         {
@@ -38,7 +46,7 @@
           "name": "ui",
           "type": "variable",
           "path": "src/cli.ts",
-          "line": 130,
+          "line": 147,
           "exports": []
         }
       ]
@@ -273,7 +281,7 @@
           "name": "OutputOptions",
           "type": "interface",
           "path": "src/types.ts",
-          "line": 47,
+          "line": 48,
           "exports": [
             "OutputOptions"
           ]
@@ -509,6 +517,67 @@
       ]
     },
     {
+      "id": "src/commands/context.ts",
+      "name": "context.ts",
+      "type": "file",
+      "path": "src/commands/context.ts",
+      "exports": [
+        "contextCommand"
+      ],
+      "children": [
+        {
+          "id": "src/commands/context.ts:findEntryPoints",
+          "name": "findEntryPoints",
+          "type": "function",
+          "path": "src/commands/context.ts",
+          "line": 44,
+          "exports": []
+        },
+        {
+          "id": "src/commands/context.ts:getPublicApi",
+          "name": "getPublicApi",
+          "type": "function",
+          "path": "src/commands/context.ts",
+          "line": 70,
+          "exports": []
+        },
+        {
+          "id": "src/commands/context.ts:computeHotspots",
+          "name": "computeHotspots",
+          "type": "function",
+          "path": "src/commands/context.ts",
+          "line": 84,
+          "exports": []
+        },
+        {
+          "id": "src/commands/context.ts:contextCommand",
+          "name": "contextCommand",
+          "type": "function",
+          "path": "src/commands/context.ts",
+          "line": 107,
+          "exports": [
+            "contextCommand"
+          ]
+        },
+        {
+          "id": "src/commands/context.ts:printHuman",
+          "name": "printHuman",
+          "type": "function",
+          "path": "src/commands/context.ts",
+          "line": 193,
+          "exports": []
+        },
+        {
+          "id": "src/commands/context.ts:ContextBrief",
+          "name": "ContextBrief",
+          "type": "interface",
+          "path": "src/commands/context.ts",
+          "line": 13,
+          "exports": []
+        }
+      ]
+    },
+    {
       "id": "src/commands/doc.ts",
       "name": "doc.ts",
       "type": "file",
@@ -518,15 +587,40 @@
         "docShowCommand",
         "docListCommand",
         "docCreateCommand",
-        "docSearchCommand"
+        "docSearchCommand",
+        "docAliasCommand"
       ],
       "children": [
+        {
+          "id": "src/commands/doc.ts:typeDir",
+          "name": "typeDir",
+          "type": "function",
+          "path": "src/commands/doc.ts",
+          "line": 20,
+          "exports": []
+        },
+        {
+          "id": "src/commands/doc.ts:detectTypeFromElement",
+          "name": "detectTypeFromElement",
+          "type": "function",
+          "path": "src/commands/doc.ts",
+          "line": 26,
+          "exports": []
+        },
         {
           "id": "src/commands/doc.ts:docFilePath",
           "name": "docFilePath",
           "type": "function",
           "path": "src/commands/doc.ts",
-          "line": 7,
+          "line": 36,
+          "exports": []
+        },
+        {
+          "id": "src/commands/doc.ts:findDocFile",
+          "name": "findDocFile",
+          "type": "function",
+          "path": "src/commands/doc.ts",
+          "line": 46,
           "exports": []
         },
         {
@@ -534,7 +628,7 @@
           "name": "indexPath",
           "type": "function",
           "path": "src/commands/doc.ts",
-          "line": 12,
+          "line": 79,
           "exports": []
         },
         {
@@ -542,7 +636,7 @@
           "name": "loadIndex",
           "type": "function",
           "path": "src/commands/doc.ts",
-          "line": 16,
+          "line": 83,
           "exports": []
         },
         {
@@ -550,7 +644,7 @@
           "name": "saveIndex",
           "type": "function",
           "path": "src/commands/doc.ts",
-          "line": 20,
+          "line": 87,
           "exports": []
         },
         {
@@ -558,7 +652,7 @@
           "name": "docAddCommand",
           "type": "function",
           "path": "src/commands/doc.ts",
-          "line": 25,
+          "line": 92,
           "exports": [
             "docAddCommand"
           ]
@@ -568,7 +662,7 @@
           "name": "docShowCommand",
           "type": "function",
           "path": "src/commands/doc.ts",
-          "line": 88,
+          "line": 169,
           "exports": [
             "docShowCommand"
           ]
@@ -578,7 +672,7 @@
           "name": "docListCommand",
           "type": "function",
           "path": "src/commands/doc.ts",
-          "line": 106,
+          "line": 190,
           "exports": [
             "docListCommand"
           ]
@@ -588,7 +682,7 @@
           "name": "docCreateCommand",
           "type": "function",
           "path": "src/commands/doc.ts",
-          "line": 123,
+          "line": 219,
           "exports": [
             "docCreateCommand"
           ]
@@ -598,10 +692,36 @@
           "name": "docSearchCommand",
           "type": "function",
           "path": "src/commands/doc.ts",
-          "line": 143,
+          "line": 239,
           "exports": [
             "docSearchCommand"
           ]
+        },
+        {
+          "id": "src/commands/doc.ts:docAliasCommand",
+          "name": "docAliasCommand",
+          "type": "function",
+          "path": "src/commands/doc.ts",
+          "line": 264,
+          "exports": [
+            "docAliasCommand"
+          ]
+        },
+        {
+          "id": "src/commands/doc.ts:TYPE_DIRS",
+          "name": "TYPE_DIRS",
+          "type": "variable",
+          "path": "src/commands/doc.ts",
+          "line": 7,
+          "exports": []
+        },
+        {
+          "id": "src/commands/doc.ts:FILE_EXTENSIONS",
+          "name": "FILE_EXTENSIONS",
+          "type": "variable",
+          "path": "src/commands/doc.ts",
+          "line": 24,
+          "exports": []
         }
       ]
     },
@@ -648,7 +768,7 @@
           "name": "findClaudeMd",
           "type": "function",
           "path": "src/commands/start.ts",
-          "line": 49,
+          "line": 75,
           "exports": []
         },
         {
@@ -656,7 +776,7 @@
           "name": "generateClaudeAgent",
           "type": "function",
           "path": "src/commands/start.ts",
-          "line": 61,
+          "line": 87,
           "exports": []
         },
         {
@@ -664,7 +784,7 @@
           "name": "startCommand",
           "type": "function",
           "path": "src/commands/start.ts",
-          "line": 81,
+          "line": 107,
           "exports": [
             "startCommand"
           ]
@@ -682,7 +802,7 @@
           "name": "ARHIT_MARKER_START",
           "type": "variable",
           "path": "src/commands/start.ts",
-          "line": 46,
+          "line": 72,
           "exports": []
         },
         {
@@ -690,7 +810,7 @@
           "name": "ARHIT_MARKER_END",
           "type": "variable",
           "path": "src/commands/start.ts",
-          "line": 47,
+          "line": 73,
           "exports": []
         }
       ]
@@ -707,11 +827,27 @@
       ],
       "children": [
         {
+          "id": "src/commands/ui.ts:saveDocContent",
+          "name": "saveDocContent",
+          "type": "function",
+          "path": "src/commands/ui.ts",
+          "line": 13,
+          "exports": []
+        },
+        {
+          "id": "src/commands/ui.ts:readBody",
+          "name": "readBody",
+          "type": "function",
+          "path": "src/commands/ui.ts",
+          "line": 41,
+          "exports": []
+        },
+        {
           "id": "src/commands/ui.ts:jsonResponse",
           "name": "jsonResponse",
           "type": "function",
           "path": "src/commands/ui.ts",
-          "line": 7,
+          "line": 50,
           "exports": []
         },
         {
@@ -719,7 +855,7 @@
           "name": "htmlResponse",
           "type": "function",
           "path": "src/commands/ui.ts",
-          "line": 12,
+          "line": 55,
           "exports": []
         },
         {
@@ -727,7 +863,7 @@
           "name": "getDocsIndex",
           "type": "function",
           "path": "src/commands/ui.ts",
-          "line": 17,
+          "line": 60,
           "exports": []
         },
         {
@@ -735,7 +871,7 @@
           "name": "getDocContent",
           "type": "function",
           "path": "src/commands/ui.ts",
-          "line": 26,
+          "line": 69,
           "exports": []
         },
         {
@@ -743,7 +879,7 @@
           "name": "pidFilePath",
           "type": "function",
           "path": "src/commands/ui.ts",
-          "line": 402,
+          "line": 548,
           "exports": []
         },
         {
@@ -751,7 +887,7 @@
           "name": "getRunningPid",
           "type": "function",
           "path": "src/commands/ui.ts",
-          "line": 406,
+          "line": 552,
           "exports": []
         },
         {
@@ -759,7 +895,7 @@
           "name": "createServer",
           "type": "function",
           "path": "src/commands/ui.ts",
-          "line": 419,
+          "line": 565,
           "exports": []
         },
         {
@@ -767,7 +903,7 @@
           "name": "runDaemon",
           "type": "function",
           "path": "src/commands/ui.ts",
-          "line": 489,
+          "line": 653,
           "exports": []
         },
         {
@@ -775,7 +911,7 @@
           "name": "uiStartCommand",
           "type": "function",
           "path": "src/commands/ui.ts",
-          "line": 512,
+          "line": 676,
           "exports": [
             "uiStartCommand"
           ]
@@ -785,7 +921,7 @@
           "name": "uiStopCommand",
           "type": "function",
           "path": "src/commands/ui.ts",
-          "line": 564,
+          "line": 728,
           "exports": [
             "uiStopCommand"
           ]
@@ -795,17 +931,25 @@
           "name": "uiStatusCommand",
           "type": "function",
           "path": "src/commands/ui.ts",
-          "line": 593,
+          "line": 757,
           "exports": [
             "uiStatusCommand"
           ]
+        },
+        {
+          "id": "src/commands/ui.ts:TYPE_DIRS",
+          "name": "TYPE_DIRS",
+          "type": "variable",
+          "path": "src/commands/ui.ts",
+          "line": 7,
+          "exports": []
         },
         {
           "id": "src/commands/ui.ts:PAGE_HTML",
           "name": "PAGE_HTML",
           "type": "variable",
           "path": "src/commands/ui.ts",
-          "line": 36,
+          "line": 90,
           "exports": []
         }
       ]

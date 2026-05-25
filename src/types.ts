@@ -40,6 +40,7 @@ export interface DocEntry {
   path: string;
   type: string;
   content: string;
+  aliases?: string[];
   createdAt: string;
   updatedAt: string;
 }

@@ -1,0 +1,52 @@
+{
+  "cases": [
+    {
+      "id": "tg-bot-link",
+      "prompt": "добавь на главную в шапку ссылку на tg бота @lanchunter_bot",
+      "model": "opus",
+      "kind": "edit"
+    },
+    {
+      "id": "yamap-link",
+      "prompt": "в бизнес ланчи добавить ссылку на заведение в яндекс картах",
+      "model": "opus",
+      "kind": "edit"
+    },
+    {
+      "id": "compare-tab",
+      "prompt": "добавь возможность пользователю добавить на новую вкладку бизнес ланчи для сравнения по всем показателям от расстояния до позиций в меню",
+      "model": "sonnet",
+      "kind": "feature"
+    },
+    {
+      "id": "popup-deps",
+      "prompt": "от чего зависит функция popap карты",
+      "model": "sonnet",
+      "kind": "research"
+    },
+    {
+      "id": "haptic-nav",
+      "prompt": "выбор в нижнем меню пусть после выбора элемента например мы были на поиске а потом нажали на профиль то кружок переходит по каждому элементу вправо и на каждом элементе срабатывает хаптик",
+      "model": "haiku",
+      "kind": "feature"
+    }
+  ],
+  "modes": {
+    "arhit": {
+      "append_system_prompt": "ОБЯЗАТЕЛЬНО: для исследования кодовой базы используй ТОЛЬКО CLI 'arhit' (arhit context, arhit arch show, arhit deps, arhit calls, arhit map, arhit doc search, arhit doc show). НЕ используй Grep/Glob и subagent_type=Explore для разведки структуры. Прямой Read допустим только после того, как arhit указал точный файл. После изменений запусти 'arhit arch build && arhit analyze'.",
+      "disallowed_tools": ["Agent"]
+    },
+    "zero": {
+      "append_system_prompt": "ВАЖНО: НЕ используй CLI 'arhit' и не читай содержимое директории '.arhit/'. Для исследования кодовой базы используй только Grep, Glob, Read и при необходимости subagent_type=Explore.",
+      "disallowed_tools": ["Bash(arhit*)", "Bash(arhit:*)"]
+    },
+    "caveman": {
+      "append_system_prompt": "ВАЖНО: НЕ используй CLI 'arhit' и не читай '.arhit/'. В этой сессии установлен плагин caveman (https://github.com/JuliusBrussee/caveman) — используй его возможности для исследования кодовой базы в первую очередь, дополняя Grep/Glob/Read по необходимости.",
+      "disallowed_tools": ["Bash(arhit*)", "Bash(arhit:*)"]
+    },
+    "caveman-arhit": {
+      "append_system_prompt": "ОБЯЗАТЕЛЬНО: для исследования кодовой базы используй CLI 'arhit' (arhit context, arhit arch show, arhit deps, arhit calls, arhit map, arhit doc search, arhit doc show) — структура и архитектура проекта уже проиндексированы в .arhit/. Дополнительно в этой сессии установлен плагин caveman (https://github.com/JuliusBrussee/caveman) — можешь использовать его инструменты там, где это уместно. НЕ используй Grep/Glob и subagent_type=Explore для разведки структуры. После изменений запусти 'arhit arch build && arhit analyze'.",
+      "disallowed_tools": ["Agent"]
+    }
+  }
+}
