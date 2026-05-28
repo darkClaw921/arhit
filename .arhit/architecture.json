@@ -1,7 +1,30 @@
 {
   "root": "/Users/igorgerasimov/claudeWorkspace/arhit",
-  "generatedAt": "2026-05-25T08:06:59.330Z",
+  "generatedAt": "2026-05-28T07:38:58.660Z",
   "nodes": [
+    {
+      "id": "src/analyzer/ignore.ts",
+      "name": "ignore.ts",
+      "type": "file",
+      "path": "src/analyzer/ignore.ts",
+      "exports": [
+        "isIgnored"
+      ],
+      "children": [
+        {
+          "id": "src/analyzer/ignore.ts:isIgnored",
+          "name": "isIgnored",
+          "type": "function",
+          "path": "src/analyzer/ignore.ts",
+          "line": 17,
+          "signature": "isIgnored(rel: string, ignore: string[]): boolean",
+          "docComment": "Проверяет, попадает ли относительный путь под список игнорируемых паттернов.\n\nМатчинг посегментный, а НЕ подстрочный: запись `dist` отсекает каталог\n`dist/`, но не трогает файл `src/distance.ts`. Это устраняет ложные\nсрабатывания коротких generic-имён (`out`, `build`, `bin`, …), которые при\nстаром `rel.includes(p)` ловили настоящий код (`layout.tsx`, `combine.ts`).\n\nПоддерживаются три формы паттерна:\n - имя сегмента (`node_modules`, `.next`) — совпадает с любым сегментом пути;\n - glob по расширению (`*.egg-info`) — совпадает с сегментом по суффиксу;\n - путь с разделителем (`src/generated`) — старое подстрочное поведение,\n   чтобы пользовательские конфиги с вложенными путями не сломались.",
+          "exports": [
+            "isIgnored"
+          ]
+        }
+      ]
+    },
     {
       "id": "src/analyzer/python-scanner.ts",
       "name": "python-scanner.ts",
@@ -18,7 +41,7 @@
           "name": "extractDocstring",
           "type": "function",
           "path": "src/analyzer/python-scanner.ts",
-          "line": 18,
+          "line": 19,
           "signature": "extractDocstring(lines: string[], declIndex: number): string | undefined",
           "docComment": "Извлекает docstring элемента: первый строковый литерал тела сразу после\nстроки объявления (def/class). Возвращает undefined, если его нет.",
           "exports": []
@@ -28,7 +51,7 @@
           "name": "parsePythonFile",
           "type": "function",
           "path": "src/analyzer/python-scanner.ts",
-          "line": 47,
+          "line": 48,
           "signature": "parsePythonFile(content: string): PythonElement[]",
           "exports": []
         },
@@ -37,7 +60,7 @@
           "name": "parsePythonImports",
           "type": "function",
           "path": "src/analyzer/python-scanner.ts",
-          "line": 108,
+          "line": 109,
           "signature": "parsePythonImports(content: string): PythonImport[]",
           "exports": []
         },
@@ -46,7 +69,7 @@
           "name": "parsePythonCalls",
           "type": "function",
           "path": "src/analyzer/python-scanner.ts",
-          "line": 138,
+          "line": 139,
           "signature": "parsePythonCalls(content: string): Array<{ caller: string | undefined; callee: string; line: number }>",
           "exports": []
         },
@@ -55,7 +78,7 @@
           "name": "parsePythonInheritance",
           "type": "function",
           "path": "src/analyzer/python-scanner.ts",
-          "line": 177,
+          "line": 178,
           "signature": "parsePythonInheritance(content: string): Array<{ className: string; bases: string[]; line: number }>",
           "exports": []
         },
@@ -64,7 +87,7 @@
           "name": "findPythonFiles",
           "type": "function",
           "path": "src/analyzer/python-scanner.ts",
-          "line": 195,
+          "line": 196,
           "signature": "findPythonFiles(sourcePaths: string[], ignore: string[]): string[]",
           "exports": [
             "findPythonFiles"
@@ -75,7 +98,7 @@
           "name": "buildPythonArchNodes",
           "type": "function",
           "path": "src/analyzer/python-scanner.ts",
-          "line": 226,
+          "line": 227,
           "signature": "buildPythonArchNodes(sourcePaths: string[], ignore: string[]): ArchNode[]",
           "exports": [
             "buildPythonArchNodes"
@@ -86,7 +109,7 @@
           "name": "buildPythonDependencies",
           "type": "function",
           "path": "src/analyzer/python-scanner.ts",
-          "line": 260,
+          "line": 261,
           "signature": "buildPythonDependencies(sourcePaths: string[], ignore: string[]): Dependency[]",
           "exports": [
             "buildPythonDependencies"
@@ -97,7 +120,7 @@
           "name": "PythonElement",
           "type": "interface",
           "path": "src/analyzer/python-scanner.ts",
-          "line": 5,
+          "line": 6,
           "signature": "interface PythonElement",
           "exports": []
         },
@@ -106,7 +129,7 @@
           "name": "PythonImport",
           "type": "interface",
           "path": "src/analyzer/python-scanner.ts",
-          "line": 102,
+          "line": 103,
           "signature": "interface PythonImport",
           "exports": []
         }
@@ -128,7 +151,7 @@
           "name": "findSourceFiles",
           "type": "function",
           "path": "src/analyzer/scanner.ts",
-          "line": 16,
+          "line": 17,
           "signature": "findSourceFiles(sourcePaths: string[], ignore: string[]): string[]",
           "docComment": "Обходит файловую систему и собирает пути к исходникам TS/JS.\n\nИгнорируемые каталоги (node_modules, dist, …) отсекаются ПРЯМО при обходе —\nих содержимое никогда не читается и не парсится. Это критично для памяти:\nраньше ts-morph загружал в AST весь node_modules и удалял его только после,\nчто приводило к OOM в V8 на больших проектах.",
           "exports": [
@@ -140,7 +163,7 @@
           "name": "createScratchProject",
           "type": "function",
           "path": "src/analyzer/scanner.ts",
-          "line": 58,
+          "line": 59,
           "signature": "createScratchProject(): Project",
           "docComment": "Создаёт «лёгкий» проект ts-morph для пофайлового разбора.\n\nskipFileDependencyResolution не даёт ts-morph автоматически подтягивать\nимпортируемые файлы при добавлении одного исходника — иначе добавление\nодного файла затягивало бы в память весь граф импортов.",
           "exports": []
@@ -150,7 +173,7 @@
           "name": "extractJsDoc",
           "type": "function",
           "path": "src/analyzer/scanner.ts",
-          "line": 70,
+          "line": 71,
           "signature": "extractJsDoc(node: { getJsDocs?: () => Array<{ getDescription(): string }> }): string | undefined",
           "docComment": "Извлекает текст JSDoc-комментария у узла (описание без тегов).\nВозвращает undefined, если документации нет.",
           "exports": []
@@ -160,7 +183,7 @@
           "name": "functionSignature",
           "type": "function",
           "path": "src/analyzer/scanner.ts",
-          "line": 83,
+          "line": 84,
           "signature": "functionSignature(name: string, fn: import('ts-morph').FunctionDeclaration): string",
           "docComment": "Собирает текстовую сигнатуру функции/метода из узлов параметров и явного\nвозвращаемого типа. Намеренно НЕ выводит типы через type checker — это\nсохраняет «лёгкий» режим разбора (см. createScratchProject) и память.",
           "exports": []
@@ -170,7 +193,7 @@
           "name": "collectFileChildren",
           "type": "function",
           "path": "src/analyzer/scanner.ts",
-          "line": 89,
+          "line": 90,
           "signature": "collectFileChildren(sf: import('ts-morph').SourceFile, filePath: string): ArchNode[]",
           "exports": []
         },
@@ -179,7 +202,7 @@
           "name": "buildArchNodes",
           "type": "function",
           "path": "src/analyzer/scanner.ts",
-          "line": 180,
+          "line": 181,
           "signature": "buildArchNodes(sourcePaths: string[], ignore: string[]): ArchNode[]",
           "exports": [
             "buildArchNodes"
@@ -190,7 +213,7 @@
           "name": "resolveImport",
           "type": "function",
           "path": "src/analyzer/scanner.ts",
-          "line": 217,
+          "line": 218,
           "signature": "resolveImport(fromFile: string, specifier: string): string",
           "docComment": "Разрешает относительный импорт в путь к файлу без загрузки всего проекта\nв type checker (что было основным источником потребления памяти в analyze).\nВозвращает путь относительно cwd либо исходный спецификатор для внешних модулей.",
           "exports": []
@@ -200,7 +223,7 @@
           "name": "collectFileDependencies",
           "type": "function",
           "path": "src/analyzer/scanner.ts",
-          "line": 247,
+          "line": 248,
           "signature": "collectFileDependencies(sf: import('ts-morph').SourceFile, file: string, filePath: string): Dependency[]",
           "exports": []
         },
@@ -209,7 +232,7 @@
           "name": "buildDependencies",
           "type": "function",
           "path": "src/analyzer/scanner.ts",
-          "line": 325,
+          "line": 326,
           "signature": "buildDependencies(sourcePaths: string[], ignore: string[]): Dependency[]",
           "exports": [
             "buildDependencies"
@@ -220,7 +243,7 @@
           "name": "SOURCE_EXTENSIONS",
           "type": "variable",
           "path": "src/analyzer/scanner.ts",
-          "line": 6,
+          "line": 7,
           "exports": []
         }
       ]

@@ -349,5 +349,21 @@
     "aliases": [
       "карточка элемента"
     ]
+  },
+  {
+    "element": "buildArhitConfig",
+    "path": "",
+    "type": "unknown",
+    "content": "Дефолтный список ignore при инициализации проекта (arhit start) включает .next — артефакты сборки Next.js не попадают в граф архитектуры.",
+    "createdAt": "2026-05-28T07:30:12.950Z",
+    "updatedAt": "2026-05-28T07:30:12.950Z"
+  },
+  {
+    "element": "isIgnored",
+    "path": "src/analyzer/ignore.ts",
+    "type": "function",
+    "content": "Хелпер src/analyzer/ignore.ts. Посегментный матчинг игнорируемых путей (rel.split(path.sep)) вместо подстрочного rel.includes(p). Устраняет ложные срабатывания generic-имён: 'dist' больше не ловит src/distance.ts, 'out' не ловит layout.tsx. Формы паттернов: имя сегмента (node_modules, .next), glob по расширению (*.egg-info), путь с разделителем (src/generated) — для последнего сохранено старое подстрочное поведение ради обратной совместимости пользовательских конфигов. Используется в findSourceFiles (scanner.ts) и findPythonFiles (python-scanner.ts).",
+    "createdAt": "2026-05-28T07:38:59.318Z",
+    "updatedAt": "2026-05-28T07:38:59.318Z"
   }
 ]

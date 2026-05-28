@@ -19,7 +19,16 @@ export async function onboardingCommand(options: { human?: boolean }) {
   const existing = readJson<ArhitConfig>(configPath()) || {
     name: '',
     sourcePaths: ['src'],
-    ignore: ['node_modules', 'dist', '.arhit', '.git'],
+    ignore: [
+      '.git', '.arhit', '.omc', '.idea', '.vscode',
+      'node_modules', 'dist', 'build', 'out', 'coverage',
+      '.next', '.nuxt', '.output', '.svelte-kit', '.turbo',
+      '.cache', '.parcel-cache', '.nyc_output', '.angular', '.docusaurus',
+      '.vercel', '.netlify', 'storybook-static',
+      '.venv', 'venv', '__pycache__', '.tox', '.mypy_cache', '.pytest_cache',
+      '.ruff_cache', '.ipynb_checkpoints', '.eggs', '*.egg-info',
+      'target', 'vendor', 'bin', 'obj', '.gradle', 'Pods',
+    ],
     language: 'typescript',
   };
 

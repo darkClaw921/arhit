@@ -223,7 +223,20 @@ export function startCommand(options: { human?: boolean }) {
   const config: ArhitConfig = {
     name: path.basename(process.cwd()),
     sourcePaths,
-    ignore: ['node_modules', 'dist', '.arhit', '.git', '.omc', '.venv', 'venv', '__pycache__', '.tox', '.mypy_cache', '.pytest_cache'],
+    ignore: [
+      // VCS / служебные
+      '.git', '.arhit', '.omc', '.idea', '.vscode',
+      // JS/TS зависимости и сборка
+      'node_modules', 'dist', 'build', 'out', 'coverage',
+      '.next', '.nuxt', '.output', '.svelte-kit', '.turbo',
+      '.cache', '.parcel-cache', '.nyc_output', '.angular', '.docusaurus',
+      '.vercel', '.netlify', 'storybook-static',
+      // Python
+      '.venv', 'venv', '__pycache__', '.tox', '.mypy_cache', '.pytest_cache',
+      '.ruff_cache', '.ipynb_checkpoints', '.eggs', '*.egg-info',
+      // Прочие языки
+      'target', 'vendor', 'bin', 'obj', '.gradle', 'Pods',
+    ],
     language,
     framework,
   };

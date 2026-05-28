@@ -2,6 +2,7 @@ import { Project, SyntaxKind, Node } from 'ts-morph';
 import fs from 'node:fs';
 import path from 'node:path';
 import type { ArchNode, Dependency } from '../types.js';
+import { isIgnored } from './ignore.js';
 
 const SOURCE_EXTENSIONS = ['.ts', '.tsx', '.js', '.jsx', '.mts', '.cts', '.mjs', '.cjs'];
 
@@ -27,7 +28,7 @@ export function findSourceFiles(sourcePaths: string[], ignore: string[]): string
     for (const entry of entries) {
       const fullPath = path.join(dir, entry.name);
       const rel = path.relative(process.cwd(), fullPath);
-      if (ignore.some(p => rel.includes(p))) continue;
+      if (isIgnored(rel, ignore)) continue;
 
       if (entry.isDirectory()) {
         walk(fullPath);
